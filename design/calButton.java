@@ -25,7 +25,6 @@ public class calButton implements ActionListener {
         DefaultTableModel newModel = new DefaultTableModel(data, cols);
         JButton addDateButton = new JButton("Добавить дату");
         JButton deleteDateButton = new JButton("Удалить дату");
-        //JButton changeDateButton = new JButton("Изменить дату");
         for (Calendar cal:lst) {
             String buf[] = new String[3];
             buf[0] = cal.getDate();
@@ -75,17 +74,31 @@ public class calButton implements ActionListener {
 
                 addDateButton.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent e){
-                        Calendar addedDate = new Calendar(newDate.getText(), 
+                        Calendar addedDate;
+                        try{
+                            addedDate = new Calendar(newDate.getText(), 
                             Integer.parseInt(newWins.getText()), 
                             Integer.parseInt(newLosses.getText()));
-                        lst.add(addedDate);
-                        JOptionPane.showMessageDialog(addDateBox, "Дата добавлена", "", 
-                        JOptionPane.INFORMATION_MESSAGE);
-                        addDateBox.dispose();
-                        String[] buf = {addedDate.getDate(), 
-                            Integer.toString(addedDate.getWins()), 
-                            Integer.toString(addedDate.getLosses())};
-                        newModel.addRow(buf);
+                            addedDate.isDateRight();
+                            lst.add(addedDate);
+                            JOptionPane.showMessageDialog(addDateBox, "Дата добавлена", "", 
+                            JOptionPane.INFORMATION_MESSAGE);
+                            addDateBox.dispose();
+                            String[] buf = {addedDate.getDate(), 
+                                Integer.toString(addedDate.getWins()), 
+                                Integer.toString(addedDate.getLosses())};
+                            newModel.addRow(buf);
+                        }
+                        catch(NumberFormatException exNum){
+                            JOptionPane.showMessageDialog(addDateBox, "Некорректные числовые данные", "", 
+                            JOptionPane.ERROR_MESSAGE);
+                        }
+                        catch(IllegalArgumentException exArg){
+                            JOptionPane.showMessageDialog(addDateBox, "Неправильная дата", "", 
+                            JOptionPane.ERROR_MESSAGE);
+                        }
+                        
+                        
                     }
                 });
 

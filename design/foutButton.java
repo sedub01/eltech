@@ -22,11 +22,21 @@ public class foutButton implements ActionListener{
         JLabel text = new JLabel("Введите ID игрока: ");
         textField.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                int ID = Integer.parseInt(textField.getText());
-                Footballer boy = theBest.find(ID);
-                infoBox.dispose();
-                JOptionPane.showMessageDialog(infoBox, boy.info(), boy.getName()+" "+boy.getLastName(), 
-                JOptionPane.INFORMATION_MESSAGE);
+                try{
+                    int ID = Integer.parseInt(textField.getText());
+                    Footballer boy = theBest.find(ID);
+                    infoBox.dispose();
+                    JOptionPane.showMessageDialog(infoBox, boy.info(), boy.getName()+" "+boy.getLastName(), 
+                    JOptionPane.INFORMATION_MESSAGE);
+                }
+                catch(NullPointerException ex){
+                    JOptionPane.showMessageDialog(infoBox, "Нет такого игрока", "", 
+                    JOptionPane.ERROR_MESSAGE);
+                }
+                catch(NumberFormatException exNum){
+                    JOptionPane.showMessageDialog(infoBox, "Некорректные данные", "", 
+                    JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
         content.add(text, BorderLayout.NORTH);

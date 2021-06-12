@@ -24,17 +24,27 @@ public class deleteButton implements ActionListener{
         smallField.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 //System.out.println("Hello thrrrr");
-                
-                int ID = Integer.parseInt(smallField.getText());
-                theBest.delete(ID);
-                JOptionPane.showMessageDialog(deleteBox, "Игрок удален", "", 
-                JOptionPane.INFORMATION_MESSAGE);
-                model.removeRow(ID-theBest.firstID());
-                deleteBox.dispose();
-                //так как ID в структуре меняется, а на выводе нет, 
-                //то таблицу нужно выводить заново
-                while (model.getRowCount()>0) model.removeRow(0);
-                model.showTable(theBest);
+                try{
+                    int ID = Integer.parseInt(smallField.getText());
+                    theBest.find(ID);
+                    theBest.delete(ID);
+                    JOptionPane.showMessageDialog(deleteBox, "Игрок удален", "", 
+                    JOptionPane.INFORMATION_MESSAGE);
+                    model.removeRow(ID-theBest.firstID());
+                    deleteBox.dispose();
+                    //так как ID в структуре меняется, а на выводе нет, 
+                    //то таблицу нужно выводить заново
+                    while (model.getRowCount()>0) model.removeRow(0);
+                    model.showTable(theBest);
+                }
+                catch(NullPointerException exNull){
+                    JOptionPane.showMessageDialog(deleteBox, "Нет такого игрока", "", 
+                    JOptionPane.ERROR_MESSAGE);
+                }
+                catch(NumberFormatException exNum){
+                    JOptionPane.showMessageDialog(deleteBox, "Некорректные данные", "", 
+                    JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
                 

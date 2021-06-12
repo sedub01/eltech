@@ -83,4 +83,24 @@ public class Footballer extends Person implements IRoles{
     public int getSalary(){
         return salary;
     }
+
+    //числа в одной из строк - IllegalArgumentException
+    //
+    public void isAllRight() throws IllegalArgumentException{
+        for (int i = 0; i<name.length(); ++i)
+            if (Character.isDigit(name.charAt(i)))
+                throw new IllegalArgumentException();
+
+        for (int i = 0; i<last_name.length(); ++i)
+            if (Character.isDigit(last_name.charAt(i)))
+                throw new IllegalArgumentException();
+
+        for (int i = 0; i<club.length(); ++i)
+            if (Character.isDigit(club.charAt(i)))
+                throw new IllegalArgumentException();
+
+        for (int i = 0; i<club.length(); ++i)
+            if (Character.isDigit(club.charAt(i)))
+                throw new IllegalArgumentException();
+    }
 }

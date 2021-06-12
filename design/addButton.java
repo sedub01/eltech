@@ -86,24 +86,35 @@ public class addButton implements ActionListener, IRoles{
                 else if (neededRole.equals(roles[1])) neededRoleInt = 1;
                 else if (neededRole.equals(roles[2])) neededRoleInt = 2;
                 else if (neededRole.equals(roles[3])) neededRoleInt = 3;
-                Footballer boy = new Footballer(theBest.lastID()+1, newName.getText(), newLastName.getText(), 
-                newClub.getText(), newCity.getText(), Integer.parseInt(newGoals.getText()), 
-                Integer.parseInt(newSalary.getText()), neededRoleInt);
-                theBest.add(boy);
-                JOptionPane.showMessageDialog(addBox, "Игрок добавлен", "", 
-                JOptionPane.INFORMATION_MESSAGE);
-               
-                model.addRow(new String[]{
-                    Integer.toString(boy.getID()), 
-                    boy.getName(), 
-                    boy.getLastName(),
-                    roles[boy.getRole()], 
-                    boy.getClub(),
-                    boy.getCity(), 
-                    Integer.toString(boy.getGoals()),
-                    Integer.toString(boy.getSalary())
-                });
-                addBox.dispose();
+                try{
+                    Footballer boy = new Footballer(theBest.lastID()+1, newName.getText(), newLastName.getText(), 
+                        newClub.getText(), newCity.getText(), Integer.parseInt(newGoals.getText()), 
+                        Integer.parseInt(newSalary.getText()), neededRoleInt);
+                    boy.isAllRight();
+                    theBest.add(boy);
+                    model.addRow(new String[]{
+                        Integer.toString(boy.getID()), 
+                        boy.getName(), 
+                        boy.getLastName(),
+                        roles[boy.getRole()], 
+                        boy.getClub(),
+                        boy.getCity(), 
+                        Integer.toString(boy.getGoals()),
+                        Integer.toString(boy.getSalary())
+                    });
+                    JOptionPane.showMessageDialog(addBox, "Игрок добавлен", "", 
+                    JOptionPane.INFORMATION_MESSAGE);
+                    addBox.dispose();
+                }
+                catch(NumberFormatException exNum){
+                    JOptionPane.showMessageDialog(addBox, "В одном из чисел\nобнаружены буквы", "", 
+                    JOptionPane.ERROR_MESSAGE);
+                }
+                catch(IllegalArgumentException exArg){
+                    JOptionPane.showMessageDialog(addBox, "В одной из строк\nобнаружено число", "", 
+                    JOptionPane.ERROR_MESSAGE);
+                }
+                
             }
         });
 

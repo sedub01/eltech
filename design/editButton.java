@@ -123,24 +123,37 @@ public class editButton implements ActionListener, IRoles {
 
                     changePlayer.addActionListener(new ActionListener(){
                         public void actionPerformed(ActionEvent e){
-                            boy.setName(newName.getText());
-                            boy.setLastName(newLastName.getText());
                             String neededRole = (String)newRole.getSelectedItem();
                             int neededRoleInt;
                             if (neededRole.equals(roles[0])) neededRoleInt = 0;
                             else if (neededRole.equals(roles[1])) neededRoleInt = 1;
                             else if (neededRole.equals(roles[2])) neededRoleInt = 2;
                             else neededRoleInt = 3;
-                            boy.setRole(neededRoleInt);
-                            boy.setClub(newClub.getText());
-                            boy.setCity(newCity.getText());
-                            boy.setGoals(Integer.parseInt(newGoals.getText()));
-                            boy.setSalary(Integer.parseInt(newSalary.getText()));
-                            JOptionPane.showMessageDialog(editBigBox, "Информация изменена", "", 
-                            JOptionPane.INFORMATION_MESSAGE);
-                            editBigBox.dispose();
-                            while (model.getRowCount()>0) model.removeRow(0);
-                            model.showTable(theBest);
+
+                            try{
+                                boy.setName(newName.getText());
+                                boy.setLastName(newLastName.getText());
+                                boy.setRole(neededRoleInt);
+                                boy.setClub(newClub.getText());
+                                boy.setCity(newCity.getText());
+                                boy.setGoals(Integer.parseInt(newGoals.getText()));
+                                boy.setSalary(Integer.parseInt(newSalary.getText()));
+                                boy.isAllRight();
+                                JOptionPane.showMessageDialog(editBigBox, "Информация изменена", "", 
+                                JOptionPane.INFORMATION_MESSAGE);
+                                editBigBox.dispose();
+                                while (model.getRowCount()>0) model.removeRow(0);
+                                model.showTable(theBest);
+                            }
+                            catch(NumberFormatException exNum){
+                                JOptionPane.showMessageDialog(editBigBox, "В одном из чисел\nобнаружены буквы", "", 
+                                JOptionPane.ERROR_MESSAGE);
+                            }
+                            catch(IllegalArgumentException exArg){
+                                JOptionPane.showMessageDialog(editBigBox, "В одной из строк\nобнаружено число", "", 
+                                JOptionPane.ERROR_MESSAGE);
+                            }
+
                         }
                     });
                     
@@ -152,6 +165,10 @@ public class editButton implements ActionListener, IRoles {
                 }
                 catch(NullPointerException ex){
                     JOptionPane.showMessageDialog(editSmallBox, "Нет такого игрока", "", 
+                    JOptionPane.ERROR_MESSAGE);
+                }
+                catch(NumberFormatException exNum){
+                    JOptionPane.showMessageDialog(editSmallBox, "Некорректные данные", "", 
                     JOptionPane.ERROR_MESSAGE);
                 }
             }
