@@ -6,7 +6,9 @@ import java.awt.BorderLayout;
 
 import team.Footballer;
 import team.Team;
-
+/**
+ * Вывод информации о конкретном футболисте
+ */
 public class foutButton implements ActionListener{
     private Team theBest;
     private JFrame owner;

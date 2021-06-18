@@ -12,15 +12,27 @@ import com.itextpdf.text.pdf.*;
 //первым делом выводить инфромацию о команде в целом
 //потом таблицу игроков
 //а затем таблицу календаря
+/**
+ * Класс для создания PDF отчета
+ * @param FILE Путь файла, куда записывать
+ * @param FONT Путь файла с нужным шрифтом для отображения русского языка
+ * @param bf Вспомогательная переменная для FONT
+ * @param rus_font Русский шрифт
+ * @param document Объект документа 
+ */
 public class PDFGenerator
 {
-    private String FILE;    //Путь файла, куда записывать
+    private String FILE;
     public static final String FONT = "./src/main/resources/fonts/times.ttf";
     private BaseFont bf;
     Font rus_font;
     private Document document;
     
-
+    /**
+     * 
+     * @param path Путь сохранения файла
+     * @param msg Выводимое сообщение о команде
+     */
     public PDFGenerator(String path, String msg)
     {
         this.FILE = path;
@@ -131,7 +143,10 @@ public class PDFGenerator
         }
     }
 
-    //Добавляем таблицу дат
+    /**
+     * Добавляем таблицу дат
+     * @param calendar Лист с датами
+     */
     public void addCals(List<Calendar> calendar)
     {
         Font font = new Font(bf, 12, Font.NORMAL);

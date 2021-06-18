@@ -8,6 +8,11 @@ import javax.swing.*;
 
 import java.awt.event.*;
 
+/**
+ * Весь графический интерфейс
+ * @author sedub01
+ * 
+ */
 public class PlayerList implements IRoles {
     // Объявления графических компонентов
     private JFrame playerList;
@@ -18,6 +23,10 @@ public class PlayerList implements IRoles {
     private JTable players;
     private JTextField PlayerName, PlayerLastName;
     private JButton filter;
+    /**
+     * Отображение интерфейса
+     * @param theBest команда
+     */
     public void show(Team theBest) {
         // Создание окна
         playerList = new JFrame("Список футболистов");

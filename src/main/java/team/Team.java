@@ -7,7 +7,11 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 
 import java.io.*;
-
+/**
+ * Сама команда
+ * @param list Список футболистов
+ * @param calendar Список дат матчей
+ */
 public class Team implements IRoles{ // класс-агрегатор
     private List<Footballer> list;
     private List<Calendar> calendar;
@@ -15,6 +19,13 @@ public class Team implements IRoles{ // класс-агрегатор
     private int wins;
     private int losses;
     private int games;
+    /**
+     * 
+     * @param ID админа команды (для связки)
+     * @param wins Кол-во победных матчей
+     * @param losses Кол-во проигранных матчей
+     * @param games Кол-во игр всего (для подсчета ничей)
+     */
     public Team(int ID, int wins, int losses, int games){
         calendar = new ArrayList <Calendar>();
         list = new ArrayList<Footballer>();
@@ -23,7 +34,9 @@ public class Team implements IRoles{ // класс-агрегатор
         this.losses = losses;
         this.games = games;
     }
-
+    /**
+     * Конструктор для ввода информации из файла
+     */
     public Team(){
         calendar = new ArrayList <Calendar>();
         list = new ArrayList<Footballer>();
@@ -63,7 +76,10 @@ public class Team implements IRoles{ // класс-агрегатор
         return calendar;
     }
     public void add(Footballer boy) {list.add(boy);}
-    public void delete(int id) {//удаление по id
+    /**
+     * Удаление игрока по ID
+     */
+    public void delete(int id) {
         for (Footballer boy : list){
             if (boy.getID() == id){
                 list.remove(boy);
@@ -74,7 +90,13 @@ public class Team implements IRoles{ // класс-агрегатор
         }
     } 
     
-    public Footballer find(int id) throws NullPointerException {//поиск по id
+    /**
+     * Поиск игрока по ID
+     * @param id
+     * @return объект найденного футболиста
+     * @throws NullPointerException Выбрасывает исключение, если игрок отсутствует
+     */
+    public Footballer find(int id) throws NullPointerException {
         Footballer nes = new Footballer();
         for (Footballer boy : list){
             if (boy.getID() == id){
@@ -84,6 +106,13 @@ public class Team implements IRoles{ // класс-агрегатор
         if (nes.name == null) throw new NullPointerException();
         return nes;
     }
+    /**
+     * Поиск игрока по имени и фамилии (находит первого попавшегося или не находит вовсе)
+     * @param name Имя футболиста
+     * @param lastName Его фамилия
+     * @return ID найденного футболиста
+     * @throws NullPointerException Игрок не найден
+     */
     public int find(String name, String lastName) throws NullPointerException {
         for (Footballer boy:list)
             if (boy.getName().equals(name) && boy.getLastName().equals(lastName))
@@ -111,6 +140,9 @@ public class Team implements IRoles{ // класс-агрегатор
         else games++; //ничья
     }
 
+    /**
+     * Сохранение изменений в файл
+     */
     public void saveChanges(){
         try{
             FileWriter writer1 = new FileWriter("./src/main/resources/data/Даты.txt");
@@ -136,7 +168,10 @@ public class Team implements IRoles{ // класс-агрегатор
         }
         catch(Exception ex){ex.getStackTrace();}
     }
-
+    /**
+     * Вывод информации о команде
+     * @return Строку информации для вывода в окошке
+     */
     public String msg(){
         String[] buf = new String[5];
         buf[0] = "ID Админа: "+Integer.toString(bossID)+"\n";
@@ -153,6 +188,11 @@ public class Team implements IRoles{ // класс-агрегатор
         return buf[0] + buf[1]+buf[2]+buf[3]+buf[4];
     }
 
+    /**
+     * Добавление информации об игроках в таблицу (для класса {@link #PDFGenerator})
+     * @param table Таблица в PDF файле
+     * @param font Шрифт выводимого текста (для кириллицы)
+     */
     public void addCells(PdfPTable table, Font font){
         for(Footballer boy : list)
         {

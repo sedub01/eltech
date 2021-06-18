@@ -9,10 +9,17 @@ import java.awt.*;
 
 import team.Calendar;
 import team.Team;
-
+/**
+ * Кнопка, вызывающая календарь
+ */
 public class calButton implements ActionListener {
     private List<Calendar> lst;
     private JFrame owner;
+    /**
+     * 
+     * @param theBest Команда
+     * @param owner Предыдущий фрейм
+     */
     calButton(Team theBest, JFrame owner){
         this.lst = theBest.getCal();
         this.owner = owner;
@@ -38,6 +45,9 @@ public class calButton implements ActionListener {
         };
         JScrollPane newScroll = new JScrollPane(dates);
         calBox.add(newScroll, BorderLayout.CENTER);
+        /**
+        * Удаление даты из календаря
+        */
         deleteDateButton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 try{
@@ -52,6 +62,9 @@ public class calButton implements ActionListener {
             }
         });
         addDateButton.addActionListener(new ActionListener(){
+            /**
+             * Добавление даты в календарь
+             */
             public void actionPerformed(ActionEvent e){
                 JDialog addDateBox = new JDialog(calBox, "Добавление даты", true);
                 JPanel commonPanel = new JPanel();
@@ -97,6 +110,10 @@ public class calButton implements ActionListener {
                             JOptionPane.showMessageDialog(addDateBox, "Неправильная дата", "", 
                             JOptionPane.ERROR_MESSAGE);
                         }
+                        catch(ArrayIndexOutOfBoundsException exArg){
+                            JOptionPane.showMessageDialog(addDateBox, "Введите дату полностью", "", 
+                            JOptionPane.ERROR_MESSAGE);
+                        }
                         
                         
                     }
@@ -113,7 +130,6 @@ public class calButton implements ActionListener {
         JPanel calPanel = new JPanel();
         calPanel.add(addDateButton);
         calPanel.add(deleteDateButton);
-        //calPanel.add(changeDateButton);
         
         calBox.add(calPanel, BorderLayout.SOUTH);
         calBox.setAlwaysOnTop(true);

@@ -8,11 +8,19 @@ import java.awt.FlowLayout;
 import java.awt.event.*;
 import javax.swing.JFrame;
 import javax.swing.*;
-
+/**
+ * Кнопка добавления игрока
+ */
 public class addButton implements ActionListener, IRoles{
     private JFrame owner;
     private Team theBest;
     private MyModel model;
+    /**
+     * Просто конструктор
+     * @param owner Окно, откуда появился этот фрейм
+     * @param theBest Команда
+     * @param model Отображаемая таблица
+     */
     addButton(JFrame owner, Team theBest, MyModel model){
         this.owner = owner;
         this.theBest = theBest;

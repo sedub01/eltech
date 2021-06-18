@@ -8,11 +8,19 @@ import java.awt.event.ActionEvent;
 import java.awt.*;
 
 import team.*;
-
+/**
+ * Редактирование информации об игроке
+ */
 public class editButton implements ActionListener, IRoles {
     private JFrame owner;
     private Team theBest;
     private MyModel model;
+    /**
+     * 
+     * @param owner Предыдущий фрейм
+     * @param theBest Команда
+     * @param model Отображаемая таблица
+     */
     editButton(JFrame owner, Team theBest, MyModel model){
         this.owner = owner;
         this.theBest = theBest;

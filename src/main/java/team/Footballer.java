@@ -1,6 +1,8 @@
 package team;
 import exceptions.*;
-
+/**
+ * Класс футболиста
+ */
 public class Footballer extends Person implements IRoles{
     private int RoleID;//см. IRoles
     private String club; //принадлежность к клубу
@@ -8,6 +10,17 @@ public class Footballer extends Person implements IRoles{
     private int goals; // кол-во забитых голов
     private int salary; //зарплата в долларах в месяц
     public Footballer() {}
+    /**
+     * 
+     * @param ID футболиста
+     * @param name Имя футболиста
+     * @param last_name Его фамилия
+     * @param club Название клуба
+     * @param city Город
+     * @param goals Кол-во голов
+     * @param salary Зарплата в год
+     * @param RoleID Код специализации
+     */
     public Footballer(int ID, String name, String last_name, String club, String city, int goals, int salary, int RoleID) {
         super(name, last_name, ID);
         this.club = club;
@@ -16,6 +29,9 @@ public class Footballer extends Person implements IRoles{
         this.salary = salary;
         this.RoleID = RoleID;
     }
+    /**
+     * Вывод подробной информации о футболисте для окошка
+     */
     public String info() {
         String[] buf = new String[6];
         buf[0] = "\n---Информация об игроке " + name + ' ' + last_name+"---\n";
@@ -84,7 +100,12 @@ public class Footballer extends Person implements IRoles{
     public int getSalary(){
         return salary;
     }
-
+    /**
+     * Проверка на корректность вводимых данных
+     * @throws IllegalArgumentException Неверное наименование города или клуба
+     * @throws WrongNameException Некорректное имя
+     * @throws WrongLastNameException Некорректная фамилия
+     */
     public void isAllRight() throws IllegalArgumentException, WrongNameException, WrongLastNameException{
         for (int i = 0; i<name.length(); ++i)
             if (Character.isDigit(name.charAt(i)))

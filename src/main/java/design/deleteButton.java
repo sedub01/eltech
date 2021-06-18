@@ -4,11 +4,19 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.BorderLayout;
 import team.Team;
-
+/**
+ * Кнопка для удаления игрока
+ */
 public class deleteButton implements ActionListener{
     private MyModel model;
     private Team theBest;
     private JFrame owner;
+    /**
+     * 
+     * @param model Отображаемая таблица
+     * @param theBest Команда
+     * @param owner Предыдущий фрейм
+     */
     deleteButton(MyModel model, Team theBest, JFrame owner){
         this.model = model;
         this.theBest = theBest;
@@ -23,7 +31,6 @@ public class deleteButton implements ActionListener{
                 
         smallField.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                //System.out.println("Hello thrrrr");
                 try{
                     int ID = Integer.parseInt(smallField.getText());
                     theBest.find(ID);

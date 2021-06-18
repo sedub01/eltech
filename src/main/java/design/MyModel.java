@@ -2,7 +2,10 @@ package design;
 
 import javax.swing.table.DefaultTableModel;
 import team.*;
-
+/**
+ * Класс был создан для того, чтобы в класс {@code DefaultTableModel}
+ * добавить функцию вывода информации об игроках
+ */
 public class MyModel extends DefaultTableModel implements IRoles {
     MyModel(String[][] data, String[] columns){super(data, columns);}
     public void showTable(Team theBest){
