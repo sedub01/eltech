@@ -7,6 +7,9 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.*;
 import javax.swing.JFrame;
+
+import com.mysql.cj.exceptions.WrongArgumentException;
+
 import javax.swing.*;
 /**
  * Кнопка добавления игрока
@@ -119,8 +122,12 @@ public class addButton implements ActionListener, IRoles{
                     JOptionPane.showMessageDialog(addBox, "В одном из чисел\nобнаружены буквы", "", 
                     JOptionPane.ERROR_MESSAGE);
                 }
-                catch(IllegalArgumentException exArg){
-                    JOptionPane.showMessageDialog(addBox, "В одной из строк\nобнаружено число", "", 
+                catch(IllegalArgumentException exCity){
+                    JOptionPane.showMessageDialog(addBox, exCity.getMessage(), "", 
+                    JOptionPane.ERROR_MESSAGE);
+                }
+                catch(WrongArgumentException exClub){
+                    JOptionPane.showMessageDialog(addBox, exClub.getMessage(), "", 
                     JOptionPane.ERROR_MESSAGE);
                 }
                 catch(WrongNameException exName){

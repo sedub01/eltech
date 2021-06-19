@@ -2,6 +2,8 @@ package design;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+import com.mysql.cj.exceptions.WrongArgumentException;
+
 import exceptions.*;
 
 import java.awt.event.ActionEvent;
@@ -158,8 +160,12 @@ public class editButton implements ActionListener, IRoles {
                                 JOptionPane.showMessageDialog(editBigBox, "В одном из чисел\nобнаружены буквы", "", 
                                 JOptionPane.ERROR_MESSAGE);
                             }
-                            catch(IllegalArgumentException exArg){
-                                JOptionPane.showMessageDialog(editBigBox, "В одной из строк\nобнаружено число", "", 
+                            catch(IllegalArgumentException exCity){
+                                JOptionPane.showMessageDialog(editBigBox, exCity.getMessage(), "", 
+                                JOptionPane.ERROR_MESSAGE);
+                            }
+                            catch(WrongArgumentException exClub){
+                                JOptionPane.showMessageDialog(editBigBox, exClub.getMessage(), "", 
                                 JOptionPane.ERROR_MESSAGE);
                             }
                             catch(WrongNameException exName){
