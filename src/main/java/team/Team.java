@@ -13,8 +13,8 @@ import java.io.*;
  * @param calendar Список дат матчей
  */
 public class Team implements IRoles{ // класс-агрегатор
-    private List<Footballer> list;
-    private List<Calendar> calendar;
+    private List<Footballer> list = null;
+    private List<Calendar> calendar = null;
     private int bossID;
     private int wins;
     private int losses;
@@ -52,7 +52,7 @@ public class Team implements IRoles{ // класс-агрегатор
             buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Игроки.txt")));
             while (buf.ready()){
                 String v[] = buf.readLine().split(";");
-                add(new Footballer(Integer.parseInt(v[0]), v[1], v[2], v[3], v[4], 
+                addFootballer(new Footballer(Integer.parseInt(v[0]), v[1], v[2], v[3], v[4], 
                 Integer.parseInt(v[5]), Integer.parseInt(v[6]), Integer.parseInt(v[7])));
             }
             buf.close();
@@ -75,7 +75,15 @@ public class Team implements IRoles{ // класс-агрегатор
     public List<Calendar> getCal(){
         return calendar;
     }
-    public void add(Footballer boy) {list.add(boy);}
+    /**
+     * Использую только для тестов!!!
+     * @return Лист футболистов
+     */
+    public List<Footballer> getFootballers(){
+        return list;
+    }
+    public void addFootballer(Footballer boy) {list.add(boy);}
+    public void addDate(Calendar date) {calendar.add(date);}
     /**
      * Удаление игрока по ID
      */

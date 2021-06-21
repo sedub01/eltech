@@ -103,7 +103,7 @@ public class addButton implements ActionListener, IRoles{
                         newClub.getText(), newCity.getText(), Integer.parseInt(newGoals.getText()), 
                         Integer.parseInt(newSalary.getText()), neededRoleInt);
                     boy.isAllRight();
-                    theBest.add(boy);
+                    theBest.addFootballer(boy);
                     model.addRow(new String[]{
                         Integer.toString(boy.getID()), 
                         boy.getName(), 
