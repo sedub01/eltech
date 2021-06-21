@@ -8,7 +8,6 @@ import java.awt.FlowLayout;
 import java.awt.event.*;
 import javax.swing.JFrame;
 
-import com.mysql.cj.exceptions.WrongArgumentException;
 
 import javax.swing.*;
 /**
@@ -126,7 +125,7 @@ public class addButton implements ActionListener, IRoles{
                     JOptionPane.showMessageDialog(addBox, exCity.getMessage(), "", 
                     JOptionPane.ERROR_MESSAGE);
                 }
-                catch(WrongArgumentException exClub){
+                catch(ArithmeticException exClub){
                     JOptionPane.showMessageDialog(addBox, exClub.getMessage(), "", 
                     JOptionPane.ERROR_MESSAGE);
                 }

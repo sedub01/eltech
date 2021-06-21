@@ -2,7 +2,6 @@ package design;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-import com.mysql.cj.exceptions.WrongArgumentException;
 
 import exceptions.*;
 
@@ -164,7 +163,7 @@ public class editButton implements ActionListener, IRoles {
                                 JOptionPane.showMessageDialog(editBigBox, exCity.getMessage(), "", 
                                 JOptionPane.ERROR_MESSAGE);
                             }
-                            catch(WrongArgumentException exClub){
+                            catch(ArithmeticException exClub){
                                 JOptionPane.showMessageDialog(editBigBox, exClub.getMessage(), "", 
                                 JOptionPane.ERROR_MESSAGE);
                             }

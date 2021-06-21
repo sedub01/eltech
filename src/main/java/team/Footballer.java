@@ -1,5 +1,5 @@
 package team;
-import com.mysql.cj.exceptions.WrongArgumentException;
+
 
 import exceptions.*;
 /**
@@ -108,7 +108,7 @@ public class Footballer extends Person implements IRoles{
      * @throws WrongNameException Некорректное имя
      * @throws WrongLastNameException Некорректная фамилия
      */
-    public void isAllRight() throws IllegalArgumentException, WrongNameException, WrongLastNameException, WrongArgumentException{
+    public void isAllRight() throws IllegalArgumentException, WrongNameException, WrongLastNameException, ArithmeticException{
         for (int i = 0; i<name.length(); ++i)
             if (Character.isDigit(name.charAt(i)))
                 throw new WrongNameException("Некорректно введенное имя");
@@ -123,6 +123,6 @@ public class Footballer extends Person implements IRoles{
 
         for (int i = 0; i<club.length(); ++i)
             if (Character.isDigit(club.charAt(i)))
-                throw new WrongArgumentException("Неправильное название клуба");
+                throw new ArithmeticException("Неправильное название клуба");
     }
 }
