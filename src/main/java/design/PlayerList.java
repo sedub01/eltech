@@ -5,15 +5,19 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 import javax.swing.*;
-
 import java.awt.event.*;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 /**
  * Весь графический интерфейс
+ * Смысл переменных понятен по их названию
  * @author sedub01
- * 
  */
 public class PlayerList implements IRoles {
+
+    private static final Logger PLlog = LogManager.getLogger(PlayerList.class);
     // Объявления графических компонентов
     private JFrame playerList;
     private MyModel model;
@@ -23,11 +27,13 @@ public class PlayerList implements IRoles {
     private JTable players;
     private JTextField PlayerName, PlayerLastName;
     private JButton filter;
+    
     /**
      * Отображение интерфейса
      * @param theBest команда
      */
     public void show(Team theBest) {
+        PLlog.info("Main menu is preparing");
         // Создание окна
         playerList = new JFrame("Список футболистов");
         playerList.setSize(750, 400);
@@ -79,19 +85,23 @@ public class PlayerList implements IRoles {
         // Размещение таблицы с данными
         save.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                PLlog.info("User is going to save his changes");
                 theBest.saveChanges();
                 JOptionPane.showMessageDialog(playerList, "Данные сохранены", "", 
                 JOptionPane.INFORMATION_MESSAGE);
+                PLlog.info("Data saved successfully!");
             }
         });
         print.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                PLlog.info("User is going to print his report");
                 PDFGenerator report = new PDFGenerator("Report.pdf", theBest.msg());
                 report.addFootballers(theBest);
                 report.addCals(theBest.getCal());
                 report.doClose();
                 JOptionPane.showMessageDialog(playerList, "Отчет сохранен в корневой папке", 
                 "Report.pdf", JOptionPane.INFORMATION_MESSAGE);
+                PLlog.info("Report printed successfully!");
             }
         });
         info.setActionCommand("Кнопка info нажата");
@@ -122,20 +132,25 @@ public class PlayerList implements IRoles {
         //Поиск по имени фамилии
         filter.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                PLlog.info("User is going to find player with ID");
                 try{
                     int foundID = theBest.find(PlayerName.getText(), PlayerLastName.getText());
                     JOptionPane.showMessageDialog(playerList, "ID игрока: "+Integer.toString(foundID), 
                     "ID игрока", JOptionPane.INFORMATION_MESSAGE);
+                    PLlog.info("Player has been found!");
                 }
                 catch(NullPointerException ex){
+                    PLlog.error("No player with this ID!");
                     JOptionPane.showMessageDialog(playerList, "Нет такого футболиста", "Каво", 
                     JOptionPane.ERROR_MESSAGE);
                 }
+                
             }
         });
         // Размещение панели поиска внизу окна
         playerList.add(filterPanel, BorderLayout.SOUTH);
         // Визуализация экранной формы
         playerList.setVisible(true);
+        PLlog.info("Main menu has been created");
     }
 }

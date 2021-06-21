@@ -1,0 +1,24 @@
+[0 is 2021-06-22 00:02:08,302 INFO  design.PlayerList:show:44] Main menu is preparing
+[658 is 2021-06-22 00:02:08,960 INFO  design.PlayerList:show:162] Main menu has been created
+[3346 is 2021-06-22 00:02:11,648 INFO  design.PlayerList:actionPerformed:105] User is going to print his report
+[3356 is 2021-06-22 00:02:11,658 INFO  design.PDFGenerator:<init>:45] Creating report
+[3480 is 2021-06-22 00:02:11,782 INFO  design.PDFGenerator:addTitle:73] Creating title with russian font
+[3530 is 2021-06-22 00:02:11,832 INFO  design.PDFGenerator:addTitle:84] Trying add page
+[3618 is 2021-06-22 00:02:11,920 INFO  design.PDFGenerator:addTitle:86] Page added successfully!
+[3648 is 2021-06-22 00:02:11,950 INFO  design.PDFGenerator:addTitle:94] Title was construcred
+[3648 is 2021-06-22 00:02:11,950 INFO  design.PDFGenerator:<init>:52] Report was created
+[3648 is 2021-06-22 00:02:11,950 INFO  design.PDFGenerator:addFootballers:107] Creating page with footballers
+[3658 is 2021-06-22 00:02:11,960 INFO  design.PDFGenerator:addFootballers:114] Creating table with footballers
+[3658 is 2021-06-22 00:02:11,960 INFO  design.PDFGenerator:addFootballers:117] Table created!
+[3717 is 2021-06-22 00:02:12,019 INFO  design.PDFGenerator:addFootballers:153] Trying add page with footballers
+[3767 is 2021-06-22 00:02:12,069 INFO  design.PDFGenerator:addFootballers:156] Page added successfully
+[3767 is 2021-06-22 00:02:12,069 INFO  design.PDFGenerator:addFootballers:163] Footballers page is over
+[3767 is 2021-06-22 00:02:12,069 INFO  design.PDFGenerator:addCals:172] Creating page with calendar
+[3767 is 2021-06-22 00:02:12,069 INFO  design.PDFGenerator:addCals:200] Trying add page with calendars
+[3777 is 2021-06-22 00:02:12,079 INFO  design.PDFGenerator:addCals:203] Page added successfully!
+[3777 is 2021-06-22 00:02:12,079 INFO  design.PDFGenerator:addCals:210] Calendars page is over
+[4787 is 2021-06-22 00:02:13,089 INFO  design.PlayerList:actionPerformed:112] Report printed successfully!
+[6871 is 2021-06-22 00:02:15,173 INFO  design.PlayerList:actionPerformed:143] User is going to find player with ID
+[6871 is 2021-06-22 00:02:15,173 ERROR design.PlayerList:actionPerformed:151] No player with this ID!
+[8856 is 2021-06-22 00:02:17,158 INFO  design.PlayerList:actionPerformed:96] User is going to save his changes
+[9824 is 2021-06-22 00:02:18,126 INFO  design.PlayerList:actionPerformed:100] Data saved successfully!

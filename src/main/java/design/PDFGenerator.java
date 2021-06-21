@@ -9,6 +9,9 @@ import java.util.Date;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 //первым делом выводить инфромацию о команде в целом
 //потом таблицу игроков
 //а затем таблицу календаря
@@ -22,6 +25,7 @@ import com.itextpdf.text.pdf.*;
  */
 public class PDFGenerator
 {
+    private static final Logger PDFlog = LogManager.getLogger(PDFGenerator.class);
     private String FILE;
     public static final String FONT = "./src/main/resources/fonts/times.ttf";
     private BaseFont bf;
@@ -38,15 +42,18 @@ public class PDFGenerator
         this.FILE = path;
         try
         {
+            PDFlog.info("Creating report");
             document = new Document();
             PdfWriter.getInstance(document, new FileOutputStream(FILE));//получения экземляра класса PdfWriter
             document.open();
             addMetaData();
             addTitle(msg);
             bf=BaseFont.createFont(FONT, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            PDFlog.info("Report was created");
         }
         catch(Exception e)
         {
+            PDFlog.error("Either doc ruined or font hadn't fit");
             e.printStackTrace();
         }
     }
@@ -63,6 +70,7 @@ public class PDFGenerator
     private void addTitle(String msg)
     {
         try{
+            PDFlog.info("Creating title with russian font");
             bf=BaseFont.createFont(FONT, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
             Paragraph preface = new Paragraph();
             Font rus_font = new Font(bf, 18, Font.NORMAL);
@@ -73,17 +81,22 @@ public class PDFGenerator
             preface.add(new Paragraph(msg, rus_font));
             try
             {
+                PDFlog.info("Trying add page");
                 document.add(preface);
+                PDFlog.info("Page added successfully!");
             }
             catch(Exception e)
             {
+                PDFlog.error("Page hadn't been added!");
                 e.printStackTrace();
             }
             document.newPage();
+            PDFlog.info("Title was construcred");
         }
         catch(Exception e)
         {
             e.printStackTrace();
+            PDFlog.error("Title with russian font ruined!");
         }
 
     }
@@ -91,16 +104,19 @@ public class PDFGenerator
     //Добавляем таблицу футболистов
     public void addFootballers(Team theBest)
     {
+        PDFlog.info("Creating page with footballers");
         Font font = new Font(bf, 12, Font.NORMAL);
         Paragraph ph = new Paragraph("1. Игроки", font);
         addEmptyLine(ph, 1);
 
         PdfPTable table = new PdfPTable(8);
         try{ 
+            PDFlog.info("Creating table with footballers");
             table.setTotalWidth(1650);
             table.setWidths(new int[]{150, 200, 300, 200, 150, 300, 150, 200}); 
+            PDFlog.info("Table created!");
         }
-        catch(Exception e){e.getStackTrace();}
+        catch(Exception e){e.getStackTrace(); PDFlog.error("Table didn't create");}
         
         PdfPCell pfpc;
         pfpc = new PdfPCell(new Phrase("ID", font));
@@ -134,13 +150,17 @@ public class PDFGenerator
         ph.add(table);
         try
         {
+            PDFlog.info("Trying add page with footballers");
             document.add(ph);
             document.newPage();
+            PDFlog.info("Page added successfully");
         }
         catch(Exception e)
         {
+            PDFlog.error("Page didn't add!");
             e.printStackTrace();
         }
+        PDFlog.info("Footballers page is over");
     }
 
     /**
@@ -149,6 +169,8 @@ public class PDFGenerator
      */
     public void addCals(List<Calendar> calendar)
     {
+        PDFlog.info("Creating page with calendar");
+
         Font font = new Font(bf, 12, Font.NORMAL);
         Paragraph ph = new Paragraph("2. Календарь", font);
         addEmptyLine(ph, 1);
@@ -175,13 +197,17 @@ public class PDFGenerator
         ph.add(table);
         try
         {
+            PDFlog.info("Trying add page with calendars");
             document.add(ph);
             document.newPage();
+            PDFlog.info("Page added successfully!");
         }
         catch(Exception e)
         {
+            PDFlog.error("Page didn't add!");
             e.printStackTrace();
         }
+        PDFlog.info("Calendars page is over");
     }
 
     //Добавляем пустые строки
