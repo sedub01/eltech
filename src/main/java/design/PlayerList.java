@@ -81,7 +81,13 @@ public class PlayerList implements IRoles {
             public boolean isCellEditable(int row, int column){ return false; }
         };
         scroll = new JScrollPane(players);
-        model.showTable(theBest);
+        Thread pLThread = new Thread(new Runnable(){
+            public void run(){
+                model.showTable(theBest);
+            }
+        });
+        pLThread.start();
+        
         // Размещение таблицы с данными
         save.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -95,13 +101,19 @@ public class PlayerList implements IRoles {
         print.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 PLlog.info("User is going to print his report");
-                PDFGenerator report = new PDFGenerator("Report.pdf", theBest.msg());
-                report.addFootballers(theBest);
-                report.addCals(theBest.getCal());
-                report.doClose();
-                JOptionPane.showMessageDialog(playerList, "Отчет сохранен в корневой папке", 
-                "Report.pdf", JOptionPane.INFORMATION_MESSAGE);
-                PLlog.info("Report printed successfully!");
+                Thread pdfThread = new Thread(new Runnable(){
+                    public void run(){
+                        PDFGenerator report = new PDFGenerator("Report.pdf", theBest.msg());
+                        report.addFootballers(theBest);
+                        report.addCals(theBest.getCal());
+                        report.doClose();
+                        JOptionPane.showMessageDialog(playerList, "Отчет сохранен в корневой папке", 
+                        "Report.pdf", JOptionPane.INFORMATION_MESSAGE);
+                        PLlog.info("Report printed successfully!");
+                    } 
+                });
+                pdfThread.start();
+                
             }
         });
         info.setActionCommand("Кнопка info нажата");

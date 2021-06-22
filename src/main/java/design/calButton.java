@@ -25,29 +25,38 @@ public class calButton implements ActionListener {
         this.owner = owner;
     }
     public void actionPerformed(ActionEvent e){
+        JTable dates;
+        DefaultTableModel newModel;
+        JButton addDateButton, deleteDateButton;
+        JScrollPane newScroll;
         JDialog calBox = new JDialog(owner,"Календарь игр", true);
-        calBox.setIconImage(new ImageIcon("./img/calendar.png").getImage());
         String[] cols = {"Дата", "Счет сборной", "Счет противника"};
         String[][] data = new String[0][];
-        DefaultTableModel newModel = new DefaultTableModel(data, cols);
-        JButton addDateButton = new JButton("Добавить дату");
-        JButton deleteDateButton = new JButton("Удалить дату");
-        for (Calendar cal:lst) {
-            String buf[] = new String[3];
-            buf[0] = cal.getDate();
-            buf[1] = Integer.toString(cal.getWins());
-            buf[2] = Integer.toString(cal.getLosses());
-            newModel.addRow(buf);
-        }
-        JTable dates = new JTable(newModel){
+        newModel = new DefaultTableModel(data, cols);
+        addDateButton = new JButton("Добавить дату");
+        deleteDateButton = new JButton("Удалить дату");
+        dates = new JTable(newModel){
             @Override
             public boolean isCellEditable(int row, int column){ return false; }
         };
-        JScrollPane newScroll = new JScrollPane(dates);
+        newScroll = new JScrollPane(dates);
+
+        Thread calThread = new Thread(new Runnable(){
+            public void run(){
+                calBox.setIconImage(new ImageIcon("./src/main/resources/img/calendar.png").getImage());
+                for (Calendar cal:lst) {
+                    String buf[] = new String[3];
+                    buf[0] = cal.getDate();
+                    buf[1] = Integer.toString(cal.getWins());
+                    buf[2] = Integer.toString(cal.getLosses());
+                    newModel.addRow(buf);
+                }
+            }
+        });
+        calThread.start();
+        
         calBox.add(newScroll, BorderLayout.CENTER);
-        /**
-        * Удаление даты из календаря
-        */
+        /** Удаление даты из календаря */
         deleteDateButton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 try{
@@ -62,9 +71,7 @@ public class calButton implements ActionListener {
             }
         });
         addDateButton.addActionListener(new ActionListener(){
-            /**
-             * Добавление даты в календарь
-             */
+            /** Добавление даты в календарь*/
             public void actionPerformed(ActionEvent e){
                 JDialog addDateBox = new JDialog(calBox, "Добавление даты", true);
                 JPanel commonPanel = new JPanel();

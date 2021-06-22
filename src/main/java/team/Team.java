@@ -19,6 +19,7 @@ public class Team implements IRoles{ // класс-агрегатор
     private int wins;
     private int losses;
     private int games;
+    private Object DBlock = new Object();
     /**
      * 
      * @param ID админа команды (для связки)
@@ -42,26 +43,36 @@ public class Team implements IRoles{ // класс-агрегатор
         list = new ArrayList<Footballer>();
         wins=0; losses=0; games=0; bossID = 100000;
         try{//Ввод инфы из трех файлов
-            BufferedReader buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Команда.txt")));//"./src/main/resources/data/Команда.txt"
-            String s[] = buf.readLine().split(";");
-            bossID = Integer.parseInt(s[0]);
-            wins = Integer.parseInt(s[1]);
-            losses = Integer.parseInt(s[2]);
-            games =  Integer.parseInt(s[3]);
-            buf.close();
-            buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Игроки.txt")));
-            while (buf.ready()){
-                String v[] = buf.readLine().split(";");
-                addFootballer(new Footballer(Integer.parseInt(v[0]), v[1], v[2], v[3], v[4], 
-                Integer.parseInt(v[5]), Integer.parseInt(v[6]), Integer.parseInt(v[7])));
+            BufferedReader buf;
+            synchronized(DBlock){//блок может выполняться только одним потоком одновременно
+                buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Команда.txt")));
+                String s[] = buf.readLine().split(";");
+                bossID = Integer.parseInt(s[0]);
+                wins = Integer.parseInt(s[1]);
+                losses = Integer.parseInt(s[2]);
+                games =  Integer.parseInt(s[3]);
+                buf.close();
             }
-            buf.close();
-            buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Даты.txt")));
-            while(buf.ready()){
-                String v[] = buf.readLine().split(";");
-                addDate(v[0], Integer.parseInt(v[1]), Integer.parseInt(v[2]));
+            
+            synchronized(DBlock){
+                buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Игроки.txt")));
+                while (buf.ready()){
+                    String v[] = buf.readLine().split(";");
+                    addFootballer(new Footballer(Integer.parseInt(v[0]), v[1], v[2], v[3], v[4], 
+                    Integer.parseInt(v[5]), Integer.parseInt(v[6]), Integer.parseInt(v[7])));
+                }
+                buf.close();
             }
-            buf.close();
+            
+            synchronized(DBlock){
+                buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Даты.txt")));
+                while(buf.ready()){
+                    String v[] = buf.readLine().split(";");
+                    addDate(v[0], Integer.parseInt(v[1]), Integer.parseInt(v[2]));
+                }
+                buf.close();
+            }
+            
         }
         catch(Exception ex){ ex.printStackTrace(); }
     }
@@ -153,26 +164,33 @@ public class Team implements IRoles{ // класс-агрегатор
      */
     public void saveChanges(){
         try{
-            FileWriter writer1 = new FileWriter("./src/main/resources/data/Даты.txt");
-            for (Calendar cal: calendar){
-                writer1.write(cal.getDate()+';'+cal.getWins()+';'+cal.getLosses()+'\n');
+            synchronized(DBlock){
+                FileWriter writer1 = new FileWriter("./src/main/resources/data/Даты.txt");
+                for (Calendar cal: calendar){
+                    writer1.write(cal.getDate()+';'+cal.getWins()+';'+cal.getLosses()+'\n');
+                }
+                writer1.flush();
+                writer1.close();
             }
-            writer1.flush();
-            writer1.close();
-
-            FileWriter writer2 = new FileWriter("./src/main/resources/data/Игроки.txt");
-            for (Footballer boy: list){
-                writer2.write(boy.getID()+";"+boy.getName()+';'+boy.getLastName()+
-                ';'+boy.getClub()+';'+boy.getCity()+';'+boy.getGoals()+';'+boy.getSalary()+
-                ';'+boy.getRole()+'\n');
+            
+            synchronized(DBlock){
+                FileWriter writer2 = new FileWriter("./src/main/resources/data/Игроки.txt");
+                for (Footballer boy: list){
+                    writer2.write(boy.getID()+";"+boy.getName()+';'+boy.getLastName()+
+                    ';'+boy.getClub()+';'+boy.getCity()+';'+boy.getGoals()+';'+boy.getSalary()+
+                    ';'+boy.getRole()+'\n');
+                }
+                writer2.flush();
+                writer2.close();
             }
-            writer2.flush();
-            writer2.close();
-
-            FileWriter writer3 = new FileWriter("./src/main/resources/data/Команда.txt");
-            writer3.write(bossID+";"+wins+";"+losses+";"+games);
-            writer3.flush();
-            writer3.close();
+            
+            synchronized(DBlock){
+                FileWriter writer3 = new FileWriter("./src/main/resources/data/Команда.txt");
+                writer3.write(bossID+";"+wins+";"+losses+";"+games);
+                writer3.flush();
+                writer3.close();
+            }
+            
         }
         catch(Exception ex){ex.getStackTrace();}
     }
