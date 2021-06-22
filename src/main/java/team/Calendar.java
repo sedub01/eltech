@@ -1,4 +1,6 @@
 package team;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 /**
  * Класс, хранящий дату со счетом
@@ -7,6 +9,7 @@ package team;
  * @param lose Счет противника
  */
 public class Calendar{
+    private static final Logger Clog = LogManager.getLogger(Footballer.class);
     private String date;
     private int wins;
     private int losses;
@@ -47,11 +50,15 @@ public class Calendar{
      * @throws ArrayIndexOutOfBoundsException Функция {@code split} не разделила дату по точкам 
      */
     public void isDateRight() throws IllegalArgumentException, NumberFormatException, ArrayIndexOutOfBoundsException{
+        Clog.info("Checking object in calendar");
         String[] strings = date.split("\\.");
         int[] nums = new int[3];
         for (int i=0; i<3; i++) 
             nums[i] = Integer.parseInt(strings[i]);
-        if (nums[2]<0) throw new IllegalArgumentException();
+        if (nums[2]<0){
+            Clog.error("Year value is below zero");
+            throw new IllegalArgumentException();
+        }
         
         switch(nums[1])
         {
@@ -77,10 +84,14 @@ public class Calendar{
                 IsRange(nums[0], 1, 30);
                 break;
             default:
+                Clog.error("Wrong month value");
                 throw new IllegalArgumentException();
-            
         }
-        if (wins<0 || losses<0) throw new NumberFormatException();
+        if (wins<0 || losses<0){
+            Clog.error("Wins or losses values are below zero");
+            throw new NumberFormatException();
+        }
+        Clog.info("This object is correct!");
     }
     /**
      * Проверка диапозона чисел
@@ -91,7 +102,9 @@ public class Calendar{
      */
     private void IsRange(int value, int min, int max) throws IllegalArgumentException
     {
-        if (value < min) throw new IllegalArgumentException();
-        if (value > max) throw new IllegalArgumentException();
+        if (value < min || value > max){
+            Clog.error("Day value is out of range");
+            throw new IllegalArgumentException();
+        }
     }
 }

@@ -6,6 +6,9 @@ import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import java.io.*;
 /**
  * Сама команда
@@ -13,6 +16,7 @@ import java.io.*;
  * @param calendar Список дат матчей
  */
 public class Team implements IRoles{ // класс-агрегатор
+    private static final Logger Tlog = LogManager.getLogger(Team.class);
     private List<Footballer> list = null;
     private List<Calendar> calendar = null;
     private int bossID;
@@ -39,12 +43,15 @@ public class Team implements IRoles{ // класс-агрегатор
      * Конструктор для ввода информации из файла
      */
     public Team(){
+        
         calendar = new ArrayList <Calendar>();
         list = new ArrayList<Footballer>();
         wins=0; losses=0; games=0; bossID = 100000;
         try{//Ввод инфы из трех файлов
+            Tlog.info("Team is ready to construct");
             BufferedReader buf;
             synchronized(DBlock){//блок может выполняться только одним потоком одновременно
+                Tlog.info("Info about team");
                 buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Команда.txt")));
                 String s[] = buf.readLine().split(";");
                 bossID = Integer.parseInt(s[0]);
@@ -52,9 +59,11 @@ public class Team implements IRoles{ // класс-агрегатор
                 losses = Integer.parseInt(s[2]);
                 games =  Integer.parseInt(s[3]);
                 buf.close();
+                Tlog.info("Info about team is ready");
             }
             
             synchronized(DBlock){
+                Tlog.info("Info about footballers");
                 buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Игроки.txt")));
                 while (buf.ready()){
                     String v[] = buf.readLine().split(";");
@@ -62,19 +71,22 @@ public class Team implements IRoles{ // класс-агрегатор
                     Integer.parseInt(v[5]), Integer.parseInt(v[6]), Integer.parseInt(v[7])));
                 }
                 buf.close();
+                Tlog.info("Info about footballers is ready");
             }
             
             synchronized(DBlock){
+                Tlog.info("Info about calendar");
                 buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Даты.txt")));
                 while(buf.ready()){
                     String v[] = buf.readLine().split(";");
                     addDate(v[0], Integer.parseInt(v[1]), Integer.parseInt(v[2]));
                 }
                 buf.close();
+                Tlog.info("Info about calendar is ready");
             }
-            
+            Tlog.info("Team constructed");
         }
-        catch(Exception ex){ ex.printStackTrace(); }
+        catch(Exception ex){ ex.printStackTrace(); Tlog.error("One of inner filer (team, gamers, dates) is ruined");}
     }
     
     public int getBossID(){
@@ -116,13 +128,19 @@ public class Team implements IRoles{ // класс-агрегатор
      * @throws NullPointerException Выбрасывает исключение, если игрок отсутствует
      */
     public Footballer find(int id) throws NullPointerException {
+        Tlog.info("Finding needed gamer with ID");
         Footballer nes = new Footballer();
         for (Footballer boy : list){
             if (boy.getID() == id){
                 nes = boy;
+                break;
             }
         }
-        if (nes.name == null) throw new NullPointerException();
+        if (nes.name == null){
+            Tlog.error("Gamer not found");
+            throw new NullPointerException();
+        }
+        Tlog.info("Gamer found");
         return nes;
     }
     /**
@@ -133,9 +151,13 @@ public class Team implements IRoles{ // класс-агрегатор
      * @throws NullPointerException Игрок не найден
      */
     public int find(String name, String lastName) throws NullPointerException {
+        Tlog.info("Finding needed gamer with his name");
         for (Footballer boy:list)
-            if (boy.getName().equals(name) && boy.getLastName().equals(lastName))
+            if (boy.getName().equals(name) && boy.getLastName().equals(lastName)){
+                Tlog.info("Gamer found");
                 return boy.getID();
+            }
+        Tlog.error("Gamer not found");
         throw new NullPointerException(); //ничего не нашлось
     }
     public int firstID(){
@@ -158,22 +180,25 @@ public class Team implements IRoles{ // класс-агрегатор
         else if (loss > win) Loss();
         else games++; //ничья
     }
-
     /**
      * Сохранение изменений в файл
      */
     public void saveChanges(){
         try{
+            Tlog.info("Saving all changes");
             synchronized(DBlock){
+                Tlog.info("Saving calendar");
                 FileWriter writer1 = new FileWriter("./src/main/resources/data/Даты.txt");
                 for (Calendar cal: calendar){
                     writer1.write(cal.getDate()+';'+cal.getWins()+';'+cal.getLosses()+'\n');
                 }
                 writer1.flush();
                 writer1.close();
+                Tlog.info("Calendar saved");
             }
             
             synchronized(DBlock){
+                Tlog.info("Saving footballers");
                 FileWriter writer2 = new FileWriter("./src/main/resources/data/Игроки.txt");
                 for (Footballer boy: list){
                     writer2.write(boy.getID()+";"+boy.getName()+';'+boy.getLastName()+
@@ -182,17 +207,20 @@ public class Team implements IRoles{ // класс-агрегатор
                 }
                 writer2.flush();
                 writer2.close();
+                Tlog.info("Footballers saved");
             }
             
             synchronized(DBlock){
+                Tlog.info("Saving team info");
                 FileWriter writer3 = new FileWriter("./src/main/resources/data/Команда.txt");
                 writer3.write(bossID+";"+wins+";"+losses+";"+games);
                 writer3.flush();
                 writer3.close();
+                Tlog.info("Team info saved");
             }
-            
+            Tlog.info("Changes were saved");
         }
-        catch(Exception ex){ex.getStackTrace();}
+        catch(Exception ex){ex.getStackTrace(); Tlog.error("One of inner filer (team, gamers, dates) is ruined");}
     }
     /**
      * Вывод информации о команде
@@ -220,6 +248,7 @@ public class Team implements IRoles{ // класс-агрегатор
      * @param font Шрифт выводимого текста (для кириллицы)
      */
     public void addCells(PdfPTable table, Font font){
+        Tlog.info("Adding info in table");
         for(Footballer boy : list)
         {
             PdfPCell pfpc;
@@ -238,5 +267,7 @@ public class Team implements IRoles{ // класс-агрегатор
             table.addCell(""+boy.getGoals());
             table.addCell(""+boy.getSalary());
         }
+        Tlog.info("Everything was added");
     }
+
 }

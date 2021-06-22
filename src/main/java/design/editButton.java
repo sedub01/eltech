@@ -2,17 +2,19 @@ package design;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-
 import exceptions.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.*;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import team.*;
 /**
  * Редактирование информации об игроке
  */
 public class editButton implements ActionListener, IRoles {
+    private static final Logger Elog = LogManager.getLogger(editButton.class);
     private JFrame owner;
     private Team theBest;
     private MyModel model;
@@ -28,16 +30,19 @@ public class editButton implements ActionListener, IRoles {
         this.model = model;
     }
     public void actionPerformed(ActionEvent e){
+        Elog.info("Edit button was pressed");
         JDialog editSmallBox = new JDialog(owner, "Изменить информацию", true);
         JTextField smallField = new JTextField(4);
         smallField.setHorizontalAlignment(JTextField.RIGHT);
         JPanel content = new JPanel();
+        
         JLabel text = new JLabel("Введите ID игрока: ");
         //сначала найти игрока, потом вывести о нем информацию 
         //затем с помощью сеттеров поменять инфу
         smallField.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 try{
+                    Elog.info("Entering footballer's ID");
                     Footballer boy = theBest.find(Integer.parseInt(smallField.getText()));
                     editSmallBox.dispose();
                     JPanel commonPanel = new JPanel();
@@ -133,6 +138,7 @@ public class editButton implements ActionListener, IRoles {
 
                     changePlayer.addActionListener(new ActionListener(){
                         public void actionPerformed(ActionEvent e){
+                            
                             String neededRole = (String)newRole.getSelectedItem();
                             int neededRoleInt;
                             if (neededRole.equals(roles[0])) neededRoleInt = 0;
@@ -141,6 +147,7 @@ public class editButton implements ActionListener, IRoles {
                             else neededRoleInt = 3;
 
                             try{
+                                Elog.info("Trying to save changed data");
                                 boy.setName(newName.getText());
                                 boy.setLastName(newLastName.getText());
                                 boy.setRole(neededRoleInt);
@@ -154,24 +161,30 @@ public class editButton implements ActionListener, IRoles {
                                 editBigBox.dispose();
                                 while (model.getRowCount()>0) model.removeRow(0);
                                 model.showTable(theBest);
+                                Elog.info("Changed data saved");
                             }
                             catch(NumberFormatException exNum){
+                                Elog.error("Characters instead of digits");
                                 JOptionPane.showMessageDialog(editBigBox, "В одном из чисел\nобнаружены буквы", "", 
                                 JOptionPane.ERROR_MESSAGE);
                             }
                             catch(IllegalArgumentException exCity){
+                                Elog.error("Wrong city");
                                 JOptionPane.showMessageDialog(editBigBox, exCity.getMessage(), "", 
                                 JOptionPane.ERROR_MESSAGE);
                             }
                             catch(ArithmeticException exClub){
+                                Elog.error("Wrong club");
                                 JOptionPane.showMessageDialog(editBigBox, exClub.getMessage(), "", 
                                 JOptionPane.ERROR_MESSAGE);
                             }
                             catch(WrongNameException exName){
+                                Elog.error("Wrong name");
                                 JOptionPane.showMessageDialog(editBigBox, exName.getMessage(), "", 
                                 JOptionPane.ERROR_MESSAGE);
                             }
                             catch(WrongLastNameException exLName){
+                                Elog.error("Wrong last name");
                                 JOptionPane.showMessageDialog(editBigBox, exLName.getMessage(), "", 
                                 JOptionPane.ERROR_MESSAGE);
                             }
@@ -186,10 +199,12 @@ public class editButton implements ActionListener, IRoles {
                     editBigBox.setVisible(true);
                 }
                 catch(NullPointerException ex){
+                    Elog.error("Gamer not found");
                     JOptionPane.showMessageDialog(editSmallBox, "Нет такого игрока", "", 
                     JOptionPane.ERROR_MESSAGE);
                 }
                 catch(NumberFormatException exNum){
+                    Elog.error("Characters instead of digits");
                     JOptionPane.showMessageDialog(editSmallBox, "Некорректные данные", "", 
                     JOptionPane.ERROR_MESSAGE);
                 }
@@ -203,6 +218,6 @@ public class editButton implements ActionListener, IRoles {
         editSmallBox.setResizable(false);
         editSmallBox.setLocationRelativeTo(null);;
         editSmallBox.setVisible(true);
-
+        Elog.info("Edit frames closed");
     }
 }

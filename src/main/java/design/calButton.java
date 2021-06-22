@@ -6,6 +6,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.*;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import team.Calendar;
 import team.Team;
@@ -13,6 +15,7 @@ import team.Team;
  * Кнопка, вызывающая календарь
  */
 public class calButton implements ActionListener {
+    private static final Logger Callog = LogManager.getLogger(calButton.class);
     private List<Calendar> lst;
     private JFrame owner;
     /**
@@ -25,6 +28,7 @@ public class calButton implements ActionListener {
         this.owner = owner;
     }
     public void actionPerformed(ActionEvent e){
+        Callog.info("Calendar frame was opened");
         JTable dates;
         DefaultTableModel newModel;
         JButton addDateButton, deleteDateButton;
@@ -43,6 +47,7 @@ public class calButton implements ActionListener {
 
         Thread calThread = new Thread(new Runnable(){
             public void run(){
+                Callog.info("Creating the table");
                 calBox.setIconImage(new ImageIcon("./src/main/resources/img/calendar.png").getImage());
                 for (Calendar cal:lst) {
                     String buf[] = new String[3];
@@ -51,6 +56,7 @@ public class calButton implements ActionListener {
                     buf[2] = Integer.toString(cal.getLosses());
                     newModel.addRow(buf);
                 }
+                Callog.info("Table was created");
             }
         });
         calThread.start();
@@ -60,11 +66,14 @@ public class calButton implements ActionListener {
         deleteDateButton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 try{
+                    Callog.info("Trying delete date");
                     int selected = dates.getSelectedRow();
                     newModel.removeRow(selected);
                     lst.remove(selected);
+                    Callog.info("Date was deleted");
                 }
                 catch(Exception ex){
+                    Callog.error("User didn't choose the date");
                     JOptionPane.showMessageDialog(calBox, "Для начала выберите строку", "Вызов исключения", 
                     JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -73,6 +82,7 @@ public class calButton implements ActionListener {
         addDateButton.addActionListener(new ActionListener(){
             /** Добавление даты в календарь*/
             public void actionPerformed(ActionEvent e){
+                Callog.info("New date frame opened");
                 JDialog addDateBox = new JDialog(calBox, "Добавление даты", true);
                 JPanel commonPanel = new JPanel();
                 JTextField newDate = new JTextField(10);
@@ -96,6 +106,7 @@ public class calButton implements ActionListener {
                     public void actionPerformed(ActionEvent e){
                         Calendar addedDate;
                         try{
+                            Callog.info("Trying add new date");
                             addedDate = new Calendar(newDate.getText(), 
                             Integer.parseInt(newWins.getText()), 
                             Integer.parseInt(newLosses.getText()));
@@ -108,16 +119,20 @@ public class calButton implements ActionListener {
                                 Integer.toString(addedDate.getWins()), 
                                 Integer.toString(addedDate.getLosses())};
                             newModel.addRow(buf);
+                            Callog.info("Date was added");
                         }
                         catch(NumberFormatException exNum){
+                            Callog.error("Characters instead of digits");
                             JOptionPane.showMessageDialog(addDateBox, "Некорректные числовые данные", "", 
                             JOptionPane.ERROR_MESSAGE);
                         }
                         catch(IllegalArgumentException exArg){
+                            Callog.error("Wrong date format");
                             JOptionPane.showMessageDialog(addDateBox, "Неправильная дата", "", 
                             JOptionPane.ERROR_MESSAGE);
                         }
                         catch(ArrayIndexOutOfBoundsException exArg){
+                            Callog.error("Wrong date format");
                             JOptionPane.showMessageDialog(addDateBox, "Введите дату полностью", "", 
                             JOptionPane.ERROR_MESSAGE);
                         }
@@ -131,6 +146,7 @@ public class calButton implements ActionListener {
                 addDateBox.setResizable(false);
                 addDateBox.setLocationRelativeTo(null);
                 addDateBox.setVisible(true);
+                Callog.info("New date frame closed");
             }
         });
         
@@ -144,6 +160,7 @@ public class calButton implements ActionListener {
         calBox.setResizable(false);
         calBox.setLocationRelativeTo(null);
         calBox.setVisible(true);
+        Callog.info("Calendar frame was closed");
     }
     
 }

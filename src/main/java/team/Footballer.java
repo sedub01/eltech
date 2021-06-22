@@ -1,11 +1,13 @@
 package team;
-
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import exceptions.*;
 /**
  * Класс футболиста
  */
 public class Footballer extends Person implements IRoles{
+    private static final Logger Flog = LogManager.getLogger(Footballer.class);
     private int RoleID;//см. IRoles
     private String club; //принадлежность к клубу
     private String city; //город прибывшего футболиста
@@ -109,20 +111,31 @@ public class Footballer extends Person implements IRoles{
      * @throws WrongLastNameException Некорректная фамилия
      */
     public void isAllRight() throws IllegalArgumentException, WrongNameException, WrongLastNameException, ArithmeticException{
+        Flog.info("Checking footballer");
         for (int i = 0; i<name.length(); ++i)
-            if (Character.isDigit(name.charAt(i)))
+            if (Character.isDigit(name.charAt(i))){
+                Flog.error("Wrong name");
                 throw new WrongNameException("Некорректно введенное имя");
-
+            }
+                
         for (int i = 0; i<last_name.length(); ++i)
-            if (Character.isDigit(last_name.charAt(i)))
+            if (Character.isDigit(last_name.charAt(i))){
+                Flog.error("Wrong last name");
                 throw new WrongLastNameException("Некорректно введенная фамилия");
-
+            }
+                
         for (int i = 0; i<city.length(); ++i)
-            if (Character.isDigit(city.charAt(i)))
+            if (Character.isDigit(city.charAt(i))){
+                Flog.error("Wrong city");
                 throw new IllegalArgumentException("Неверно введенный город");
+            }
+                
 
         for (int i = 0; i<club.length(); ++i)
-            if (Character.isDigit(club.charAt(i)))
+            if (Character.isDigit(club.charAt(i))){
+                Flog.error("Wrong club");
                 throw new ArithmeticException("Неправильное название клуба");
+            }
+        Flog.info("Footballer is correct");
     }
 }

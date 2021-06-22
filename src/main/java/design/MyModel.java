@@ -2,13 +2,17 @@ package design;
 
 import javax.swing.table.DefaultTableModel;
 import team.*;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 /**
  * Класс был создан для того, чтобы в класс {@code DefaultTableModel}
  * добавить функцию вывода информации об игроках
  */
 public class MyModel extends DefaultTableModel implements IRoles {
+    private static final Logger MMlog = LogManager.getLogger(MyModel.class);
     MyModel(String[][] data, String[] columns){super(data, columns);}
     public void showTable(Team theBest){
+        MMlog.info("Finding gamers for creating table");
         for (int i = 0; i<theBest.getSizeTeam(); ++i){
             String[] buf = new String[8];
             Footballer boy = theBest.find(theBest.firstID()+i);
@@ -22,5 +26,6 @@ public class MyModel extends DefaultTableModel implements IRoles {
             buf[7] = Integer.toString(boy.getSalary());
             addRow(buf);
         }
+        MMlog.info("Table was created");
     }
 }

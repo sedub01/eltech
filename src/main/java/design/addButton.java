@@ -7,13 +7,15 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.*;
 import javax.swing.JFrame;
-
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import javax.swing.*;
 /**
  * Кнопка добавления игрока
  */
 public class addButton implements ActionListener, IRoles{
+    private static final Logger ABlog = LogManager.getLogger(addButton.class);
     private JFrame owner;
     private Team theBest;
     private MyModel model;
@@ -29,6 +31,7 @@ public class addButton implements ActionListener, IRoles{
         this.model = model;
     }
     public void actionPerformed(ActionEvent e){
+        ABlog.info("Adding new player frame opened");
         JPanel commonPanel = new JPanel();
 
         JDialog addBox = new JDialog(owner, "Добавление игрока", true);
@@ -98,6 +101,7 @@ public class addButton implements ActionListener, IRoles{
                 else if (neededRole.equals(roles[2])) neededRoleInt = 2;
                 else if (neededRole.equals(roles[3])) neededRoleInt = 3;
                 try{
+                    ABlog.info("Trying to add new player");
                     Footballer boy = new Footballer(theBest.lastID()+1, newName.getText(), newLastName.getText(), 
                         newClub.getText(), newCity.getText(), Integer.parseInt(newGoals.getText()), 
                         Integer.parseInt(newSalary.getText()), neededRoleInt);
@@ -116,24 +120,30 @@ public class addButton implements ActionListener, IRoles{
                     JOptionPane.showMessageDialog(addBox, "Игрок добавлен", "", 
                     JOptionPane.INFORMATION_MESSAGE);
                     addBox.dispose();
+                    ABlog.info("New player was added");
                 }
                 catch(NumberFormatException exNum){
+                    ABlog.error("Characters instead of digits");
                     JOptionPane.showMessageDialog(addBox, "В одном из чисел\nобнаружены буквы", "", 
                     JOptionPane.ERROR_MESSAGE);
                 }
                 catch(IllegalArgumentException exCity){
+                    ABlog.error("Wrong city");
                     JOptionPane.showMessageDialog(addBox, exCity.getMessage(), "", 
                     JOptionPane.ERROR_MESSAGE);
                 }
                 catch(ArithmeticException exClub){
+                    ABlog.error("Wrong club");
                     JOptionPane.showMessageDialog(addBox, exClub.getMessage(), "", 
                     JOptionPane.ERROR_MESSAGE);
                 }
                 catch(WrongNameException exName){
+                    ABlog.error("Wrong name");
                     JOptionPane.showMessageDialog(addBox, exName.getMessage(), "", 
                     JOptionPane.ERROR_MESSAGE);
                 }
                 catch(WrongLastNameException exLName){
+                    ABlog.error("Wrong last name");
                     JOptionPane.showMessageDialog(addBox, exLName.getMessage(), "", 
                     JOptionPane.ERROR_MESSAGE);
                 }
@@ -146,6 +156,6 @@ public class addButton implements ActionListener, IRoles{
         addBox.setResizable(false);
         addBox.setLocationRelativeTo(null);
         addBox.setVisible(true);
+        ABlog.info("Adding new player frame closed");
     }
-    
 }

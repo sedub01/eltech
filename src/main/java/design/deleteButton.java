@@ -4,10 +4,13 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.BorderLayout;
 import team.Team;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 /**
  * Кнопка для удаления игрока
  */
 public class deleteButton implements ActionListener{
+    private static final Logger DBlog = LogManager.getLogger(deleteButton.class);
     private MyModel model;
     private Team theBest;
     private JFrame owner;
@@ -23,6 +26,7 @@ public class deleteButton implements ActionListener{
         this.owner = owner;
     }
     public void actionPerformed(ActionEvent e){
+        DBlog.info("Opening deleting frame");
         JDialog deleteBox = new JDialog(owner, "Выгнать игрока", true);
         JTextField smallField = new JTextField(4);
         smallField.setHorizontalAlignment(JTextField.RIGHT);
@@ -32,6 +36,7 @@ public class deleteButton implements ActionListener{
         smallField.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 try{
+                    DBlog.info("Preparing for deleting player");
                     int ID = Integer.parseInt(smallField.getText());
                     theBest.find(ID);
                     theBest.delete(ID);
@@ -43,12 +48,15 @@ public class deleteButton implements ActionListener{
                     //то таблицу нужно выводить заново
                     while (model.getRowCount()>0) model.removeRow(0);
                     model.showTable(theBest);
+                    DBlog.info("Player was deleted");
                 }
                 catch(NullPointerException exNull){
+                    DBlog.error("Player not found");
                     JOptionPane.showMessageDialog(deleteBox, "Нет такого игрока", "", 
                     JOptionPane.ERROR_MESSAGE);
                 }
                 catch(NumberFormatException exNum){
+                    DBlog.error("Characters instead of digits");
                     JOptionPane.showMessageDialog(deleteBox, "Некорректные данные", "", 
                     JOptionPane.ERROR_MESSAGE);
                 }
@@ -62,5 +70,6 @@ public class deleteButton implements ActionListener{
         deleteBox.setResizable(false);
         deleteBox.setLocationRelativeTo(null);;
         deleteBox.setVisible(true);
+        DBlog.info("Closing deleting frame");
     }
 }
