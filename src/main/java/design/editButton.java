@@ -148,13 +148,13 @@ public class editButton implements ActionListener, IRoles {
 
                             try{
                                 Elog.info("Trying to save changed data");
-                                boy.setName(newName.getText());
-                                boy.setLastName(newLastName.getText());
+                                boy.setName(newName.getText().trim());
+                                boy.setLastName(newLastName.getText().trim());
                                 boy.setRole(neededRoleInt);
-                                boy.setClub(newClub.getText());
-                                boy.setCity(newCity.getText());
-                                boy.setGoals(Integer.parseInt(newGoals.getText()));
-                                boy.setSalary(Integer.parseInt(newSalary.getText()));
+                                boy.setClub(newClub.getText().trim());
+                                boy.setCity(newCity.getText().trim());
+                                boy.setGoals(Integer.parseInt(newGoals.getText().trim()));
+                                boy.setSalary(Integer.parseInt(newSalary.getText().trim()));
                                 boy.isAllRight();
                                 JOptionPane.showMessageDialog(editBigBox, "Информация изменена", "", 
                                 JOptionPane.INFORMATION_MESSAGE);
@@ -165,7 +165,7 @@ public class editButton implements ActionListener, IRoles {
                             }
                             catch(NumberFormatException exNum){
                                 Elog.error("Characters instead of digits");
-                                JOptionPane.showMessageDialog(editBigBox, "В одном из чисел\nобнаружены буквы", "", 
+                                JOptionPane.showMessageDialog(editBigBox, "Некорректное(ые) число(а)", "", 
                                 JOptionPane.ERROR_MESSAGE);
                             }
                             catch(IllegalArgumentException exCity){

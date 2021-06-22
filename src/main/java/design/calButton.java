@@ -107,9 +107,9 @@ public class calButton implements ActionListener {
                         Calendar addedDate;
                         try{
                             Callog.info("Trying add new date");
-                            addedDate = new Calendar(newDate.getText(), 
-                            Integer.parseInt(newWins.getText()), 
-                            Integer.parseInt(newLosses.getText()));
+                            addedDate = new Calendar(newDate.getText().trim(), 
+                            Integer.parseInt(newWins.getText().trim()), 
+                            Integer.parseInt(newLosses.getText().trim()));
                             addedDate.isDateRight();
                             lst.add(addedDate);
                             JOptionPane.showMessageDialog(addDateBox, "Дата добавлена", "", 

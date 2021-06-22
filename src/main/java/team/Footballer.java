@@ -112,29 +112,34 @@ public class Footballer extends Person implements IRoles{
      */
     public void isAllRight() throws IllegalArgumentException, WrongNameException, WrongLastNameException, ArithmeticException{
         Flog.info("Checking footballer");
+        if (name.equals("") || last_name.equals("") || city.equals("") || club.equals("")){
+            Flog.error("Empty spaces");
+            throw new IllegalArgumentException("Нельзя оставлять пустые поля!!!");
+        }
         for (int i = 0; i<name.length(); ++i)
-            if (Character.isDigit(name.charAt(i))){
+            if ((int)name.charAt(i)<192){ //до буквы А
                 Flog.error("Wrong name");
                 throw new WrongNameException("Некорректно введенное имя");
             }
                 
         for (int i = 0; i<last_name.length(); ++i)
-            if (Character.isDigit(last_name.charAt(i))){
+            if ((int)last_name.charAt(i)<192){
                 Flog.error("Wrong last name");
                 throw new WrongLastNameException("Некорректно введенная фамилия");
             }
                 
         for (int i = 0; i<city.length(); ++i)
-            if (Character.isDigit(city.charAt(i))){
+            if ((int)city.charAt(i) < 192){
                 Flog.error("Wrong city");
                 throw new IllegalArgumentException("Неверно введенный город");
             }
                 
-
         for (int i = 0; i<club.length(); ++i)
-            if (Character.isDigit(club.charAt(i))){
-                Flog.error("Wrong club");
-                throw new ArithmeticException("Неправильное название клуба");
+            if ((int)club.charAt(i) < 192){
+                if ((int)club.charAt(i) < 48 || (int)club.charAt(i) > 57){
+                    Flog.error("Wrong club");
+                    throw new ArithmeticException("Неправильное название клуба");
+                }
             }
         Flog.info("Footballer is correct");
     }

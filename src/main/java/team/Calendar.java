@@ -51,6 +51,7 @@ public class Calendar{
      */
     public void isDateRight() throws IllegalArgumentException, NumberFormatException, ArrayIndexOutOfBoundsException{
         Clog.info("Checking object in calendar");
+        if (date.equals("")) throw new IllegalArgumentException();
         String[] strings = date.split("\\.");
         int[] nums = new int[3];
         for (int i=0; i<3; i++) 

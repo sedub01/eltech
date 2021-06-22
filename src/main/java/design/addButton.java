@@ -102,9 +102,9 @@ public class addButton implements ActionListener, IRoles{
                 else if (neededRole.equals(roles[3])) neededRoleInt = 3;
                 try{
                     ABlog.info("Trying to add new player");
-                    Footballer boy = new Footballer(theBest.lastID()+1, newName.getText(), newLastName.getText(), 
-                        newClub.getText(), newCity.getText(), Integer.parseInt(newGoals.getText()), 
-                        Integer.parseInt(newSalary.getText()), neededRoleInt);
+                    Footballer boy = new Footballer(theBest.lastID()+1, newName.getText().trim(), newLastName.getText().trim(), 
+                        newClub.getText().trim(), newCity.getText().trim(), Integer.parseInt(newGoals.getText().trim()), 
+                        Integer.parseInt(newSalary.getText().trim()), neededRoleInt);
                     boy.isAllRight();
                     theBest.addFootballer(boy);
                     model.addRow(new String[]{
@@ -124,7 +124,7 @@ public class addButton implements ActionListener, IRoles{
                 }
                 catch(NumberFormatException exNum){
                     ABlog.error("Characters instead of digits");
-                    JOptionPane.showMessageDialog(addBox, "В одном из чисел\nобнаружены буквы", "", 
+                    JOptionPane.showMessageDialog(addBox, "Некорректное(ые) число(а)", "", 
                     JOptionPane.ERROR_MESSAGE);
                 }
                 catch(IllegalArgumentException exCity){
