@@ -1,3 +1,4 @@
+/**Пакет со всеми графическими принадлежностями */
 package design;
 import team.*;
 
@@ -12,22 +13,50 @@ import org.apache.log4j.Logger;
 
 /**
  * Весь графический интерфейс
- * Смысл переменных понятен по их названию
  * @author sedub01
  */
 public class PlayerList implements IRoles {
-
+    /**Логгер для окна PLayerList */
     private static final Logger PLlog = LogManager.getLogger(PlayerList.class);
-    // Объявления графических компонентов
+
+    /**Окно с основным интерфейсом */
     private JFrame playerList;
+    /**Модель таблицы (данные внутри) */
     private MyModel model;
-    private JButton save, add, delete, print, fout, cal, info, edit;
+    /** Кнопка сохранения изменений */
+    private JButton save;
+    /**Кнопка добавления нового игрока */
+    private JButton add; 
+    /**Кнопка удаления игрока */
+    private JButton delete;
+    /**Кнопка печати информации в PDF отчете */
+    private JButton print;
+    /**Кнопка вывода информации о футболисте */
+    private JButton fout;
+    /**Кнопка вывода таблицы календаря */
+    private JButton cal;
+    /**Кнопка вывода информации о команде */
+    private JButton info;
+    /**Кнопка изменения информации о футболисте */
+    private JButton edit;
+
+    /** Панель инструментов*/
     private JToolBar toolBar;
+    /** Скролл для движения вниз*/
     private JScrollPane scroll;
+    /** Сама таблица с игроками*/
     private JTable players;
-    private JTextField PlayerName, PlayerLastName;
+    /** Текстовое поле для имени внизу окна*/
+    private JTextField PlayerName;
+    /** Текстовое поле для фамилии там же*/
+    private JTextField PlayerLastName;
+    /** Кнопка для поиска по имени и фамилии*/
     private JButton filter;
+    /**Добавление компонентов в панель */
+    JPanel filterPanel;
     
+    /**PDF отчет */
+    private PDFGenerator report;
     /**
      * Отображение интерфейса
      * @param theBest команда
@@ -103,7 +132,7 @@ public class PlayerList implements IRoles {
                 PLlog.info("User is going to print his report");
                 Thread pdfThread = new Thread(new Runnable(){
                     public void run(){
-                        PDFGenerator report = new PDFGenerator("Report.pdf", theBest.msg());
+                        report = new PDFGenerator("Report.pdf", theBest.msg());
                         report.addFootballers(theBest);
                         report.addCals(theBest.getCal());
                         report.doClose();
@@ -136,8 +165,8 @@ public class PlayerList implements IRoles {
         filter = new JButton("Поиск");
         PlayerName.setPreferredSize(new Dimension(100, 20));
         PlayerLastName.setPreferredSize(new Dimension(100, 20));
-        // Добавление компонентов на панель
-        JPanel filterPanel = new JPanel();
+        
+        filterPanel = new JPanel();
         filterPanel.add(PlayerName);
         filterPanel.add(PlayerLastName);
         filterPanel.add(filter);

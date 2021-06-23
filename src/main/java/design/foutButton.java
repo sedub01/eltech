@@ -1,3 +1,4 @@
+/**Пакет, содержащий в себе графический интерфейс */
 package design;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -8,30 +9,40 @@ import team.Footballer;
 import team.Team;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-/**
- * Вывод информации о конкретном футболисте
- */
+/**Вывод информации о конкретном футболисте*/
 public class foutButton implements ActionListener{
+    /**Логгер для окон */
     private static final Logger FOlog = LogManager.getLogger(foutButton.class);
+    /**Команда */
     private Team theBest;
+    /**Владелец фрейма */
     private JFrame owner;
+    /**Фрейм с введением ID игрока для поиска */
+    JDialog infoBox;
+    /**Текстовое поле для ввода */
+    JTextField textField;
+    /**Панель с контентом */
+    JPanel content;
+    /**Надпись слева от текстового поля */
+    JLabel text;
+    /**Находимый футболист */
+    Footballer boy;
     foutButton(Team theBest, JFrame owner){
         this.theBest = theBest;
         this.owner = owner;
     }
     public void actionPerformed(ActionEvent e){
         FOlog.info("Frame was created");
-        JDialog infoBox = new JDialog(owner, "Информация об игроке", true);
-        JTextField textField = new JTextField(4);
+        infoBox = new JDialog(owner, "Информация об игроке", true);
+        textField = new JTextField(4);
         textField.setHorizontalAlignment(JTextField.RIGHT);
-        JPanel content = new JPanel();
-        JLabel text = new JLabel("Введите ID игрока: ");
+        content = new JPanel();
+        text = new JLabel("Введите ID игрока: ");
         textField.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 try{
                     FOlog.info("Trying to find gamer");
-                    int ID = Integer.parseInt(textField.getText());
-                    Footballer boy = theBest.find(ID);
+                    boy = theBest.find(Integer.parseInt(textField.getText().trim()));
                     infoBox.dispose();
                     JOptionPane.showMessageDialog(infoBox, boy.info(), boy.getName()+" "+boy.getLastName(), 
                     JOptionPane.INFORMATION_MESSAGE);
