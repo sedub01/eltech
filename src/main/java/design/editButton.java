@@ -43,7 +43,7 @@ public class editButton implements ActionListener, IRoles {
             public void actionPerformed(ActionEvent e){
                 try{
                     Elog.info("Entering footballer's ID");
-                    Footballer boy = theBest.find(Integer.parseInt(smallField.getText()));
+                    Footballer boy = theBest.find(Integer.parseInt(smallField.getText().trim()));
                     editSmallBox.dispose();
                     JPanel commonPanel = new JPanel();
 

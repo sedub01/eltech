@@ -1,6 +1,8 @@
 package team;
 import java.util.*;
 
+import javax.swing.table.DefaultTableModel;
+
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
@@ -43,7 +45,6 @@ public class Team implements IRoles{ // класс-агрегатор
      * Конструктор для ввода информации из файла
      */
     public Team(){
-        
         calendar = new ArrayList <Calendar>();
         list = new ArrayList<Footballer>();
         wins=0; losses=0; games=0; bossID = 100000;
@@ -55,9 +56,9 @@ public class Team implements IRoles{ // класс-агрегатор
                 buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Команда.txt")));
                 String s[] = buf.readLine().split(";");
                 bossID = Integer.parseInt(s[0]);
-                wins = Integer.parseInt(s[1]);
-                losses = Integer.parseInt(s[2]);
-                games =  Integer.parseInt(s[3]);
+                //wins = Integer.parseInt(s[1]);
+                //losses = Integer.parseInt(s[2]);
+                //games =  Integer.parseInt(s[3]);
                 buf.close();
                 Tlog.info("Info about team is ready");
             }
@@ -107,9 +108,7 @@ public class Team implements IRoles{ // класс-агрегатор
     }
     public void addFootballer(Footballer boy) {list.add(boy);}
     public void addDate(Calendar date) {calendar.add(date);}
-    /**
-     * Удаление игрока по ID
-     */
+    /**Удаление игрока по ID*/
     public void delete(int id) {
         for (Footballer boy : list){
             if (boy.getID() == id){
@@ -179,6 +178,34 @@ public class Team implements IRoles{ // класс-агрегатор
         if (win > loss) Win();
         else if (loss > win) Loss();
         else games++; //ничья
+    }
+    
+    public void addDates(DefaultTableModel newModel){
+        for (Calendar cal:calendar) {
+            String buf[] = new String[3];
+            buf[0] = cal.getDate();
+            buf[1] = Integer.toString(cal.getWins());
+            buf[2] = Integer.toString(cal.getLosses());
+            newModel.addRow(buf);
+        }
+    }
+
+    public void deleteDate(int selected){
+        Calendar temp = calendar.remove(selected);
+        games--;
+        if (temp.getWins()>temp.getLosses())
+            wins--;
+        else if (temp.getWins()<temp.getLosses())
+            losses--;
+        
+    }
+    public void addNewDate(Calendar cal){
+        calendar.add(cal);
+        games++;
+        if (cal.getWins()>cal.getLosses())
+            wins++;
+        else if (cal.getWins()<cal.getLosses())
+            losses++;
     }
     /**
      * Сохранение изменений в файл

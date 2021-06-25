@@ -18,7 +18,6 @@ import org.apache.log4j.Logger;
 public class PlayerList implements IRoles {
     /**Логгер для окна PLayerList */
     private static final Logger PLlog = LogManager.getLogger(PlayerList.class);
-
     /**Окно с основным интерфейсом */
     private JFrame playerList;
     /**Модель таблицы (данные внутри) */

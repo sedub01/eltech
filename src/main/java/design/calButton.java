@@ -1,6 +1,5 @@
 package design;
 import java.awt.event.ActionListener;
-import java.util.List;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -16,7 +15,7 @@ import team.Team;
  */
 public class calButton implements ActionListener {
     private static final Logger Callog = LogManager.getLogger(calButton.class);
-    private List<Calendar> lst;
+    private Team theBest;
     private JFrame owner;
     /**
      * 
@@ -24,7 +23,8 @@ public class calButton implements ActionListener {
      * @param owner Предыдущий фрейм
      */
     calButton(Team theBest, JFrame owner){
-        this.lst = theBest.getCal();
+       
+        this.theBest = theBest;
         this.owner = owner;
     }
     public void actionPerformed(ActionEvent e){
@@ -49,13 +49,7 @@ public class calButton implements ActionListener {
             public void run(){
                 Callog.info("Creating the table");
                 calBox.setIconImage(new ImageIcon("./src/main/resources/img/calendar.png").getImage());
-                for (Calendar cal:lst) {
-                    String buf[] = new String[3];
-                    buf[0] = cal.getDate();
-                    buf[1] = Integer.toString(cal.getWins());
-                    buf[2] = Integer.toString(cal.getLosses());
-                    newModel.addRow(buf);
-                }
+                theBest.addDates(newModel);
                 Callog.info("Table was created");
             }
         });
@@ -69,7 +63,8 @@ public class calButton implements ActionListener {
                     Callog.info("Trying delete date");
                     int selected = dates.getSelectedRow();
                     newModel.removeRow(selected);
-                    lst.remove(selected);
+                    
+                    theBest.deleteDate(selected);
                     Callog.info("Date was deleted");
                 }
                 catch(Exception ex){
@@ -111,7 +106,8 @@ public class calButton implements ActionListener {
                             Integer.parseInt(newWins.getText().trim()), 
                             Integer.parseInt(newLosses.getText().trim()));
                             addedDate.isDateRight();
-                            lst.add(addedDate);
+                            //lst.add(addedDate);
+                            theBest.addNewDate(addedDate);
                             JOptionPane.showMessageDialog(addDateBox, "Дата добавлена", "", 
                             JOptionPane.INFORMATION_MESSAGE);
                             addDateBox.dispose();

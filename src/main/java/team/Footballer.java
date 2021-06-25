@@ -129,13 +129,13 @@ public class Footballer extends Person implements IRoles{
             }
                 
         for (int i = 0; i<city.length(); ++i)
-            if ((int)city.charAt(i) < 192){
+            if ((int)city.charAt(i) < 192 && (int)city.charAt(i) != 32 && (int)city.charAt(i) != 45){
                 Flog.error("Wrong city");
                 throw new IllegalArgumentException("Неверно введенный город");
             }
                 
         for (int i = 0; i<club.length(); ++i)
-            if ((int)club.charAt(i) < 192){
+            if ((int)club.charAt(i) < 192 && (int)club.charAt(i) != 32 && (int)club.charAt(i) != 45){
                 if ((int)club.charAt(i) < 48 || (int)club.charAt(i) > 57){
                     Flog.error("Wrong club");
                     throw new ArithmeticException("Неправильное название клуба");
