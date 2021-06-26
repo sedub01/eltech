@@ -13,7 +13,6 @@ public class Footballer extends Person implements IRoles{
     private String city; //город прибывшего футболиста
     private int goals; // кол-во забитых голов
     private int salary; //зарплата в долларах в месяц
-    public Footballer() {}
     /**
      * 
      * @param ID футболиста
@@ -33,9 +32,7 @@ public class Footballer extends Person implements IRoles{
         this.salary = salary;
         this.RoleID = RoleID;
     }
-    /**
-     * Вывод подробной информации о футболисте для окошка
-     */
+    /** Вывод подробной информации о футболисте для окошка*/
     public String info() {
         String[] buf = new String[6];
         buf[0] = "\n---Информация об игроке " + name + ' ' + last_name+"---\n";

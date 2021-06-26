@@ -128,19 +128,14 @@ public class Team implements IRoles{ // класс-агрегатор
      */
     public Footballer find(int id) throws NullPointerException {
         Tlog.info("Finding needed gamer with ID");
-        Footballer nes = new Footballer();
         for (Footballer boy : list){
             if (boy.getID() == id){
-                nes = boy;
-                break;
+                Tlog.info("Gamer found");
+                return boy;
             }
         }
-        if (nes.name == null){
-            Tlog.error("Gamer not found");
-            throw new NullPointerException();
-        }
-        Tlog.info("Gamer found");
-        return nes;
+        Tlog.error("Gamer not found");
+        throw new NullPointerException();
     }
     /**
      * Поиск игрока по имени и фамилии (находит первого попавшегося или не находит вовсе)
@@ -201,15 +196,11 @@ public class Team implements IRoles{ // класс-агрегатор
     }
     public void addNewDate(Calendar cal){
         calendar.add(cal);
+        if (cal.getWins()>cal.getLosses()) wins++;
+        else if (cal.getWins()<cal.getLosses()) losses++;
         games++;
-        if (cal.getWins()>cal.getLosses())
-            wins++;
-        else if (cal.getWins()<cal.getLosses())
-            losses++;
     }
-    /**
-     * Сохранение изменений в файл
-     */
+    /**Сохранение изменений в файл*/
     public void saveChanges(){
         try{
             Tlog.info("Saving all changes");

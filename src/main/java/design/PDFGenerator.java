@@ -66,7 +66,10 @@ public class PDFGenerator
         document.addCreator("Это тоже я!");
     }
 
-    //Добавляем титульную страницу с датой отчета
+    /**
+     * Добавляем титульную страницу с датой отчета
+     * @param msg
+     */
     private void addTitle(String msg)
     {
         try{
@@ -101,7 +104,10 @@ public class PDFGenerator
 
     }
 
-    //Добавляем таблицу футболистов
+    /**
+     * Добавляем таблицу футболистов
+     * @param theBest
+     */
     public void addFootballers(Team theBest)
     {
         PDFlog.info("Creating page with footballers");
@@ -210,7 +216,11 @@ public class PDFGenerator
         PDFlog.info("Calendars page is over");
     }
 
-    //Добавляем пустые строки
+    /**
+     * Добавляем пустые строки
+     * @param paragraph
+     * @param number
+     */
     private static void addEmptyLine(Paragraph paragraph, int number) {
         for (int i = 0; i < number; i++) {
             paragraph.add(new Paragraph(" "));

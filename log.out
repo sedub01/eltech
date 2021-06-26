@@ -2500,3 +2500,480 @@
 [69339 is 2021-06-25 10:32:18,386 INFO  team.Team:saveChanges:246] Team info saved
 [69339 is 2021-06-25 10:32:18,386 INFO  team.Team:saveChanges:248] Changes were saved
 [70429 is 2021-06-25 10:32:19,476 INFO  design.PlayerList:actionPerformed:126] Data saved successfully!
+[0 is 2021-06-26 16:38:14,627 INFO  team.Team:<init>:52] Team is ready to construct
+[4 is 2021-06-26 16:38:14,631 INFO  team.Team:<init>:55] Info about team
+[6 is 2021-06-26 16:38:14,633 INFO  team.Team:<init>:63] Info about team is ready
+[6 is 2021-06-26 16:38:14,633 INFO  team.Team:<init>:67] Info about footballers
+[11 is 2021-06-26 16:38:14,638 INFO  team.Team:<init>:75] Info about footballers is ready
+[11 is 2021-06-26 16:38:14,638 INFO  team.Team:<init>:79] Info about calendar
+[18 is 2021-06-26 16:38:14,645 INFO  team.Team:<init>:86] Info about calendar is ready
+[18 is 2021-06-26 16:38:14,645 INFO  team.Team:<init>:88] Team constructed
+[28 is 2021-06-26 16:38:14,655 INFO  design.PlayerList:show:64] Main menu is preparing
+[513 is 2021-06-26 16:38:15,140 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[515 is 2021-06-26 16:38:15,142 INFO  team.Team:find:130] Finding needed gamer with ID
+[516 is 2021-06-26 16:38:15,143 INFO  team.Team:find:142] Gamer found
+[517 is 2021-06-26 16:38:15,144 INFO  team.Team:find:130] Finding needed gamer with ID
+[517 is 2021-06-26 16:38:15,144 INFO  team.Team:find:142] Gamer found
+[517 is 2021-06-26 16:38:15,144 INFO  team.Team:find:130] Finding needed gamer with ID
+[518 is 2021-06-26 16:38:15,145 INFO  team.Team:find:142] Gamer found
+[521 is 2021-06-26 16:38:15,148 INFO  team.Team:find:130] Finding needed gamer with ID
+[521 is 2021-06-26 16:38:15,148 INFO  team.Team:find:142] Gamer found
+[521 is 2021-06-26 16:38:15,148 INFO  team.Team:find:130] Finding needed gamer with ID
+[522 is 2021-06-26 16:38:15,149 INFO  team.Team:find:142] Gamer found
+[522 is 2021-06-26 16:38:15,149 INFO  team.Team:find:130] Finding needed gamer with ID
+[522 is 2021-06-26 16:38:15,149 INFO  team.Team:find:142] Gamer found
+[522 is 2021-06-26 16:38:15,149 INFO  team.Team:find:130] Finding needed gamer with ID
+[523 is 2021-06-26 16:38:15,150 INFO  team.Team:find:142] Gamer found
+[523 is 2021-06-26 16:38:15,150 INFO  team.Team:find:130] Finding needed gamer with ID
+[523 is 2021-06-26 16:38:15,150 INFO  team.Team:find:142] Gamer found
+[523 is 2021-06-26 16:38:15,150 INFO  team.Team:find:130] Finding needed gamer with ID
+[523 is 2021-06-26 16:38:15,150 INFO  team.Team:find:142] Gamer found
+[524 is 2021-06-26 16:38:15,151 INFO  team.Team:find:130] Finding needed gamer with ID
+[524 is 2021-06-26 16:38:15,151 INFO  team.Team:find:142] Gamer found
+[524 is 2021-06-26 16:38:15,151 INFO  team.Team:find:130] Finding needed gamer with ID
+[524 is 2021-06-26 16:38:15,151 INFO  team.Team:find:142] Gamer found
+[524 is 2021-06-26 16:38:15,151 INFO  team.Team:find:130] Finding needed gamer with ID
+[525 is 2021-06-26 16:38:15,152 INFO  team.Team:find:142] Gamer found
+[525 is 2021-06-26 16:38:15,152 INFO  team.Team:find:130] Finding needed gamer with ID
+[525 is 2021-06-26 16:38:15,152 INFO  team.Team:find:142] Gamer found
+[526 is 2021-06-26 16:38:15,153 INFO  team.Team:find:130] Finding needed gamer with ID
+[526 is 2021-06-26 16:38:15,153 INFO  team.Team:find:142] Gamer found
+[526 is 2021-06-26 16:38:15,153 INFO  design.MyModel:showTable:29] Table was created
+[797 is 2021-06-26 16:38:15,424 INFO  design.PlayerList:show:194] Main menu has been created
+[130292 is 2021-06-26 16:40:24,919 INFO  design.PlayerList:actionPerformed:175] User is going to find player with ID
+[130293 is 2021-06-26 16:40:24,920 INFO  team.Team:find:153] Finding needed gamer with his name
+[130294 is 2021-06-26 16:40:24,921 ERROR team.Team:find:159] Gamer not found
+[130294 is 2021-06-26 16:40:24,921 ERROR design.PlayerList:actionPerformed:183] No player with this ID!
+[0 is 2021-06-26 16:49:01,918 INFO  team.Team:<init>:52] Team is ready to construct
+[0 is 2021-06-26 16:49:01,918 INFO  team.Team:<init>:55] Info about team
+[0 is 2021-06-26 16:49:01,918 INFO  team.Team:<init>:63] Info about team is ready
+[0 is 2021-06-26 16:49:01,918 INFO  team.Team:<init>:67] Info about footballers
+[10 is 2021-06-26 16:49:01,928 INFO  team.Team:<init>:75] Info about footballers is ready
+[10 is 2021-06-26 16:49:01,928 INFO  team.Team:<init>:79] Info about calendar
+[10 is 2021-06-26 16:49:01,928 INFO  team.Team:<init>:86] Info about calendar is ready
+[10 is 2021-06-26 16:49:01,928 INFO  team.Team:<init>:88] Team constructed
+[18 is 2021-06-26 16:49:01,936 INFO  design.PlayerList:show:64] Main menu is preparing
+[472 is 2021-06-26 16:49:02,390 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[472 is 2021-06-26 16:49:02,390 INFO  team.Team:find:130] Finding needed gamer with ID
+[472 is 2021-06-26 16:49:02,390 INFO  team.Team:find:142] Gamer found
+[477 is 2021-06-26 16:49:02,395 INFO  team.Team:find:130] Finding needed gamer with ID
+[477 is 2021-06-26 16:49:02,395 INFO  team.Team:find:142] Gamer found
+[477 is 2021-06-26 16:49:02,395 INFO  team.Team:find:130] Finding needed gamer with ID
+[477 is 2021-06-26 16:49:02,395 INFO  team.Team:find:142] Gamer found
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:130] Finding needed gamer with ID
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:142] Gamer found
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:130] Finding needed gamer with ID
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:142] Gamer found
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:130] Finding needed gamer with ID
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:142] Gamer found
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:130] Finding needed gamer with ID
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:142] Gamer found
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:130] Finding needed gamer with ID
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:142] Gamer found
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:130] Finding needed gamer with ID
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:142] Gamer found
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:130] Finding needed gamer with ID
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:142] Gamer found
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:130] Finding needed gamer with ID
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:142] Gamer found
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:130] Finding needed gamer with ID
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:142] Gamer found
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:130] Finding needed gamer with ID
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:142] Gamer found
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:130] Finding needed gamer with ID
+[479 is 2021-06-26 16:49:02,397 INFO  team.Team:find:142] Gamer found
+[479 is 2021-06-26 16:49:02,397 INFO  design.MyModel:showTable:29] Table was created
+[709 is 2021-06-26 16:49:02,627 INFO  design.PlayerList:show:194] Main menu has been created
+[2876 is 2021-06-26 16:49:04,794 INFO  design.addButton:actionPerformed:34] Adding new player frame opened
+[4828 is 2021-06-26 16:49:06,746 INFO  design.addButton:actionPerformed:159] Adding new player frame closed
+[9575 is 2021-06-26 16:49:11,493 INFO  design.editButton:actionPerformed:33] Edit button was pressed
+[12890 is 2021-06-26 16:49:14,808 INFO  design.editButton:actionPerformed:45] Entering footballer's ID
+[12890 is 2021-06-26 16:49:14,808 INFO  team.Team:find:130] Finding needed gamer with ID
+[12890 is 2021-06-26 16:49:14,808 INFO  team.Team:find:142] Gamer found
+[15070 is 2021-06-26 16:49:16,988 INFO  design.editButton:actionPerformed:221] Edit frames closed
+[107859 is 2021-06-26 16:50:49,777 INFO  design.calButton:actionPerformed:31] Calendar frame was opened
+[107863 is 2021-06-26 16:50:49,781 INFO  design.calButton:run:50] Creating the table
+[107867 is 2021-06-26 16:50:49,785 INFO  design.calButton:run:53] Table was created
+[109513 is 2021-06-26 16:50:51,431 INFO  design.calButton:actionPerformed:159] Calendar frame was closed
+[125368 is 2021-06-26 16:51:07,286 INFO  design.calButton:actionPerformed:31] Calendar frame was opened
+[125371 is 2021-06-26 16:51:07,289 INFO  design.calButton:run:50] Creating the table
+[125372 is 2021-06-26 16:51:07,290 INFO  design.calButton:run:53] Table was created
+[126405 is 2021-06-26 16:51:08,323 INFO  design.calButton:actionPerformed:80] New date frame opened
+[128155 is 2021-06-26 16:51:10,073 INFO  design.calButton:actionPerformed:145] New date frame closed
+[131996 is 2021-06-26 16:51:13,914 INFO  design.calButton:actionPerformed:159] Calendar frame was closed
+[391680 is 2021-06-26 16:55:33,598 INFO  design.addButton:actionPerformed:34] Adding new player frame opened
+[404030 is 2021-06-26 16:55:45,948 INFO  design.addButton:actionPerformed:159] Adding new player frame closed
+[492894 is 2021-06-26 16:57:14,812 INFO  design.editButton:actionPerformed:33] Edit button was pressed
+[527154 is 2021-06-26 16:57:49,072 INFO  design.editButton:actionPerformed:45] Entering footballer's ID
+[527154 is 2021-06-26 16:57:49,072 INFO  team.Team:find:130] Finding needed gamer with ID
+[527154 is 2021-06-26 16:57:49,072 INFO  team.Team:find:142] Gamer found
+[536614 is 2021-06-26 16:57:58,532 INFO  design.editButton:actionPerformed:221] Edit frames closed
+[583951 is 2021-06-26 16:58:45,869 INFO  design.foutButton:actionPerformed:35] Frame was created
+[585394 is 2021-06-26 16:58:47,312 INFO  design.foutButton:actionPerformed:70] Frame closed
+[627924 is 2021-06-26 16:59:29,842 INFO  design.calButton:actionPerformed:31] Calendar frame was opened
+[627928 is 2021-06-26 16:59:29,846 INFO  design.calButton:run:50] Creating the table
+[627930 is 2021-06-26 16:59:29,848 INFO  design.calButton:run:53] Table was created
+[638488 is 2021-06-26 16:59:40,406 INFO  design.calButton:actionPerformed:159] Calendar frame was closed
+[730043 is 2021-06-26 17:01:11,961 INFO  design.calButton:actionPerformed:31] Calendar frame was opened
+[730051 is 2021-06-26 17:01:11,969 INFO  design.calButton:run:50] Creating the table
+[730051 is 2021-06-26 17:01:11,969 INFO  design.calButton:run:53] Table was created
+[731371 is 2021-06-26 17:01:13,289 INFO  design.calButton:actionPerformed:80] New date frame opened
+[740561 is 2021-06-26 17:01:22,479 INFO  design.calButton:actionPerformed:145] New date frame closed
+[741220 is 2021-06-26 17:01:23,138 INFO  design.calButton:actionPerformed:159] Calendar frame was closed
+[0 is 2021-06-26 17:11:05,998 INFO  team.Team:<init>:52] Team is ready to construct
+[10 is 2021-06-26 17:11:06,008 INFO  team.Team:<init>:55] Info about team
+[10 is 2021-06-26 17:11:06,008 INFO  team.Team:<init>:63] Info about team is ready
+[10 is 2021-06-26 17:11:06,008 INFO  team.Team:<init>:67] Info about footballers
+[10 is 2021-06-26 17:11:06,008 INFO  team.Team:<init>:75] Info about footballers is ready
+[10 is 2021-06-26 17:11:06,008 INFO  team.Team:<init>:79] Info about calendar
+[10 is 2021-06-26 17:11:06,008 INFO  team.Team:<init>:86] Info about calendar is ready
+[10 is 2021-06-26 17:11:06,008 INFO  team.Team:<init>:88] Team constructed
+[0 is 2021-06-26 17:11:10,592 INFO  team.Team:<init>:52] Team is ready to construct
+[0 is 2021-06-26 17:11:10,592 INFO  team.Team:<init>:55] Info about team
+[0 is 2021-06-26 17:11:10,592 INFO  team.Team:<init>:63] Info about team is ready
+[0 is 2021-06-26 17:11:10,592 INFO  team.Team:<init>:67] Info about footballers
+[10 is 2021-06-26 17:11:10,602 INFO  team.Team:<init>:75] Info about footballers is ready
+[10 is 2021-06-26 17:11:10,602 INFO  team.Team:<init>:79] Info about calendar
+[10 is 2021-06-26 17:11:10,602 INFO  team.Team:<init>:86] Info about calendar is ready
+[10 is 2021-06-26 17:11:10,602 INFO  team.Team:<init>:88] Team constructed
+[20 is 2021-06-26 17:11:10,612 INFO  design.PlayerList:show:64] Main menu is preparing
+[470 is 2021-06-26 17:11:11,062 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[470 is 2021-06-26 17:11:11,062 INFO  team.Team:find:130] Finding needed gamer with ID
+[470 is 2021-06-26 17:11:11,062 INFO  team.Team:find:133] Gamer found
+[470 is 2021-06-26 17:11:11,062 INFO  team.Team:find:130] Finding needed gamer with ID
+[470 is 2021-06-26 17:11:11,062 INFO  team.Team:find:133] Gamer found
+[470 is 2021-06-26 17:11:11,062 INFO  team.Team:find:130] Finding needed gamer with ID
+[470 is 2021-06-26 17:11:11,062 INFO  team.Team:find:133] Gamer found
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:130] Finding needed gamer with ID
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:133] Gamer found
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:130] Finding needed gamer with ID
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:133] Gamer found
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:130] Finding needed gamer with ID
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:133] Gamer found
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:130] Finding needed gamer with ID
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:133] Gamer found
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:130] Finding needed gamer with ID
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:133] Gamer found
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:130] Finding needed gamer with ID
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:133] Gamer found
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:130] Finding needed gamer with ID
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:133] Gamer found
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:130] Finding needed gamer with ID
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:133] Gamer found
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:130] Finding needed gamer with ID
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:133] Gamer found
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:130] Finding needed gamer with ID
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:133] Gamer found
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:130] Finding needed gamer with ID
+[478 is 2021-06-26 17:11:11,070 INFO  team.Team:find:133] Gamer found
+[478 is 2021-06-26 17:11:11,070 INFO  design.MyModel:showTable:29] Table was created
+[702 is 2021-06-26 17:11:11,294 INFO  design.PlayerList:show:194] Main menu has been created
+[5572 is 2021-06-26 17:11:16,164 INFO  design.deleteButton:actionPerformed:29] Opening deleting frame
+[7358 is 2021-06-26 17:11:17,950 INFO  design.deleteButton:actionPerformed:39] Preparing for deleting player
+[7358 is 2021-06-26 17:11:17,950 INFO  team.Team:find:130] Finding needed gamer with ID
+[7358 is 2021-06-26 17:11:17,950 INFO  team.Team:find:133] Gamer found
+[7358 is 2021-06-26 17:11:17,950 INFO  team.Team:find:130] Finding needed gamer with ID
+[7358 is 2021-06-26 17:11:17,950 INFO  team.Team:find:133] Gamer found
+[7358 is 2021-06-26 17:11:17,950 INFO  team.Team:find:130] Finding needed gamer with ID
+[7358 is 2021-06-26 17:11:17,950 INFO  team.Team:find:133] Gamer found
+[7358 is 2021-06-26 17:11:17,950 INFO  team.Team:find:130] Finding needed gamer with ID
+[7358 is 2021-06-26 17:11:17,950 INFO  team.Team:find:133] Gamer found
+[7358 is 2021-06-26 17:11:17,950 INFO  team.Team:find:130] Finding needed gamer with ID
+[7358 is 2021-06-26 17:11:17,950 INFO  team.Team:find:133] Gamer found
+[7358 is 2021-06-26 17:11:17,950 INFO  team.Team:find:130] Finding needed gamer with ID
+[7368 is 2021-06-26 17:11:17,960 INFO  team.Team:find:133] Gamer found
+[7368 is 2021-06-26 17:11:17,960 INFO  team.Team:find:130] Finding needed gamer with ID
+[7368 is 2021-06-26 17:11:17,960 INFO  team.Team:find:133] Gamer found
+[7368 is 2021-06-26 17:11:17,960 INFO  team.Team:find:130] Finding needed gamer with ID
+[7368 is 2021-06-26 17:11:17,960 INFO  team.Team:find:133] Gamer found
+[7368 is 2021-06-26 17:11:17,960 INFO  team.Team:find:130] Finding needed gamer with ID
+[7368 is 2021-06-26 17:11:17,960 INFO  team.Team:find:133] Gamer found
+[7368 is 2021-06-26 17:11:17,960 INFO  team.Team:find:130] Finding needed gamer with ID
+[7368 is 2021-06-26 17:11:17,960 INFO  team.Team:find:133] Gamer found
+[7368 is 2021-06-26 17:11:17,960 INFO  team.Team:find:130] Finding needed gamer with ID
+[7368 is 2021-06-26 17:11:17,960 INFO  team.Team:find:133] Gamer found
+[7368 is 2021-06-26 17:11:17,960 INFO  team.Team:find:130] Finding needed gamer with ID
+[7368 is 2021-06-26 17:11:17,960 INFO  team.Team:find:133] Gamer found
+[8244 is 2021-06-26 17:11:18,836 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[8246 is 2021-06-26 17:11:18,838 INFO  team.Team:find:130] Finding needed gamer with ID
+[8246 is 2021-06-26 17:11:18,838 INFO  team.Team:find:133] Gamer found
+[8246 is 2021-06-26 17:11:18,838 INFO  team.Team:find:130] Finding needed gamer with ID
+[8247 is 2021-06-26 17:11:18,839 INFO  team.Team:find:133] Gamer found
+[8247 is 2021-06-26 17:11:18,839 INFO  team.Team:find:130] Finding needed gamer with ID
+[8248 is 2021-06-26 17:11:18,840 INFO  team.Team:find:133] Gamer found
+[8248 is 2021-06-26 17:11:18,840 INFO  team.Team:find:130] Finding needed gamer with ID
+[8250 is 2021-06-26 17:11:18,842 INFO  team.Team:find:133] Gamer found
+[8250 is 2021-06-26 17:11:18,842 INFO  team.Team:find:130] Finding needed gamer with ID
+[8251 is 2021-06-26 17:11:18,843 INFO  team.Team:find:133] Gamer found
+[8251 is 2021-06-26 17:11:18,843 INFO  team.Team:find:130] Finding needed gamer with ID
+[8252 is 2021-06-26 17:11:18,844 INFO  team.Team:find:133] Gamer found
+[8252 is 2021-06-26 17:11:18,844 INFO  team.Team:find:130] Finding needed gamer with ID
+[8253 is 2021-06-26 17:11:18,845 INFO  team.Team:find:133] Gamer found
+[8253 is 2021-06-26 17:11:18,845 INFO  team.Team:find:130] Finding needed gamer with ID
+[8253 is 2021-06-26 17:11:18,845 INFO  team.Team:find:133] Gamer found
+[8254 is 2021-06-26 17:11:18,846 INFO  team.Team:find:130] Finding needed gamer with ID
+[8254 is 2021-06-26 17:11:18,846 INFO  team.Team:find:133] Gamer found
+[8254 is 2021-06-26 17:11:18,846 INFO  team.Team:find:130] Finding needed gamer with ID
+[8254 is 2021-06-26 17:11:18,846 INFO  team.Team:find:133] Gamer found
+[8255 is 2021-06-26 17:11:18,847 INFO  team.Team:find:130] Finding needed gamer with ID
+[8255 is 2021-06-26 17:11:18,847 INFO  team.Team:find:133] Gamer found
+[8255 is 2021-06-26 17:11:18,847 INFO  team.Team:find:130] Finding needed gamer with ID
+[8256 is 2021-06-26 17:11:18,848 INFO  team.Team:find:133] Gamer found
+[8256 is 2021-06-26 17:11:18,848 INFO  team.Team:find:130] Finding needed gamer with ID
+[8256 is 2021-06-26 17:11:18,848 INFO  team.Team:find:133] Gamer found
+[8257 is 2021-06-26 17:11:18,849 INFO  design.MyModel:showTable:29] Table was created
+[8257 is 2021-06-26 17:11:18,849 INFO  design.deleteButton:actionPerformed:51] Player was deleted
+[8257 is 2021-06-26 17:11:18,849 INFO  design.deleteButton:actionPerformed:73] Closing deleting frame
+[12884 is 2021-06-26 17:11:23,476 INFO  design.deleteButton:actionPerformed:29] Opening deleting frame
+[14886 is 2021-06-26 17:11:25,478 INFO  design.deleteButton:actionPerformed:39] Preparing for deleting player
+[14886 is 2021-06-26 17:11:25,478 INFO  team.Team:find:130] Finding needed gamer with ID
+[14886 is 2021-06-26 17:11:25,478 INFO  team.Team:find:133] Gamer found
+[14886 is 2021-06-26 17:11:25,478 INFO  team.Team:find:130] Finding needed gamer with ID
+[14886 is 2021-06-26 17:11:25,478 INFO  team.Team:find:133] Gamer found
+[15377 is 2021-06-26 17:11:25,969 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:130] Finding needed gamer with ID
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:133] Gamer found
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:130] Finding needed gamer with ID
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:133] Gamer found
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:130] Finding needed gamer with ID
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:133] Gamer found
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:130] Finding needed gamer with ID
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:133] Gamer found
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:130] Finding needed gamer with ID
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:133] Gamer found
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:130] Finding needed gamer with ID
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:133] Gamer found
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:130] Finding needed gamer with ID
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:133] Gamer found
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:130] Finding needed gamer with ID
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:133] Gamer found
+[15377 is 2021-06-26 17:11:25,969 INFO  team.Team:find:130] Finding needed gamer with ID
+[15387 is 2021-06-26 17:11:25,979 INFO  team.Team:find:133] Gamer found
+[15387 is 2021-06-26 17:11:25,979 INFO  team.Team:find:130] Finding needed gamer with ID
+[15387 is 2021-06-26 17:11:25,979 INFO  team.Team:find:133] Gamer found
+[15387 is 2021-06-26 17:11:25,979 INFO  team.Team:find:130] Finding needed gamer with ID
+[15387 is 2021-06-26 17:11:25,979 INFO  team.Team:find:133] Gamer found
+[15387 is 2021-06-26 17:11:25,979 INFO  team.Team:find:130] Finding needed gamer with ID
+[15387 is 2021-06-26 17:11:25,979 INFO  team.Team:find:133] Gamer found
+[15387 is 2021-06-26 17:11:25,979 INFO  design.MyModel:showTable:29] Table was created
+[15387 is 2021-06-26 17:11:25,979 INFO  design.deleteButton:actionPerformed:51] Player was deleted
+[15387 is 2021-06-26 17:11:25,979 INFO  design.deleteButton:actionPerformed:73] Closing deleting frame
+[18132 is 2021-06-26 17:11:28,724 INFO  design.deleteButton:actionPerformed:29] Opening deleting frame
+[20305 is 2021-06-26 17:11:30,897 INFO  design.deleteButton:actionPerformed:39] Preparing for deleting player
+[20305 is 2021-06-26 17:11:30,897 INFO  team.Team:find:130] Finding needed gamer with ID
+[20305 is 2021-06-26 17:11:30,897 ERROR team.Team:find:137] Gamer not found
+[20305 is 2021-06-26 17:11:30,897 ERROR design.deleteButton:actionPerformed:54] Player not found
+[23613 is 2021-06-26 17:11:34,205 INFO  design.deleteButton:actionPerformed:39] Preparing for deleting player
+[23613 is 2021-06-26 17:11:34,205 INFO  team.Team:find:130] Finding needed gamer with ID
+[23613 is 2021-06-26 17:11:34,205 ERROR team.Team:find:137] Gamer not found
+[23613 is 2021-06-26 17:11:34,205 ERROR design.deleteButton:actionPerformed:54] Player not found
+[31863 is 2021-06-26 17:11:42,455 INFO  design.deleteButton:actionPerformed:39] Preparing for deleting player
+[31863 is 2021-06-26 17:11:42,455 INFO  team.Team:find:130] Finding needed gamer with ID
+[31863 is 2021-06-26 17:11:42,455 INFO  team.Team:find:133] Gamer found
+[31863 is 2021-06-26 17:11:42,455 INFO  team.Team:find:130] Finding needed gamer with ID
+[31863 is 2021-06-26 17:11:42,455 INFO  team.Team:find:133] Gamer found
+[31863 is 2021-06-26 17:11:42,455 INFO  team.Team:find:130] Finding needed gamer with ID
+[31863 is 2021-06-26 17:11:42,455 INFO  team.Team:find:133] Gamer found
+[31863 is 2021-06-26 17:11:42,455 INFO  team.Team:find:130] Finding needed gamer with ID
+[31863 is 2021-06-26 17:11:42,455 INFO  team.Team:find:133] Gamer found
+[31863 is 2021-06-26 17:11:42,455 INFO  team.Team:find:130] Finding needed gamer with ID
+[31863 is 2021-06-26 17:11:42,455 INFO  team.Team:find:133] Gamer found
+[31863 is 2021-06-26 17:11:42,455 INFO  team.Team:find:130] Finding needed gamer with ID
+[31873 is 2021-06-26 17:11:42,465 INFO  team.Team:find:133] Gamer found
+[31873 is 2021-06-26 17:11:42,465 INFO  team.Team:find:130] Finding needed gamer with ID
+[31873 is 2021-06-26 17:11:42,465 INFO  team.Team:find:133] Gamer found
+[32563 is 2021-06-26 17:11:43,155 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:130] Finding needed gamer with ID
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:133] Gamer found
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:130] Finding needed gamer with ID
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:133] Gamer found
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:130] Finding needed gamer with ID
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:133] Gamer found
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:130] Finding needed gamer with ID
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:133] Gamer found
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:130] Finding needed gamer with ID
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:133] Gamer found
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:130] Finding needed gamer with ID
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:133] Gamer found
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:130] Finding needed gamer with ID
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:133] Gamer found
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:130] Finding needed gamer with ID
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:133] Gamer found
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:130] Finding needed gamer with ID
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:133] Gamer found
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:130] Finding needed gamer with ID
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:133] Gamer found
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:130] Finding needed gamer with ID
+[32563 is 2021-06-26 17:11:43,155 INFO  team.Team:find:133] Gamer found
+[32563 is 2021-06-26 17:11:43,155 INFO  design.MyModel:showTable:29] Table was created
+[32573 is 2021-06-26 17:11:43,165 INFO  design.deleteButton:actionPerformed:51] Player was deleted
+[32573 is 2021-06-26 17:11:43,165 INFO  design.deleteButton:actionPerformed:73] Closing deleting frame
+[0 is 2021-06-26 17:11:47,234 INFO  team.Team:<init>:52] Team is ready to construct
+[10 is 2021-06-26 17:11:47,244 INFO  team.Team:<init>:55] Info about team
+[10 is 2021-06-26 17:11:47,244 INFO  team.Team:<init>:63] Info about team is ready
+[10 is 2021-06-26 17:11:47,244 INFO  team.Team:<init>:67] Info about footballers
+[10 is 2021-06-26 17:11:47,244 INFO  team.Team:<init>:75] Info about footballers is ready
+[10 is 2021-06-26 17:11:47,244 INFO  team.Team:<init>:79] Info about calendar
+[20 is 2021-06-26 17:11:47,254 INFO  team.Team:<init>:86] Info about calendar is ready
+[20 is 2021-06-26 17:11:47,254 INFO  team.Team:<init>:88] Team constructed
+[20 is 2021-06-26 17:11:47,254 INFO  design.PlayerList:show:64] Main menu is preparing
+[488 is 2021-06-26 17:11:47,722 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[488 is 2021-06-26 17:11:47,722 INFO  team.Team:find:130] Finding needed gamer with ID
+[488 is 2021-06-26 17:11:47,722 INFO  team.Team:find:133] Gamer found
+[488 is 2021-06-26 17:11:47,722 INFO  team.Team:find:130] Finding needed gamer with ID
+[488 is 2021-06-26 17:11:47,722 INFO  team.Team:find:133] Gamer found
+[488 is 2021-06-26 17:11:47,722 INFO  team.Team:find:130] Finding needed gamer with ID
+[488 is 2021-06-26 17:11:47,722 INFO  team.Team:find:133] Gamer found
+[488 is 2021-06-26 17:11:47,722 INFO  team.Team:find:130] Finding needed gamer with ID
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:133] Gamer found
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:130] Finding needed gamer with ID
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:133] Gamer found
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:130] Finding needed gamer with ID
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:133] Gamer found
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:130] Finding needed gamer with ID
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:133] Gamer found
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:130] Finding needed gamer with ID
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:133] Gamer found
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:130] Finding needed gamer with ID
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:133] Gamer found
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:130] Finding needed gamer with ID
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:133] Gamer found
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:130] Finding needed gamer with ID
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:133] Gamer found
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:130] Finding needed gamer with ID
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:133] Gamer found
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:130] Finding needed gamer with ID
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:133] Gamer found
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:130] Finding needed gamer with ID
+[496 is 2021-06-26 17:11:47,730 INFO  team.Team:find:133] Gamer found
+[496 is 2021-06-26 17:11:47,730 INFO  design.MyModel:showTable:29] Table was created
+[739 is 2021-06-26 17:11:47,973 INFO  design.PlayerList:show:194] Main menu has been created
+[0 is 2021-06-26 17:13:24,951 INFO  team.Team:<init>:52] Team is ready to construct
+[0 is 2021-06-26 17:13:24,951 INFO  team.Team:<init>:55] Info about team
+[0 is 2021-06-26 17:13:24,951 INFO  team.Team:<init>:63] Info about team is ready
+[0 is 2021-06-26 17:13:24,951 INFO  team.Team:<init>:67] Info about footballers
+[10 is 2021-06-26 17:13:24,961 INFO  team.Team:<init>:75] Info about footballers is ready
+[10 is 2021-06-26 17:13:24,961 INFO  team.Team:<init>:79] Info about calendar
+[10 is 2021-06-26 17:13:24,961 INFO  team.Team:<init>:86] Info about calendar is ready
+[10 is 2021-06-26 17:13:24,961 INFO  team.Team:<init>:88] Team constructed
+[20 is 2021-06-26 17:13:24,971 INFO  design.PlayerList:show:64] Main menu is preparing
+[437 is 2021-06-26 17:13:25,388 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[437 is 2021-06-26 17:13:25,388 INFO  team.Team:find:130] Finding needed gamer with ID
+[437 is 2021-06-26 17:13:25,388 INFO  team.Team:find:133] Gamer found
+[437 is 2021-06-26 17:13:25,388 INFO  team.Team:find:130] Finding needed gamer with ID
+[437 is 2021-06-26 17:13:25,388 INFO  team.Team:find:133] Gamer found
+[437 is 2021-06-26 17:13:25,388 INFO  team.Team:find:130] Finding needed gamer with ID
+[437 is 2021-06-26 17:13:25,388 INFO  team.Team:find:133] Gamer found
+[437 is 2021-06-26 17:13:25,388 INFO  team.Team:find:130] Finding needed gamer with ID
+[437 is 2021-06-26 17:13:25,388 INFO  team.Team:find:133] Gamer found
+[437 is 2021-06-26 17:13:25,388 INFO  team.Team:find:130] Finding needed gamer with ID
+[437 is 2021-06-26 17:13:25,388 INFO  team.Team:find:133] Gamer found
+[437 is 2021-06-26 17:13:25,388 INFO  team.Team:find:130] Finding needed gamer with ID
+[437 is 2021-06-26 17:13:25,388 INFO  team.Team:find:133] Gamer found
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:130] Finding needed gamer with ID
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:133] Gamer found
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:130] Finding needed gamer with ID
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:133] Gamer found
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:130] Finding needed gamer with ID
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:133] Gamer found
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:130] Finding needed gamer with ID
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:133] Gamer found
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:130] Finding needed gamer with ID
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:133] Gamer found
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:130] Finding needed gamer with ID
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:133] Gamer found
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:130] Finding needed gamer with ID
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:133] Gamer found
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:130] Finding needed gamer with ID
+[447 is 2021-06-26 17:13:25,398 INFO  team.Team:find:133] Gamer found
+[447 is 2021-06-26 17:13:25,398 INFO  design.MyModel:showTable:29] Table was created
+[700 is 2021-06-26 17:13:25,651 INFO  design.PlayerList:show:194] Main menu has been created
+[2181 is 2021-06-26 17:13:27,132 INFO  design.editButton:actionPerformed:33] Edit button was pressed
+[5321 is 2021-06-26 17:13:30,272 INFO  design.editButton:actionPerformed:45] Entering footballer's ID
+[5321 is 2021-06-26 17:13:30,272 INFO  team.Team:find:130] Finding needed gamer with ID
+[5321 is 2021-06-26 17:13:30,272 INFO  team.Team:find:133] Gamer found
+[18242 is 2021-06-26 17:13:43,193 INFO  design.editButton:actionPerformed:150] Trying to save changed data
+[18242 is 2021-06-26 17:13:43,193 INFO  team.Footballer:isAllRight:114] Checking footballer
+[18242 is 2021-06-26 17:13:43,193 INFO  team.Footballer:isAllRight:144] Footballer is correct
+[21756 is 2021-06-26 17:13:46,707 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:130] Finding needed gamer with ID
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:133] Gamer found
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:130] Finding needed gamer with ID
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:133] Gamer found
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:130] Finding needed gamer with ID
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:133] Gamer found
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:130] Finding needed gamer with ID
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:133] Gamer found
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:130] Finding needed gamer with ID
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:133] Gamer found
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:130] Finding needed gamer with ID
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:133] Gamer found
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:130] Finding needed gamer with ID
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:133] Gamer found
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:130] Finding needed gamer with ID
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:133] Gamer found
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:130] Finding needed gamer with ID
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:133] Gamer found
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:130] Finding needed gamer with ID
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:133] Gamer found
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:130] Finding needed gamer with ID
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:133] Gamer found
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:130] Finding needed gamer with ID
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:133] Gamer found
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:130] Finding needed gamer with ID
+[21756 is 2021-06-26 17:13:46,707 INFO  team.Team:find:133] Gamer found
+[21766 is 2021-06-26 17:13:46,717 INFO  team.Team:find:130] Finding needed gamer with ID
+[21766 is 2021-06-26 17:13:46,717 INFO  team.Team:find:133] Gamer found
+[21766 is 2021-06-26 17:13:46,717 INFO  design.MyModel:showTable:29] Table was created
+[21766 is 2021-06-26 17:13:46,717 INFO  design.editButton:actionPerformed:164] Changed data saved
+[21766 is 2021-06-26 17:13:46,717 INFO  design.editButton:actionPerformed:221] Edit frames closed
+[25631 is 2021-06-26 17:13:50,582 INFO  design.PlayerList:actionPerformed:122] User is going to save his changes
+[25641 is 2021-06-26 17:13:50,592 INFO  team.Team:saveChanges:210] Saving all changes
+[25641 is 2021-06-26 17:13:50,592 INFO  team.Team:saveChanges:212] Saving calendar
+[25641 is 2021-06-26 17:13:50,592 INFO  team.Team:saveChanges:219] Calendar saved
+[25641 is 2021-06-26 17:13:50,592 INFO  team.Team:saveChanges:223] Saving footballers
+[25641 is 2021-06-26 17:13:50,592 INFO  team.Team:saveChanges:232] Footballers saved
+[25641 is 2021-06-26 17:13:50,592 INFO  team.Team:saveChanges:236] Saving team info
+[25641 is 2021-06-26 17:13:50,592 INFO  team.Team:saveChanges:241] Team info saved
+[25641 is 2021-06-26 17:13:50,592 INFO  team.Team:saveChanges:243] Changes were saved
+[26931 is 2021-06-26 17:13:51,882 INFO  design.PlayerList:actionPerformed:126] Data saved successfully!
+[0 is 2021-06-26 17:13:57,178 INFO  team.Team:<init>:52] Team is ready to construct
+[0 is 2021-06-26 17:13:57,178 INFO  team.Team:<init>:55] Info about team
+[0 is 2021-06-26 17:13:57,178 INFO  team.Team:<init>:63] Info about team is ready
+[0 is 2021-06-26 17:13:57,178 INFO  team.Team:<init>:67] Info about footballers
+[10 is 2021-06-26 17:13:57,188 INFO  team.Team:<init>:75] Info about footballers is ready
+[10 is 2021-06-26 17:13:57,188 INFO  team.Team:<init>:79] Info about calendar
+[10 is 2021-06-26 17:13:57,188 INFO  team.Team:<init>:86] Info about calendar is ready
+[10 is 2021-06-26 17:13:57,188 INFO  team.Team:<init>:88] Team constructed
+[21 is 2021-06-26 17:13:57,199 INFO  design.PlayerList:show:64] Main menu is preparing
+[454 is 2021-06-26 17:13:57,632 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[454 is 2021-06-26 17:13:57,632 INFO  team.Team:find:130] Finding needed gamer with ID
+[462 is 2021-06-26 17:13:57,640 INFO  team.Team:find:133] Gamer found
+[462 is 2021-06-26 17:13:57,640 INFO  team.Team:find:130] Finding needed gamer with ID
+[462 is 2021-06-26 17:13:57,640 INFO  team.Team:find:133] Gamer found
+[462 is 2021-06-26 17:13:57,640 INFO  team.Team:find:130] Finding needed gamer with ID
+[462 is 2021-06-26 17:13:57,640 INFO  team.Team:find:133] Gamer found
+[462 is 2021-06-26 17:13:57,640 INFO  team.Team:find:130] Finding needed gamer with ID
+[462 is 2021-06-26 17:13:57,640 INFO  team.Team:find:133] Gamer found
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:130] Finding needed gamer with ID
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:133] Gamer found
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:130] Finding needed gamer with ID
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:133] Gamer found
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:130] Finding needed gamer with ID
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:133] Gamer found
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:130] Finding needed gamer with ID
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:133] Gamer found
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:130] Finding needed gamer with ID
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:133] Gamer found
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:130] Finding needed gamer with ID
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:133] Gamer found
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:130] Finding needed gamer with ID
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:133] Gamer found
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:130] Finding needed gamer with ID
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:133] Gamer found
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:130] Finding needed gamer with ID
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:133] Gamer found
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:130] Finding needed gamer with ID
+[470 is 2021-06-26 17:13:57,648 INFO  team.Team:find:133] Gamer found
+[470 is 2021-06-26 17:13:57,648 INFO  design.MyModel:showTable:29] Table was created
+[698 is 2021-06-26 17:13:57,876 INFO  design.PlayerList:show:194] Main menu has been created
