@@ -9,5 +9,5 @@ abstract class Person{
     protected int ID;
     protected String name;
     protected String last_name;
-    abstract String info();
+    public abstract String info();
 }

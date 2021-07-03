@@ -41,9 +41,7 @@ public class Team implements IRoles{ // класс-агрегатор
         this.losses = losses;
         this.games = games;
     }
-    /**
-     * Конструктор для ввода информации из файла
-     */
+    /**Конструктор для ввода информации из файла*/
     public Team(){
         calendar = new ArrayList <Calendar>();
         list = new ArrayList<Footballer>();
@@ -107,7 +105,6 @@ public class Team implements IRoles{ // класс-агрегатор
         return list;
     }
     public void addFootballer(Footballer boy) {list.add(boy);}
-    public void addDate(Calendar date) {calendar.add(date);}
     /**Удаление игрока по ID*/
     public void delete(int id) {
         for (Footballer boy : list){
@@ -164,25 +161,19 @@ public class Team implements IRoles{ // класс-агрегатор
         }
         return max;
     }
-    void Win() {wins++; games++; }
-    void Loss() {losses++; games++; } 
     
     public void addDate(String date, int win, int loss){
         Calendar day = new Calendar(date, win, loss);
         calendar.add(day);
-        if (win > loss) Win();
-        else if (loss > win) Loss();
-        else games++; //ничья
+        games++;
+        if (win > loss) wins++;
+        else if (loss > win) losses++;
     }
-    
-    public void addDates(DefaultTableModel newModel){
-        for (Calendar cal:calendar) {
-            String buf[] = new String[3];
-            buf[0] = cal.getDate();
-            buf[1] = Integer.toString(cal.getWins());
-            buf[2] = Integer.toString(cal.getLosses());
-            newModel.addRow(buf);
-        }
+    public void addDate(Calendar cal){
+        calendar.add(cal);
+        if (cal.getWins()>cal.getLosses()) wins++;
+        else if (cal.getWins()<cal.getLosses()) losses++;
+        games++;
     }
 
     public void deleteDate(int selected){
@@ -192,15 +183,18 @@ public class Team implements IRoles{ // класс-агрегатор
             wins--;
         else if (temp.getWins()<temp.getLosses())
             losses--;
-        
     }
-    public void addNewDate(Calendar cal){
-        calendar.add(cal);
-        if (cal.getWins()>cal.getLosses()) wins++;
-        else if (cal.getWins()<cal.getLosses()) losses++;
-        games++;
+
+    public void addDates(DefaultTableModel newModel){
+        for (Calendar cal:calendar) {
+            String buf[] = new String[3];
+            buf[0] = cal.getDate();
+            buf[1] = Integer.toString(cal.getWins());
+            buf[2] = Integer.toString(cal.getLosses());
+            newModel.addRow(buf);
+        }
     }
-    /**Сохранение изменений в файл*/
+    /**Сохранение изменений в файлы*/
     public void saveChanges(){
         try{
             Tlog.info("Saving all changes");

@@ -107,7 +107,7 @@ public class calButton implements ActionListener {
                             Integer.parseInt(newLosses.getText().trim()));
                             addedDate.isDateRight();
                             //lst.add(addedDate);
-                            theBest.addNewDate(addedDate);
+                            theBest.addDate(addedDate);
                             JOptionPane.showMessageDialog(addDateBox, "Дата добавлена", "", 
                             JOptionPane.INFORMATION_MESSAGE);
                             addDateBox.dispose();

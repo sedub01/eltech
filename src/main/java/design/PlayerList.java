@@ -38,6 +38,8 @@ public class PlayerList implements IRoles {
     private JButton info;
     /**Кнопка изменения информации о футболисте */
     private JButton edit;
+    /**Кнопка туториала по программе */
+    private JButton help;
 
     /** Панель инструментов*/
     private JToolBar toolBar;
@@ -77,6 +79,7 @@ public class PlayerList implements IRoles {
         fout = new JButton(new ImageIcon("./src/main/resources/img/fout.png"));
         cal = new JButton(new ImageIcon("./src/main/resources/img/calendar.png"));
         info = new JButton(new ImageIcon("./src/main/resources/img/info.png"));
+        help = new JButton(new ImageIcon("./src/main/resources/img/help.png"));
         // Настройка подсказок для кнопок
         save.setToolTipText("Сохранить изменения");
         add.setToolTipText("Добавить игрока");
@@ -86,6 +89,7 @@ public class PlayerList implements IRoles {
         print.setToolTipText("Распечатать список?");
         cal.setToolTipText("Календарь игр");
         info.setToolTipText("Информация о сборной");
+        help.setToolTipText("Как пользоваться программой");
         // Добавление кнопок на панель инструментов
         toolBar = new JToolBar("Панель инструментов");
         toolBar.add(save);
@@ -96,6 +100,7 @@ public class PlayerList implements IRoles {
         toolBar.add(cal);
         toolBar.add(print);
         toolBar.add(info);
+        toolBar.add(help);
         // Размещение панели инструментов
         playerList.setLayout(new BorderLayout());
         playerList.add(toolBar, BorderLayout.NORTH);
@@ -151,11 +156,12 @@ public class PlayerList implements IRoles {
                 JOptionPane.INFORMATION_MESSAGE);
             }
         });
-        delete.addActionListener(new deleteButton(model, theBest, playerList)); //если забагуется, верну обратно
+        delete.addActionListener(new deleteButton(model, theBest, playerList));
         fout.addActionListener(new foutButton(theBest, playerList)); //в функцию передается ссылка, а из нее возвращается копия!!!
         cal.addActionListener(new calButton(theBest, playerList)); //передал playerList, чтобы сделать окно модальным через JDialog
         add.addActionListener(new addButton(playerList, theBest, model));
         edit.addActionListener(new editButton(playerList, theBest, model));
+        help.addActionListener(new helpButton(playerList));
         
         playerList.add(scroll, BorderLayout.CENTER);
         // Подготовка компонентов поиска

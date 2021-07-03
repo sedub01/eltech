@@ -61,17 +61,17 @@ public class editButton implements ActionListener, IRoles {
                     JTextField newLastName = new JTextField(boy.getLastName());
                     //Role ComboBox
                     int first, second, third;
-                    if (boy.getRole() == GOALKEEPER) {
+                    if (boy.getRole() == 0) {
                         first = 1;
                         second = 2;
                         third = 3;
                     }
-                    else if (boy.getRole() == STRIKER){
+                    else if (boy.getRole() == 1){
                         first = 0;
                         second = 2;
                         third = 3;
                     }
-                    else if (boy.getRole() == HALFBACK){
+                    else if (boy.getRole() == 2){
                         first = 0;
                         second = 1;
                         third = 3;
