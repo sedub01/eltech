@@ -7,6 +7,7 @@ import java.awt.Dimension;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.List;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -180,9 +181,16 @@ public class PlayerList implements IRoles {
             public void actionPerformed(ActionEvent e){
                 PLlog.info("User is going to find player with ID");
                 try{
-                    int foundID = theBest.find(PlayerName.getText(), PlayerLastName.getText());
-                    JOptionPane.showMessageDialog(playerList, "ID игрока: "+Integer.toString(foundID), 
-                    "ID игрока", JOptionPane.INFORMATION_MESSAGE);
+                    List<Integer> foundID = theBest.find(PlayerName.getText().trim(), PlayerLastName.getText().trim());
+                    if(foundID.size() == 1)
+                        JOptionPane.showMessageDialog(playerList, "ID игрока: "+Integer.toString(foundID.get(0)), 
+                        "ID игрока", JOptionPane.INFORMATION_MESSAGE);
+                    else{
+                        String IDs = new String();
+                        for (int temp : foundID) IDs += Integer.toString(temp) + "\n";
+                        JOptionPane.showMessageDialog(playerList, "ID игроков:\n"+IDs, 
+                        "ID игроков", JOptionPane.INFORMATION_MESSAGE);
+                    }
                     PLlog.info("Player has been found!");
                 }
                 catch(NullPointerException ex){
@@ -190,7 +198,6 @@ public class PlayerList implements IRoles {
                     JOptionPane.showMessageDialog(playerList, "Нет такого футболиста", "Каво", 
                     JOptionPane.ERROR_MESSAGE);
                 }
-                
             }
         });
         // Размещение панели поиска внизу окна

@@ -141,15 +141,20 @@ public class Team implements IRoles{ // класс-агрегатор
      * @return ID найденного футболиста
      * @throws NullPointerException Игрок не найден
      */
-    public int find(String name, String lastName) throws NullPointerException {
+    public List<Integer> find(String name, String lastName) throws NullPointerException {
         Tlog.info("Finding needed gamer with his name");
+        List<Integer> IDs = new ArrayList<>();
         for (Footballer boy:list)
             if (boy.getName().equals(name) && boy.getLastName().equals(lastName)){
                 Tlog.info("Gamer found");
-                return boy.getID();
+                IDs.add(boy.getID());
             }
-        Tlog.error("Gamer not found");
-        throw new NullPointerException(); //ничего не нашлось
+        if (IDs.size() == 0){
+            Tlog.error("Gamer not found");
+            throw new NullPointerException(); //ничего не нашлось
+        }
+        return IDs;
+        
     }
     public int firstID(){
         return list.get(0).ID;

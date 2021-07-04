@@ -90,7 +90,7 @@ public class helpButton implements ActionListener, SwingConstants{
             public void run(){
                 int count = 0;
                 try{
-                    while(count < 70){
+                    while(count < 100){
                         int i, n=30, repeat = 50;
                         for(i=0; i<=255; i+=repeat) {colored.setForeground(new Color(255, 0, 0+i)); Thread.sleep(n);}
                         for(i=0; i<=255; i+=repeat) {colored.setForeground(new Color(255-i, 0, 255)); Thread.sleep(n);}
