@@ -60,7 +60,13 @@ public class helpButton implements ActionListener, SwingConstants{
             "<br><p style=\"margin-left: 20px;\">Для этого введите имя и фамилию внизу таблицы и нажмите"+
             "<br><p style=\"margin-left: 120px;\"> кнопку поиска"+
             "<br><p style=\"margin-left: 40px;\">Остальное узнаете из всплывающих подсказок</html>",
-            "<html><p style=\"margin-left: 215px;\">@sedub01 Июль 2021</html>"
+            "<html><p style=\"margin-left: 215px;\">@sedub01 Июль 2021</html>", 
+
+            "<html><p style=\"margin-left: 60px;\">Рассмотрен случай бесконечной таблицы"+
+            "<br><p style=\"margin-left: 40px;\">Если надо взаимодействовать со строкой в таблице,"+
+            "<br><p style=\"margin-left: 60px;\">следует ее выделить и нажать нужную иконку"+
+            "<br><p style=\"margin-left: 40px;\">Если строка не выделена, можно нажать на иконку"+
+            "<br><p style=\"margin-left: 120px;\">и ввести ID игрока</html>"
         };
 
         content.add(new JLabel(strings[0]));
@@ -81,6 +87,9 @@ public class helpButton implements ActionListener, SwingConstants{
         content.add(new JLabel(" "));
 
         content.add(new JLabel(strings[5]));
+        content.add(new JLabel(" "));
+        content.add(new JLabel(strings[7]));
+
         JLabel colored = new JLabel(strings[6]);
 
         content.add(colored);

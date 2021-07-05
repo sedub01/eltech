@@ -157,11 +157,11 @@ public class PlayerList implements IRoles {
                 JOptionPane.INFORMATION_MESSAGE);
             }
         });
-        delete.addActionListener(new deleteButton(model, theBest, playerList));
-        fout.addActionListener(new foutButton(theBest, playerList)); //в функцию передается ссылка, а из нее возвращается копия!!!
+        delete.addActionListener(new deleteButton(model, theBest, playerList, players));
+        fout.addActionListener(new foutButton(theBest, playerList, players)); //в функцию передается ссылка, а из нее возвращается копия!!!
         cal.addActionListener(new calButton(theBest, playerList)); //передал playerList, чтобы сделать окно модальным через JDialog
         add.addActionListener(new addButton(playerList, theBest, model));
-        edit.addActionListener(new editButton(playerList, theBest, model));
+        edit.addActionListener(new editButton(playerList, theBest, model, players));
         help.addActionListener(new helpButton(playerList));
         
         playerList.add(scroll, BorderLayout.CENTER);
