@@ -3,18 +3,18 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import exceptions.*;
-/**
- * Класс футболиста
- */
-public class Footballer extends Person implements IRoles{
+/**Класс футболиста*/
+public class Footballer implements IRoles{
     private static final Logger Flog = LogManager.getLogger(Footballer.class);
+    private int ID;
+    private String name;
+    private String last_name;
     private int RoleID;//см. IRoles
     private String club; //принадлежность к клубу
     private String city; //город прибывшего футболиста
     private int goals; // кол-во забитых голов
     private int salary; //зарплата в долларах в месяц
     /**
-     * 
      * @param ID футболиста
      * @param name Имя футболиста
      * @param last_name Его фамилия
@@ -25,7 +25,9 @@ public class Footballer extends Person implements IRoles{
      * @param RoleID Код специализации
      */
     public Footballer(int ID, String name, String last_name, String club, String city, int goals, int salary, int RoleID) {
-        super(name, last_name, ID);
+        this.ID = ID;
+        this.name = name;
+        this.last_name = last_name;
         this.club = club;
         this.city = city;
         this.goals = goals;

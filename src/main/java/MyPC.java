@@ -5,8 +5,6 @@ public class MyPC{//не забудьте прописать в консоли �
     public static void main(String[] args) {
         Team theBest = new Team(); 
         PlayerList GUI = new PlayerList();
-        @SuppressWarnings("unused")
-        Admin John = new Admin("Семен", "Дубенков", theBest.getBossID());
         GUI.show(theBest);
     }
 }

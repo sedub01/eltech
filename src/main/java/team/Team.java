@@ -27,7 +27,6 @@ public class Team implements IRoles{ // класс-агрегатор
     private int games;
     private Object DBlock = new Object();
     /**
-     * 
      * @param ID админа команды (для связки)
      * @param wins Кол-во победных матчей
      * @param losses Кол-во проигранных матчей
@@ -54,9 +53,6 @@ public class Team implements IRoles{ // класс-агрегатор
                 buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Команда.txt")));
                 String s[] = buf.readLine().split(";");
                 bossID = Integer.parseInt(s[0]);
-                //wins = Integer.parseInt(s[1]);
-                //losses = Integer.parseInt(s[2]);
-                //games =  Integer.parseInt(s[3]);
                 buf.close();
                 Tlog.info("Info about team is ready");
             }
@@ -116,7 +112,6 @@ public class Team implements IRoles{ // класс-агрегатор
             }
         }
     } 
-    
     /**
      * Поиск игрока по ID
      * @param id
@@ -157,7 +152,7 @@ public class Team implements IRoles{ // класс-агрегатор
         
     }
     public int firstID(){
-        return list.get(0).ID;
+        return list.get(0).getID();
     }
     public int lastID(){
         int max = 0;
@@ -250,12 +245,6 @@ public class Team implements IRoles{ // класс-агрегатор
         buf[2] = "Кол-во побед: "+Integer.toString(wins)+"\n";
         buf[3] = "Кол-во поражений: "+Integer.toString(losses)+"\n";
         buf[4] = "Кол-во ничей: "+Integer.toString(games - wins - losses)+"\n";
-        /*
-        System.out.println("ID Админа: " + bossID);
-        System.out.println("Кол-во побед: "+ wins);
-        System.out.println("Кол-во поражений: "+ losses);
-        System.out.println("Кол-во ничей: "+ (games - wins - losses));
-        */
         return buf[0] + buf[1]+buf[2]+buf[3]+buf[4];
     }
 
