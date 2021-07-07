@@ -19940,3 +19940,489 @@
 [228 is 2021-07-05 22:31:23,962 INFO  team.Team:find:130] Gamer found
 [228 is 2021-07-05 22:31:23,962 INFO  design.MyModel:showTable:29] Table was created
 [341 is 2021-07-05 22:31:24,075 INFO  design.PlayerList:show:207] Main menu has been created
+[0 is 2021-07-06 12:46:13,811 INFO  team.Team:<init>:49] Team is ready to construct
+[4 is 2021-07-06 12:46:13,815 INFO  team.Team:<init>:52] Info about team
+[8 is 2021-07-06 12:46:13,819 INFO  team.Team:<init>:57] Info about team is ready
+[8 is 2021-07-06 12:46:13,819 INFO  team.Team:<init>:61] Info about footballers
+[8 is 2021-07-06 12:46:13,819 INFO  team.Team:<init>:69] Info about footballers is ready
+[8 is 2021-07-06 12:46:13,819 INFO  team.Team:<init>:73] Info about calendar
+[11 is 2021-07-06 12:46:13,822 INFO  team.Team:<init>:80] Info about calendar is ready
+[11 is 2021-07-06 12:46:13,822 INFO  team.Team:<init>:82] Team constructed
+[0 is 2021-07-06 12:46:26,704 INFO  team.Team:<init>:49] Team is ready to construct
+[4 is 2021-07-06 12:46:26,708 INFO  team.Team:<init>:52] Info about team
+[9 is 2021-07-06 12:46:26,713 INFO  team.Team:<init>:57] Info about team is ready
+[9 is 2021-07-06 12:46:26,713 INFO  team.Team:<init>:61] Info about footballers
+[13 is 2021-07-06 12:46:26,717 INFO  team.Team:<init>:69] Info about footballers is ready
+[13 is 2021-07-06 12:46:26,717 INFO  team.Team:<init>:73] Info about calendar
+[17 is 2021-07-06 12:46:26,721 INFO  team.Team:<init>:80] Info about calendar is ready
+[17 is 2021-07-06 12:46:26,721 INFO  team.Team:<init>:82] Team constructed
+[26 is 2021-07-06 12:46:26,730 INFO  design.PlayerList:show:67] Main menu is preparing
+[610 is 2021-07-06 12:46:27,314 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[610 is 2021-07-06 12:46:27,314 INFO  team.Team:find:122] Finding needed gamer with ID
+[614 is 2021-07-06 12:46:27,318 INFO  team.Team:find:125] Gamer found
+[614 is 2021-07-06 12:46:27,318 INFO  team.Team:find:122] Finding needed gamer with ID
+[614 is 2021-07-06 12:46:27,318 INFO  team.Team:find:125] Gamer found
+[614 is 2021-07-06 12:46:27,318 INFO  team.Team:find:122] Finding needed gamer with ID
+[614 is 2021-07-06 12:46:27,318 INFO  team.Team:find:125] Gamer found
+[618 is 2021-07-06 12:46:27,322 INFO  team.Team:find:122] Finding needed gamer with ID
+[618 is 2021-07-06 12:46:27,322 INFO  team.Team:find:125] Gamer found
+[618 is 2021-07-06 12:46:27,322 INFO  team.Team:find:122] Finding needed gamer with ID
+[618 is 2021-07-06 12:46:27,322 INFO  team.Team:find:125] Gamer found
+[618 is 2021-07-06 12:46:27,322 INFO  team.Team:find:122] Finding needed gamer with ID
+[620 is 2021-07-06 12:46:27,324 INFO  team.Team:find:125] Gamer found
+[620 is 2021-07-06 12:46:27,324 INFO  team.Team:find:122] Finding needed gamer with ID
+[620 is 2021-07-06 12:46:27,324 INFO  team.Team:find:125] Gamer found
+[620 is 2021-07-06 12:46:27,324 INFO  team.Team:find:122] Finding needed gamer with ID
+[620 is 2021-07-06 12:46:27,324 INFO  team.Team:find:125] Gamer found
+[620 is 2021-07-06 12:46:27,324 INFO  team.Team:find:122] Finding needed gamer with ID
+[620 is 2021-07-06 12:46:27,324 INFO  team.Team:find:125] Gamer found
+[620 is 2021-07-06 12:46:27,324 INFO  team.Team:find:122] Finding needed gamer with ID
+[620 is 2021-07-06 12:46:27,324 INFO  team.Team:find:125] Gamer found
+[620 is 2021-07-06 12:46:27,324 INFO  design.MyModel:showTable:29] Table was created
+[946 is 2021-07-06 12:46:27,650 INFO  design.PlayerList:show:207] Main menu has been created
+[20917 is 2021-07-06 12:46:47,621 INFO  design.calButton:actionPerformed:31] Calendar frame was opened
+[20917 is 2021-07-06 12:46:47,621 INFO  design.calButton:run:50] Creating the table
+[20917 is 2021-07-06 12:46:47,621 INFO  design.calButton:run:53] Table was created
+[29773 is 2021-07-06 12:46:56,477 INFO  design.calButton:actionPerformed:159] Calendar frame was closed
+[0 is 2021-07-06 13:02:16,430 INFO  team.Team:<init>:59] Team is ready to construct
+[10 is 2021-07-06 13:02:16,440 INFO  team.Team:<init>:62] Info about team
+[10 is 2021-07-06 13:02:16,440 INFO  team.Team:<init>:67] Info about team is ready
+[10 is 2021-07-06 13:02:16,440 INFO  team.Team:<init>:71] Info about footballers
+[10 is 2021-07-06 13:02:16,440 INFO  team.Team:<init>:79] Info about footballers is ready
+[10 is 2021-07-06 13:02:16,440 INFO  team.Team:<init>:83] Info about calendar
+[10 is 2021-07-06 13:02:16,440 INFO  team.Team:<init>:90] Info about calendar is ready
+[10 is 2021-07-06 13:02:16,440 INFO  team.Team:<init>:92] Team constructed
+[0 is 2021-07-06 13:02:23,615 INFO  team.Team:<init>:59] Team is ready to construct
+[10 is 2021-07-06 13:02:23,625 INFO  team.Team:<init>:62] Info about team
+[10 is 2021-07-06 13:02:23,625 INFO  team.Team:<init>:67] Info about team is ready
+[10 is 2021-07-06 13:02:23,625 INFO  team.Team:<init>:71] Info about footballers
+[10 is 2021-07-06 13:02:23,625 INFO  team.Team:<init>:79] Info about footballers is ready
+[10 is 2021-07-06 13:02:23,625 INFO  team.Team:<init>:83] Info about calendar
+[18 is 2021-07-06 13:02:23,633 INFO  team.Team:<init>:90] Info about calendar is ready
+[18 is 2021-07-06 13:02:23,633 INFO  team.Team:<init>:92] Team constructed
+[18 is 2021-07-06 13:02:23,633 INFO  design.PlayerList:show:67] Main menu is preparing
+[456 is 2021-07-06 13:02:24,071 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:132] Finding needed gamer with ID
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:135] Gamer found
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:132] Finding needed gamer with ID
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:135] Gamer found
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:132] Finding needed gamer with ID
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:135] Gamer found
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:132] Finding needed gamer with ID
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:135] Gamer found
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:132] Finding needed gamer with ID
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:135] Gamer found
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:132] Finding needed gamer with ID
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:135] Gamer found
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:132] Finding needed gamer with ID
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:135] Gamer found
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:132] Finding needed gamer with ID
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:135] Gamer found
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:132] Finding needed gamer with ID
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:135] Gamer found
+[464 is 2021-07-06 13:02:24,079 INFO  team.Team:find:132] Finding needed gamer with ID
+[472 is 2021-07-06 13:02:24,087 INFO  team.Team:find:135] Gamer found
+[472 is 2021-07-06 13:02:24,087 INFO  design.MyModel:showTable:29] Table was created
+[718 is 2021-07-06 13:02:24,333 INFO  design.PlayerList:show:207] Main menu has been created
+[0 is 2021-07-06 13:05:43,408 INFO  team.Team:<init>:59] Team is ready to construct
+[6 is 2021-07-06 13:05:43,414 INFO  team.Team:<init>:62] Info about team
+[8 is 2021-07-06 13:05:43,416 INFO  team.Team:<init>:67] Info about team is ready
+[327 is 2021-07-06 13:05:43,735 INFO  org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31] HHH000204: Processing PersistenceUnitInfo [name: test_persistence]
+[394 is 2021-07-06 13:05:43,802 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version 5.4.29.Final
+[655 is 2021-07-06 13:05:44,063 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[1266 is 2021-07-06 13:05:44,674 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[1286 is 2021-07-06 13:05:44,694 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mypc]
+[1286 is 2021-07-06 13:05:44,694 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[1286 is 2021-07-06 13:05:44,694 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[1292 is 2021-07-06 13:05:44,700 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 20 (min=1)
+[1884 is 2021-07-06 13:05:45,292 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2194 is 2021-07-06 13:05:45,602 ERROR team.Team:<init>:104] One of inner filer (team, gamers, dates) is ruined
+[0 is 2021-07-06 13:06:13,878 INFO  team.Team:<init>:59] Team is ready to construct
+[0 is 2021-07-06 13:06:13,878 INFO  team.Team:<init>:62] Info about team
+[0 is 2021-07-06 13:06:13,878 INFO  team.Team:<init>:67] Info about team is ready
+[248 is 2021-07-06 13:06:14,126 INFO  org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31] HHH000204: Processing PersistenceUnitInfo [name: test_persistence]
+[308 is 2021-07-06 13:06:14,186 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[496 is 2021-07-06 13:06:14,374 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[3249 is 2021-07-06 13:06:17,127 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[3278 is 2021-07-06 13:06:17,156 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mypc]
+[3279 is 2021-07-06 13:06:17,157 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[3279 is 2021-07-06 13:06:17,157 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[3279 is 2021-07-06 13:06:17,157 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 20 (min=1)
+[3736 is 2021-07-06 13:06:17,614 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[3954 is 2021-07-06 13:06:17,832 ERROR team.Team:<init>:104] One of inner filer (team, gamers, dates) is ruined
+[3970 is 2021-07-06 13:06:17,848 INFO  design.PlayerList:show:67] Main menu is preparing
+[4287 is 2021-07-06 13:06:18,165 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[4287 is 2021-07-06 13:06:18,165 INFO  design.MyModel:showTable:29] Table was created
+[4469 is 2021-07-06 13:06:18,347 INFO  design.PlayerList:show:207] Main menu has been created
+[0 is 2021-07-06 14:26:21,891 INFO  team.Team:<init>:59] Team is ready to construct
+[3 is 2021-07-06 14:26:21,894 INFO  team.Team:<init>:62] Info about team
+[5 is 2021-07-06 14:26:21,896 INFO  team.Team:<init>:67] Info about team is ready
+[257 is 2021-07-06 14:26:22,148 INFO  org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31] HHH000204: Processing PersistenceUnitInfo [name: test_persistence]
+[323 is 2021-07-06 14:26:22,214 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[516 is 2021-07-06 14:26:22,407 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[3157 is 2021-07-06 14:26:25,048 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[3181 is 2021-07-06 14:26:25,072 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mypc]
+[3182 is 2021-07-06 14:26:25,073 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[3182 is 2021-07-06 14:26:25,073 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[3186 is 2021-07-06 14:26:25,077 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 20 (min=1)
+[3660 is 2021-07-06 14:26:25,551 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[3938 is 2021-07-06 14:26:25,829 ERROR team.Team:<init>:104] One of inner filer (team, gamers, dates) is ruined
+[3949 is 2021-07-06 14:26:25,840 INFO  design.PlayerList:show:67] Main menu is preparing
+[4276 is 2021-07-06 14:26:26,167 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[4278 is 2021-07-06 14:26:26,169 INFO  design.MyModel:showTable:29] Table was created
+[4506 is 2021-07-06 14:26:26,397 INFO  design.PlayerList:show:207] Main menu has been created
+[5771 is 2021-07-06 14:26:27,662 INFO  design.addButton:actionPerformed:34] Adding new player frame opened
+[20866 is 2021-07-06 14:26:42,757 INFO  design.addButton:actionPerformed:104] Trying to add new player
+[20867 is 2021-07-06 14:26:42,758 ERROR design.addButton:actionPerformed:126] Characters instead of digits
+[37907 is 2021-07-06 14:26:59,798 INFO  design.addButton:actionPerformed:104] Trying to add new player
+[37907 is 2021-07-06 14:26:59,798 INFO  team.Footballer:isAllRight:121] Checking footballer
+[37907 is 2021-07-06 14:26:59,798 INFO  team.Footballer:isAllRight:151] Footballer is correct
+[39038 is 2021-07-06 14:27:00,929 INFO  design.addButton:actionPerformed:123] New player was added
+[39038 is 2021-07-06 14:27:00,929 INFO  design.addButton:actionPerformed:159] Adding new player frame closed
+[43742 is 2021-07-06 14:27:05,633 INFO  design.foutButton:actionPerformed:37] Frame was created
+[43743 is 2021-07-06 14:27:05,634 INFO  team.Team:find:142] Finding needed gamer with ID
+[43743 is 2021-07-06 14:27:05,634 INFO  team.Team:find:145] Gamer found
+[47678 is 2021-07-06 14:27:09,569 INFO  design.foutButton:actionPerformed:43] Gamer found
+[47679 is 2021-07-06 14:27:09,570 INFO  design.foutButton:actionPerformed:83] Frame closed
+[0 is 2021-07-06 14:27:17,065 INFO  team.Team:<init>:59] Team is ready to construct
+[5 is 2021-07-06 14:27:17,070 INFO  team.Team:<init>:62] Info about team
+[8 is 2021-07-06 14:27:17,073 INFO  team.Team:<init>:67] Info about team is ready
+[286 is 2021-07-06 14:27:17,351 INFO  org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31] HHH000204: Processing PersistenceUnitInfo [name: test_persistence]
+[341 is 2021-07-06 14:27:17,406 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[526 is 2021-07-06 14:27:17,591 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[3078 is 2021-07-06 14:27:20,143 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[3104 is 2021-07-06 14:27:20,169 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mypc]
+[3105 is 2021-07-06 14:27:20,170 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[3106 is 2021-07-06 14:27:20,171 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[3110 is 2021-07-06 14:27:20,175 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 20 (min=1)
+[3584 is 2021-07-06 14:27:20,649 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[3815 is 2021-07-06 14:27:20,880 ERROR team.Team:<init>:104] One of inner filer (team, gamers, dates) is ruined
+[3827 is 2021-07-06 14:27:20,892 INFO  design.PlayerList:show:67] Main menu is preparing
+[4146 is 2021-07-06 14:27:21,211 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[4147 is 2021-07-06 14:27:21,212 INFO  design.MyModel:showTable:29] Table was created
+[4335 is 2021-07-06 14:27:21,400 INFO  design.PlayerList:show:207] Main menu has been created
+[0 is 2021-07-07 17:13:13,933 INFO  team.Team:<init>:63] Team is ready to construct
+[14 is 2021-07-07 17:13:13,947 INFO  team.Team:<init>:66] Info about team
+[16 is 2021-07-07 17:13:13,949 INFO  team.Team:<init>:71] Info about team is ready
+[147 is 2021-07-07 17:13:14,080 INFO  org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31] HHH000204: Processing PersistenceUnitInfo [name: test_persistence]
+[178 is 2021-07-07 17:13:14,111 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[272 is 2021-07-07 17:13:14,205 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[1643 is 2021-07-07 17:13:15,576 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[1656 is 2021-07-07 17:13:15,589 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mypc]
+[1657 is 2021-07-07 17:13:15,590 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[1657 is 2021-07-07 17:13:15,590 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[1659 is 2021-07-07 17:13:15,592 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 20 (min=1)
+[1976 is 2021-07-07 17:13:15,909 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2120 is 2021-07-07 17:13:16,053 ERROR team.Team:<init>:108] One of inner filer (team, gamers, dates) is ruined
+[2128 is 2021-07-07 17:13:16,061 INFO  design.PlayerList:show:67] Main menu is preparing
+[2342 is 2021-07-07 17:13:16,275 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[2343 is 2021-07-07 17:13:16,276 INFO  design.MyModel:showTable:29] Table was created
+[2474 is 2021-07-07 17:13:16,407 INFO  design.PlayerList:show:207] Main menu has been created
+[0 is 2021-07-07 17:13:57,059 INFO  team.Team:<init>:63] Team is ready to construct
+[1 is 2021-07-07 17:13:57,060 INFO  team.Team:<init>:66] Info about team
+[2 is 2021-07-07 17:13:57,061 INFO  team.Team:<init>:71] Info about team is ready
+[134 is 2021-07-07 17:13:57,193 INFO  org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31] HHH000204: Processing PersistenceUnitInfo [name: test_persistence]
+[165 is 2021-07-07 17:13:57,224 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[258 is 2021-07-07 17:13:57,317 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[1680 is 2021-07-07 17:13:58,739 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[1694 is 2021-07-07 17:13:58,753 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mypc]
+[1694 is 2021-07-07 17:13:58,753 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[1694 is 2021-07-07 17:13:58,753 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[1697 is 2021-07-07 17:13:58,756 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2013 is 2021-07-07 17:13:59,072 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2233 is 2021-07-07 17:13:59,292 INFO  org.hibernate.orm.connections.pooling:stop:428] HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/mypc]
+[2240 is 2021-07-07 17:13:59,299 ERROR team.Team:<init>:108] One of inner filer (team, gamers, dates) is ruined
+[2247 is 2021-07-07 17:13:59,306 INFO  design.PlayerList:show:67] Main menu is preparing
+[2454 is 2021-07-07 17:13:59,513 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[2456 is 2021-07-07 17:13:59,515 INFO  design.MyModel:showTable:29] Table was created
+[2578 is 2021-07-07 17:13:59,637 INFO  design.PlayerList:show:207] Main menu has been created
+[0 is 2021-07-07 18:40:54,681 INFO  team.Team:<init>:64] Team is ready to construct
+[1 is 2021-07-07 18:40:54,682 INFO  team.Team:<init>:67] Info about team
+[3 is 2021-07-07 18:40:54,684 INFO  team.Team:<init>:72] Info about team is ready
+[530 is 2021-07-07 18:40:55,211 INFO  team.Team:<init>:116] Info about calendar
+[532 is 2021-07-07 18:40:55,213 INFO  team.Team:<init>:123] Info about calendar is ready
+[532 is 2021-07-07 18:40:55,213 INFO  team.Team:<init>:125] Team constructed
+[538 is 2021-07-07 18:40:55,219 INFO  design.PlayerList:show:67] Main menu is preparing
+[764 is 2021-07-07 18:40:55,445 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[765 is 2021-07-07 18:40:55,446 INFO  design.MyModel:showTable:29] Table was created
+[882 is 2021-07-07 18:40:55,563 INFO  design.PlayerList:show:207] Main menu has been created
+[0 is 2021-07-07 18:41:20,631 INFO  team.Team:<init>:64] Team is ready to construct
+[2 is 2021-07-07 18:41:20,633 INFO  team.Team:<init>:67] Info about team
+[3 is 2021-07-07 18:41:20,634 INFO  team.Team:<init>:72] Info about team is ready
+[526 is 2021-07-07 18:41:21,157 INFO  team.Team:<init>:116] Info about calendar
+[528 is 2021-07-07 18:41:21,159 INFO  team.Team:<init>:123] Info about calendar is ready
+[528 is 2021-07-07 18:41:21,159 INFO  team.Team:<init>:125] Team constructed
+[533 is 2021-07-07 18:41:21,164 INFO  design.PlayerList:show:67] Main menu is preparing
+[744 is 2021-07-07 18:41:21,375 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[745 is 2021-07-07 18:41:21,376 INFO  design.MyModel:showTable:29] Table was created
+[854 is 2021-07-07 18:41:21,485 INFO  design.PlayerList:show:207] Main menu has been created
+[0 is 2021-07-07 18:41:51,532 INFO  team.Team:<init>:64] Team is ready to construct
+[1 is 2021-07-07 18:41:51,533 INFO  team.Team:<init>:67] Info about team
+[2 is 2021-07-07 18:41:51,534 INFO  team.Team:<init>:72] Info about team is ready
+[530 is 2021-07-07 18:41:52,062 INFO  team.Team:<init>:116] Info about calendar
+[532 is 2021-07-07 18:41:52,064 INFO  team.Team:<init>:123] Info about calendar is ready
+[532 is 2021-07-07 18:41:52,064 INFO  team.Team:<init>:125] Team constructed
+[538 is 2021-07-07 18:41:52,070 INFO  design.PlayerList:show:67] Main menu is preparing
+[754 is 2021-07-07 18:41:52,286 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[755 is 2021-07-07 18:41:52,287 INFO  design.MyModel:showTable:29] Table was created
+[872 is 2021-07-07 18:41:52,404 INFO  design.PlayerList:show:207] Main menu has been created
+[0 is 2021-07-07 18:43:45,849 INFO  team.Team:<init>:63] Team is ready to construct
+[1 is 2021-07-07 18:43:45,850 INFO  team.Team:<init>:66] Info about team
+[2 is 2021-07-07 18:43:45,851 INFO  team.Team:<init>:71] Info about team is ready
+[136 is 2021-07-07 18:43:45,985 INFO  org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31] HHH000204: Processing PersistenceUnitInfo [name: test_persistence]
+[168 is 2021-07-07 18:43:46,017 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[263 is 2021-07-07 18:43:46,112 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[1695 is 2021-07-07 18:43:47,544 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[1711 is 2021-07-07 18:43:47,560 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mypc]
+[1711 is 2021-07-07 18:43:47,560 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[1711 is 2021-07-07 18:43:47,560 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[1714 is 2021-07-07 18:43:47,563 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2008 is 2021-07-07 18:43:47,857 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2228 is 2021-07-07 18:43:48,077 INFO  org.hibernate.orm.connections.pooling:stop:428] HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/mypc]
+[2234 is 2021-07-07 18:43:48,083 ERROR team.Team:<init>:111] One of inner filer (team, gamers, dates) is ruined
+[2240 is 2021-07-07 18:43:48,089 INFO  design.PlayerList:show:67] Main menu is preparing
+[2441 is 2021-07-07 18:43:48,290 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[2443 is 2021-07-07 18:43:48,292 INFO  design.MyModel:showTable:29] Table was created
+[2553 is 2021-07-07 18:43:48,402 INFO  design.PlayerList:show:207] Main menu has been created
+[0 is 2021-07-07 18:44:51,950 INFO  team.Team:<init>:63] Team is ready to construct
+[2 is 2021-07-07 18:44:51,952 INFO  team.Team:<init>:66] Info about team
+[3 is 2021-07-07 18:44:51,953 INFO  team.Team:<init>:71] Info about team is ready
+[134 is 2021-07-07 18:44:52,084 INFO  org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31] HHH000204: Processing PersistenceUnitInfo [name: test_persistence]
+[165 is 2021-07-07 18:44:52,115 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[261 is 2021-07-07 18:44:52,211 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[1620 is 2021-07-07 18:44:53,570 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[1633 is 2021-07-07 18:44:53,583 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mypc]
+[1634 is 2021-07-07 18:44:53,584 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[1634 is 2021-07-07 18:44:53,584 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[1637 is 2021-07-07 18:44:53,587 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 20 (min=1)
+[1928 is 2021-07-07 18:44:53,878 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2129 is 2021-07-07 18:44:54,079 INFO  org.hibernate.orm.connections.pooling:stop:428] HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/mypc]
+[2134 is 2021-07-07 18:44:54,084 ERROR team.Team:<init>:111] One of inner filer (team, gamers, dates) is ruined
+[2140 is 2021-07-07 18:44:54,090 INFO  design.PlayerList:show:67] Main menu is preparing
+[2335 is 2021-07-07 18:44:54,285 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[2337 is 2021-07-07 18:44:54,287 INFO  design.MyModel:showTable:29] Table was created
+[2447 is 2021-07-07 18:44:54,397 INFO  design.PlayerList:show:207] Main menu has been created
+[0 is 2021-07-07 19:20:06,768 INFO  team.Team:<init>:63] Team is ready to construct
+[1 is 2021-07-07 19:20:06,769 INFO  team.Team:<init>:66] Info about team
+[2 is 2021-07-07 19:20:06,770 INFO  team.Team:<init>:71] Info about team is ready
+[132 is 2021-07-07 19:20:06,900 INFO  org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31] HHH000204: Processing PersistenceUnitInfo [name: test_persistence]
+[163 is 2021-07-07 19:20:06,931 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[259 is 2021-07-07 19:20:07,027 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[1669 is 2021-07-07 19:20:08,437 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[1683 is 2021-07-07 19:20:08,451 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mypc]
+[1683 is 2021-07-07 19:20:08,451 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[1684 is 2021-07-07 19:20:08,452 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[1686 is 2021-07-07 19:20:08,454 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 20 (min=1)
+[1985 is 2021-07-07 19:20:08,753 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2438 is 2021-07-07 19:20:09,206 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:initiateService:52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2494 is 2021-07-07 19:20:09,262 ERROR team.Team:<init>:111] One of inner filer (team, gamers, dates) is ruined
+[2500 is 2021-07-07 19:20:09,268 INFO  design.PlayerList:show:67] Main menu is preparing
+[2698 is 2021-07-07 19:20:09,466 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[2700 is 2021-07-07 19:20:09,468 INFO  design.MyModel:showTable:29] Table was created
+[2816 is 2021-07-07 19:20:09,584 INFO  design.PlayerList:show:207] Main menu has been created
+[0 is 2021-07-07 19:41:52,507 INFO  team.Team:<init>:63] Team is ready to construct
+[2 is 2021-07-07 19:41:52,509 INFO  team.Team:<init>:66] Info about team
+[3 is 2021-07-07 19:41:52,510 INFO  team.Team:<init>:71] Info about team is ready
+[134 is 2021-07-07 19:41:52,641 INFO  org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31] HHH000204: Processing PersistenceUnitInfo [name: test_persistence]
+[167 is 2021-07-07 19:41:52,674 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[264 is 2021-07-07 19:41:52,771 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[1704 is 2021-07-07 19:41:54,211 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[1719 is 2021-07-07 19:41:54,226 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mypc]
+[1719 is 2021-07-07 19:41:54,226 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[1719 is 2021-07-07 19:41:54,226 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[1721 is 2021-07-07 19:41:54,228 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2007 is 2021-07-07 19:41:54,514 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2451 is 2021-07-07 19:41:54,958 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:initiateService:52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2537 is 2021-07-07 19:41:55,044 WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper:logExceptions:137] SQL Error: 1054, SQLState: 42S22
+[2538 is 2021-07-07 19:41:55,045 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:logExceptions:142] Unknown column 'footballer0_.footballers_id' in 'field list'
+[2540 is 2021-07-07 19:41:55,047 INFO  org.hibernate.event.internal.DefaultLoadEventListener:doOnLoad:116] HHH000327: Error performing load command
+org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:63)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:67)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2303)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2056)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2018)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:948)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:349)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:319)
+	at org.hibernate.loader.Loader.loadEntity(Loader.java:2421)
+	at org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:77)
+	at org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:61)
+	at org.hibernate.persister.entity.AbstractEntityPersister.doLoad(AbstractEntityPersister.java:4436)
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:4426)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:569)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:537)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:208)
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:332)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:108)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:74)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:104)
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1186)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1175)
+	at org.hibernate.internal.SessionImpl.access$2100(SessionImpl.java:193)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.doLoad(SessionImpl.java:2786)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.lambda$load$1(SessionImpl.java:2767)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.perform(SessionImpl.java:2723)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.load(SessionImpl.java:2767)
+	at org.hibernate.internal.SessionImpl.get(SessionImpl.java:988)
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsDetached(DefaultMergeEventListener.java:306)
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:172)
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:70)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:93)
+	at org.hibernate.internal.SessionImpl.fireMerge(SessionImpl.java:793)
+	at org.hibernate.internal.SessionImpl.merge(SessionImpl.java:780)
+	at team.Team.<init>(Team.java:82)
+	at MyPC.main(MyPC.java:6)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'footballer0_.footballers_id' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:57)
+	... 34 more
+[2555 is 2021-07-07 19:41:55,062 ERROR team.Team:<init>:111] One of inner filer (team, gamers, dates) is ruined
+[2561 is 2021-07-07 19:41:55,068 INFO  design.PlayerList:show:67] Main menu is preparing
+[2756 is 2021-07-07 19:41:55,263 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[2757 is 2021-07-07 19:41:55,264 INFO  design.MyModel:showTable:29] Table was created
+[2869 is 2021-07-07 19:41:55,376 INFO  design.PlayerList:show:207] Main menu has been created
+[0 is 2021-07-07 19:42:52,335 INFO  team.Team:<init>:63] Team is ready to construct
+[2 is 2021-07-07 19:42:52,337 INFO  team.Team:<init>:66] Info about team
+[3 is 2021-07-07 19:42:52,338 INFO  team.Team:<init>:71] Info about team is ready
+[134 is 2021-07-07 19:42:52,469 INFO  org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31] HHH000204: Processing PersistenceUnitInfo [name: test_persistence]
+[165 is 2021-07-07 19:42:52,500 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[261 is 2021-07-07 19:42:52,596 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[1651 is 2021-07-07 19:42:53,986 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[1665 is 2021-07-07 19:42:54,000 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mypc]
+[1666 is 2021-07-07 19:42:54,001 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[1666 is 2021-07-07 19:42:54,001 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[1668 is 2021-07-07 19:42:54,003 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 20 (min=1)
+[1963 is 2021-07-07 19:42:54,298 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2416 is 2021-07-07 19:42:54,751 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:initiateService:52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2493 is 2021-07-07 19:42:54,828 WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper:logExceptions:137] SQL Error: 1054, SQLState: 42S22
+[2493 is 2021-07-07 19:42:54,828 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:logExceptions:142] Unknown column 'footballer0_.footballers_id' in 'field list'
+[2495 is 2021-07-07 19:42:54,830 INFO  org.hibernate.event.internal.DefaultLoadEventListener:doOnLoad:116] HHH000327: Error performing load command
+org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:63)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:67)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2303)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2056)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2018)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:948)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:349)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:319)
+	at org.hibernate.loader.Loader.loadEntity(Loader.java:2421)
+	at org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:77)
+	at org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:61)
+	at org.hibernate.persister.entity.AbstractEntityPersister.doLoad(AbstractEntityPersister.java:4436)
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:4426)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:569)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:537)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:208)
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:332)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:108)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:74)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:104)
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1186)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1175)
+	at org.hibernate.internal.SessionImpl.access$2100(SessionImpl.java:193)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.doLoad(SessionImpl.java:2786)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.lambda$load$1(SessionImpl.java:2767)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.perform(SessionImpl.java:2723)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.load(SessionImpl.java:2767)
+	at org.hibernate.internal.SessionImpl.get(SessionImpl.java:988)
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsDetached(DefaultMergeEventListener.java:306)
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:172)
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:70)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:93)
+	at org.hibernate.internal.SessionImpl.fireMerge(SessionImpl.java:793)
+	at org.hibernate.internal.SessionImpl.merge(SessionImpl.java:780)
+	at team.Team.<init>(Team.java:82)
+	at MyPC.main(MyPC.java:6)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'footballer0_.footballers_id' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:57)
+	... 34 more
+[2509 is 2021-07-07 19:42:54,844 ERROR team.Team:<init>:111] One of inner filer (team, gamers, dates) is ruined
+[2516 is 2021-07-07 19:42:54,851 INFO  design.PlayerList:show:67] Main menu is preparing
+[2714 is 2021-07-07 19:42:55,049 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[2715 is 2021-07-07 19:42:55,050 INFO  design.MyModel:showTable:29] Table was created
+[2832 is 2021-07-07 19:42:55,167 INFO  design.PlayerList:show:207] Main menu has been created
+[4288 is 2021-07-07 19:42:56,623 INFO  design.calButton:actionPerformed:31] Calendar frame was opened
+[4293 is 2021-07-07 19:42:56,628 INFO  design.calButton:run:50] Creating the table
+[4294 is 2021-07-07 19:42:56,629 INFO  design.calButton:run:53] Table was created
+[5751 is 2021-07-07 19:42:58,086 INFO  design.calButton:actionPerformed:159] Calendar frame was closed
+[0 is 2021-07-07 19:46:57,027 INFO  team.Team:<init>:63] Team is ready to construct
+[2 is 2021-07-07 19:46:57,029 INFO  team.Team:<init>:66] Info about team
+[4 is 2021-07-07 19:46:57,031 INFO  team.Team:<init>:71] Info about team is ready
+[136 is 2021-07-07 19:46:57,163 INFO  org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31] HHH000204: Processing PersistenceUnitInfo [name: test_persistence]
+[167 is 2021-07-07 19:46:57,194 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[262 is 2021-07-07 19:46:57,289 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[1703 is 2021-07-07 19:46:58,730 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[1718 is 2021-07-07 19:46:58,745 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mypc]
+[1718 is 2021-07-07 19:46:58,745 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[1719 is 2021-07-07 19:46:58,746 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[1721 is 2021-07-07 19:46:58,748 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2042 is 2021-07-07 19:46:59,069 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2489 is 2021-07-07 19:46:59,516 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:initiateService:52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2568 is 2021-07-07 19:46:59,595 WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper:logExceptions:137] SQL Error: 1054, SQLState: 42S22
+[2568 is 2021-07-07 19:46:59,595 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:logExceptions:142] Unknown column 'footballers_id' in 'field list'
+[2580 is 2021-07-07 19:46:59,607 ERROR team.Team:<init>:113] One of inner filer (team, gamers, dates) is ruined
+[2588 is 2021-07-07 19:46:59,615 INFO  design.PlayerList:show:67] Main menu is preparing
+[2786 is 2021-07-07 19:46:59,813 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[2787 is 2021-07-07 19:46:59,814 INFO  design.MyModel:showTable:29] Table was created
+[2900 is 2021-07-07 19:46:59,927 INFO  design.PlayerList:show:207] Main menu has been created
+[9219 is 2021-07-07 19:47:06,246 INFO  design.calButton:actionPerformed:31] Calendar frame was opened
+[9225 is 2021-07-07 19:47:06,252 INFO  design.calButton:run:50] Creating the table
+[9226 is 2021-07-07 19:47:06,253 INFO  design.calButton:run:53] Table was created
+[11595 is 2021-07-07 19:47:08,622 INFO  design.calButton:actionPerformed:80] New date frame opened
+[13196 is 2021-07-07 19:47:10,223 INFO  design.calButton:actionPerformed:104] Trying add new date
+[13196 is 2021-07-07 19:47:10,223 ERROR design.calButton:actionPerformed:121] Characters instead of digits
+[14591 is 2021-07-07 19:47:11,618 INFO  design.calButton:actionPerformed:145] New date frame closed
+[15226 is 2021-07-07 19:47:12,253 INFO  design.calButton:actionPerformed:159] Calendar frame was closed
+[0 is 2021-07-07 20:14:33,336 INFO  team.Team:<init>:63] Team is ready to construct
+[2 is 2021-07-07 20:14:33,338 INFO  team.Team:<init>:66] Info about team
+[3 is 2021-07-07 20:14:33,339 INFO  team.Team:<init>:71] Info about team is ready
+[138 is 2021-07-07 20:14:33,474 INFO  org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31] HHH000204: Processing PersistenceUnitInfo [name: test_persistence]
+[170 is 2021-07-07 20:14:33,506 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[265 is 2021-07-07 20:14:33,601 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[1651 is 2021-07-07 20:14:34,987 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[1665 is 2021-07-07 20:14:35,001 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mypc]
+[1665 is 2021-07-07 20:14:35,001 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[1665 is 2021-07-07 20:14:35,001 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[1667 is 2021-07-07 20:14:35,003 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 20 (min=1)
+[1963 is 2021-07-07 20:14:35,299 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2383 is 2021-07-07 20:14:35,719 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:initiateService:52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2456 is 2021-07-07 20:14:35,792 WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper:logExceptions:137] SQL Error: 1054, SQLState: 42S22
+[2456 is 2021-07-07 20:14:35,792 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper:logExceptions:142] Unknown column 'bossid' in 'field list'
+[2467 is 2021-07-07 20:14:35,803 ERROR team.Team:<init>:114] One of inner filer (team, gamers, dates) is ruined
+[2475 is 2021-07-07 20:14:35,811 INFO  design.PlayerList:show:67] Main menu is preparing
+[2669 is 2021-07-07 20:14:36,005 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[2670 is 2021-07-07 20:14:36,006 INFO  design.MyModel:showTable:29] Table was created
+[2786 is 2021-07-07 20:14:36,122 INFO  design.PlayerList:show:207] Main menu has been created
+[0 is 2021-07-07 20:21:49,851 INFO  team.Team:<init>:63] Team is ready to construct
+[2 is 2021-07-07 20:21:49,853 INFO  team.Team:<init>:66] Info about team
+[3 is 2021-07-07 20:21:49,854 INFO  team.Team:<init>:71] Info about team is ready
+[135 is 2021-07-07 20:21:49,986 INFO  org.hibernate.jpa.internal.util.LogHelper:logPersistenceUnitInformation:31] HHH000204: Processing PersistenceUnitInfo [name: test_persistence]
+[168 is 2021-07-07 20:21:50,019 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[265 is 2021-07-07 20:21:50,116 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[1730 is 2021-07-07 20:21:51,581 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[1744 is 2021-07-07 20:21:51,595 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mypc]
+[1745 is 2021-07-07 20:21:51,596 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[1745 is 2021-07-07 20:21:51,596 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[1747 is 2021-07-07 20:21:51,598 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2073 is 2021-07-07 20:21:51,924 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[2555 is 2021-07-07 20:21:52,406 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:initiateService:52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2611 is 2021-07-07 20:21:52,462 ERROR team.Team:<init>:114] One of inner filer (team, gamers, dates) is ruined
+[2618 is 2021-07-07 20:21:52,469 INFO  design.PlayerList:show:67] Main menu is preparing
+[2816 is 2021-07-07 20:21:52,667 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[2817 is 2021-07-07 20:21:52,668 INFO  design.MyModel:showTable:29] Table was created
+[2930 is 2021-07-07 20:21:52,781 INFO  design.PlayerList:show:207] Main menu has been created

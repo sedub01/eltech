@@ -1,19 +1,35 @@
 package team;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import javax.persistence.*;
 
 import exceptions.*;
 /**Класс футболиста*/
+@Entity
+@Table(name = "footballers")
 public class Footballer implements IRoles{
     private static final Logger Flog = LogManager.getLogger(Footballer.class);
+    @Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
     private int ID;
+    @Column(name = "name")
     private String name;
+    @Column(name = "lastname")
     private String last_name;
+    @Column(name = "roleid")
     private int RoleID;//см. IRoles
+    @Column(name = "club")
     private String club; //принадлежность к клубу
+    @Column(name = "city")
     private String city; //город прибывшего футболиста
+    @Column(name = "goals")
     private int goals; // кол-во забитых голов
+    @Column(name = "salary")
     private int salary; //зарплата в долларах в месяц
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "bossid")
+    private Team team;
     /**
      * @param ID футболиста
      * @param name Имя футболиста
@@ -24,6 +40,7 @@ public class Footballer implements IRoles{
      * @param salary Зарплата в год
      * @param RoleID Код специализации
      */
+    public Footballer(){}
     public Footballer(int ID, String name, String last_name, String club, String city, int goals, int salary, int RoleID) {
         this.ID = ID;
         this.name = name;

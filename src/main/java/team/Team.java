@@ -3,6 +3,7 @@ import java.util.*;
 
 import javax.swing.table.DefaultTableModel;
 
+import javax.persistence.*;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
@@ -12,6 +13,8 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.io.*;
+@Entity
+@Table(name = "team")
 /**
  * Сама команда
  * @param list Список футболистов
@@ -19,13 +22,20 @@ import java.io.*;
  */
 public class Team implements IRoles{ // класс-агрегатор
     private static final Logger Tlog = LogManager.getLogger(Team.class);
+    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Footballer> list = null;
+    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Calendar> calendar = null;
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="bossid")
     private int bossID;
+    @Column(name="wins")
     private int wins;
+    //можно не указывать Column name, если оно совпадает с названием столбца в таблице
     private int losses;
     private int games;
-    private Object DBlock = new Object();
+    private String DBlock = new String();
     /**
      * @param ID админа команды (для связки)
      * @param wins Кол-во победных матчей
@@ -40,8 +50,12 @@ public class Team implements IRoles{ // класс-агрегатор
         this.losses = losses;
         this.games = games;
     }
-    /**Конструктор для ввода информации из файла*/
     public Team(){
+        calendar = new ArrayList <Calendar>();
+        list = new ArrayList<Footballer>();
+    }
+    /**Конструктор для ввода информации из файла*/
+    public Team(int fict){
         calendar = new ArrayList <Calendar>();
         list = new ArrayList<Footballer>();
         wins=0; losses=0; games=0; bossID = 100000;
@@ -58,15 +72,31 @@ public class Team implements IRoles{ // класс-агрегатор
             }
             
             synchronized(DBlock){
-                Tlog.info("Info about footballers");
-                buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Игроки.txt")));
-                while (buf.ready()){
-                    String v[] = buf.readLine().split(";");
-                    addFootballer(new Footballer(Integer.parseInt(v[0]), v[1], v[2], v[3], v[4], 
-                    Integer.parseInt(v[5]), Integer.parseInt(v[6]), Integer.parseInt(v[7])));
-                }
-                buf.close();
-                Tlog.info("Info about footballers is ready");
+
+                EntityManagerFactory emf = Persistence.createEntityManagerFactory("test_persistence");
+                EntityManager em = emf.createEntityManager();
+                System.out.println("Start hibernate test");
+                em.getTransaction().begin();
+                Footballer boy = new Footballer(2202, "Антон", "Чехов", "Москва", "Махачкала", 12, 92000, 2);
+                //Footballer boy = new Footballer();
+                boy.setName("Антон");
+                
+                //em.merge(boy);
+                em.persist(boy);
+                em.getTransaction().commit();
+                System.out.println("New group iD is" + boy.getID());
+
+
+
+                // Tlog.info("Info about footballers");
+                // buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Игроки.txt")));
+                // while (buf.ready()){
+                //     String v[] = buf.readLine().split(";");
+                //     addFootballer(new Footballer(Integer.parseInt(v[0]), v[1], v[2], v[3], v[4], 
+                //     Integer.parseInt(v[5]), Integer.parseInt(v[6]), Integer.parseInt(v[7])));
+                // }
+                // buf.close();
+                // Tlog.info("Info about footballers is ready");
             }
             
             synchronized(DBlock){
