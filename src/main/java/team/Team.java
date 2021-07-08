@@ -34,7 +34,7 @@ public class Team implements IRoles{ // класс-агрегатор
     //можно не указывать Column name, если оно совпадает с названием столбца в таблице
     private int losses;
     private int games;
-    private Object DBlock = new Object();
+    private String DBlock = new String();
     /**
      * @param ID админа команды (для связки)
      * @param wins Кол-во победных матчей
@@ -49,8 +49,12 @@ public class Team implements IRoles{ // класс-агрегатор
         this.losses = losses;
         this.games = games;
     }
-    /**Конструктор для ввода информации из файла*/
     public Team(){
+        calendar = new ArrayList <Calendar>();
+        list = new ArrayList<Footballer>();
+    }
+    /**Конструктор для ввода информации из файла*/
+    public Team(int fict){
         calendar = new ArrayList <Calendar>();
         list = new ArrayList<Footballer>();
         wins=0; losses=0; games=0; bossID = 100000;
@@ -72,14 +76,19 @@ public class Team implements IRoles{ // класс-агрегатор
                 EntityManager em = emf.createEntityManager();
                 System.out.println("Start hibernate test");
                 em.getTransaction().begin();
-                Footballer boy = new Footballer(2202, "Антон", "Чехов", "Москва", "Махачкала", 12, 92000, 2);
-                //Footballer boy = new Footballer();
+                //Footballer boy = new Footballer(2400, "Антон", "Чехов", "Москва", "Махачкала", 12, 92000, 2);
+                Footballer boy = new Footballer();
                 boy.setName("Антон");
+                boy.setLastName("Чехов");
+                boy.setCity("Москва");
+                boy.setClub("Кожаный мяч");
+                boy.setSalary(32000);
+                boy.setGoals(32);
+                boy.setRole(3);
                 
-                //em.merge(boy);
                 em.persist(boy);
                 em.getTransaction().commit();
-                System.out.println("New group iD is" + boy.getID());
+                System.out.println("New group iD is " + boy.getID());
                 // Tlog.info("Info about footballers");
                 // buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Игроки.txt")));
                 // while (buf.ready()){

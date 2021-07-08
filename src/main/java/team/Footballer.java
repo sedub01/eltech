@@ -36,6 +36,7 @@ public class Footballer implements IRoles{
      * @param salary Зарплата в год
      * @param RoleID Код специализации
      */
+    public Footballer(){}
     public Footballer(int ID, String name, String last_name, String club, String city, int goals, int salary, int RoleID) {
         this.ID = ID;
         this.name = name;
