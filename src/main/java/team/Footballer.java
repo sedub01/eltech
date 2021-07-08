@@ -8,7 +8,7 @@ import exceptions.*;
 @Entity
 @Table(name = "footballers")
 public class Footballer implements IRoles{
-    private static final Logger Flog = LogManager.getLogger(Footballer.class);
+    
     @Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
@@ -30,6 +30,7 @@ public class Footballer implements IRoles{
     @ManyToOne(optional = true)
     @JoinColumn(name = "bossid")
     private Team team;
+    private static final Logger Flog = LogManager.getLogger(Footballer.class);
     /**
      * @param ID футболиста
      * @param name Имя футболиста

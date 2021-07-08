@@ -12,7 +12,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "calendar")
 public class Calendar{
-    private static final Logger Clog = LogManager.getLogger(Footballer.class);
     @Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
@@ -21,8 +20,9 @@ public class Calendar{
     private int wins;
     private int losses;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "calendar_id")
+    @JoinColumn(name = "bossid")
     private Team team;
+    private static final Logger Clog = LogManager.getLogger(Calendar.class);
     /**
      * 
      * @param date Дата в формате {@code String}

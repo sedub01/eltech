@@ -21,11 +21,6 @@ import java.io.*;
  * @param calendar Список дат матчей
  */
 public class Team implements IRoles{ // класс-агрегатор
-    private static final Logger Tlog = LogManager.getLogger(Team.class);
-    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Footballer> list = null;
-    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Calendar> calendar = null;
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="bossid")
@@ -35,7 +30,12 @@ public class Team implements IRoles{ // класс-агрегатор
     //можно не указывать Column name, если оно совпадает с названием столбца в таблице
     private int losses;
     private int games;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Footballer> list = null;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Calendar> calendar = null;
     private String DBlock = new String();
+    private static final Logger Tlog = LogManager.getLogger(Team.class);
     /**
      * @param ID админа команды (для связки)
      * @param wins Кол-во победных матчей
