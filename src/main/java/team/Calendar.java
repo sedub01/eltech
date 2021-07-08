@@ -1,6 +1,7 @@
 package team;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import javax.persistence.*;
 
 /**
  * Класс, хранящий дату со счетом
@@ -8,11 +9,20 @@ import org.apache.log4j.Logger;
 *  @param win Счет сборной 
  * @param lose Счет противника
  */
+@Entity
+@Table(name = "calendar")
 public class Calendar{
     private static final Logger Clog = LogManager.getLogger(Footballer.class);
+    @Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
+    private int ID;
     private String date;
     private int wins;
     private int losses;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "bossid")
+    private Team team;
     /**
      * 
      * @param date Дата в формате {@code String}
@@ -24,6 +34,9 @@ public class Calendar{
         wins = win;
         losses = lose;
     }
+    public int getID(){
+        return ID;
+    }
     public String getDate(){
         return date;
     }
@@ -34,6 +47,9 @@ public class Calendar{
         return losses;
     }
 
+    public void setID(int ID){
+        this.ID = ID;
+    }
     public void setDate(String date){
         this.date = date;
     }
