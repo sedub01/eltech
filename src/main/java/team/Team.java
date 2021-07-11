@@ -35,6 +35,9 @@ public class Team implements IRoles{ // класс-агрегатор
     private int losses;
     private int games;
     private String DBlock = new String();
+   
+    //изначальная неизменяемая версия
+    //private List<Footballer> tempList = new ArrayList<Footballer>();
     /**
      * @param ID админа команды (для связки)
      * @param wins Кол-во победных матчей
@@ -42,7 +45,6 @@ public class Team implements IRoles{ // класс-агрегатор
      * @param games Кол-во игр всего (для подсчета ничей)
      */
     public Team(int ID, int wins, int losses, int games){
-        
         bossID = ID;
         this.wins = wins;
         this.losses = losses;
@@ -57,29 +59,21 @@ public class Team implements IRoles{ // класс-агрегатор
         wins=0; losses=0; games=0; bossID = 222663;
         try{//Ввод инфы из трех файлов
             Tlog.info("Team is ready to construct");
-            BufferedReader buf;
             synchronized(DBlock){//блок может выполняться только одним потоком одновременно
                 Tlog.info("Info about team");
+                //
+                
                 Tlog.info("Info about team is ready");
             }
             synchronized(DBlock){
                 list = userService.findAllFootballers();
+                userService.cloneFList(list);
             }
             
             synchronized(DBlock){
                 Tlog.info("Info about calendar");
-
-                // buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Даты.txt")));
-                // while(buf.ready()){
-                //     String v[] = buf.readLine().split(";");
-                //     addDate(v[0], Integer.parseInt(v[1]), Integer.parseInt(v[2]));
-                // }
-                // buf.close();
                 List<Calendar> tempcal = userService.findAllCalendar();
-                for(Calendar cal : tempcal){
-                    addDate(cal);
-                }
-
+                for(Calendar cal : tempcal) addDate(cal);
                 Tlog.info("Info about calendar is ready");
             }
             Tlog.info("Team constructed");
@@ -201,27 +195,34 @@ public class Team implements IRoles{ // класс-агрегатор
     public void saveChanges(){
         try{
             Tlog.info("Saving all changes");
+            UserService userService = new UserService();
             synchronized(DBlock){
                 Tlog.info("Saving calendar");
+
                 FileWriter writer1 = new FileWriter("./src/main/resources/data/Даты.txt");
                 for (Calendar cal: calendar){
                     writer1.write(cal.getDate()+';'+cal.getWins()+';'+cal.getLosses()+'\n');
                 }
                 writer1.flush();
                 writer1.close();
+
                 Tlog.info("Calendar saved");
             }
             
             synchronized(DBlock){
                 Tlog.info("Saving footballers");
-                FileWriter writer2 = new FileWriter("./src/main/resources/data/Игроки.txt");
-                for (Footballer boy: list){
-                    writer2.write(boy.getID()+";"+boy.getName()+';'+boy.getLastName()+
-                    ';'+boy.getClub()+';'+boy.getCity()+';'+boy.getGoals()+';'+boy.getSalary()+
-                    ';'+boy.getRole()+'\n');
-                }
-                writer2.flush();
-                writer2.close();
+
+                // FileWriter writer2 = new FileWriter("./src/main/resources/data/Игроки.txt");
+                // for (Footballer boy: list){
+                //     writer2.write(boy.getID()+";"+boy.getName()+';'+boy.getLastName()+
+                //     ';'+boy.getClub()+';'+boy.getCity()+';'+boy.getGoals()+';'+boy.getSalary()+
+                //     ';'+boy.getRole()+'\n');
+                // }
+                // writer2.flush();
+                // writer2.close();
+
+                for (Footballer boy : UserService.tempList) userService.deleteFootballer(boy);
+                for (Footballer boy : list) userService.saveFootballer(boy);
                 Tlog.info("Footballers saved");
             }
             

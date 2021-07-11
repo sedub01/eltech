@@ -39,10 +39,11 @@ public class UserDao {
     }
 
     public Team findTeam(){
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Team temp = session.load(Team.class, 222663);
-        session.close();
-        return temp;
+        
+        @SuppressWarnings("unchecked")
+        List<Team> teams = (List<Team>)HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Team").list();
+        
+        return teams.get(0);
     }
 
     public List<Calendar> findCalendar() {

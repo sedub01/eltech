@@ -1,9 +1,11 @@
 package team;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserService {
 
     private UserDao usersDao = new UserDao();
+    static List<Footballer> tempList = new ArrayList<Footballer>();
 
     public UserService() {}
 
@@ -25,6 +27,9 @@ public class UserService {
 
     public List<Footballer> findAllFootballers() {
         return usersDao.findFootballers();
+    }
+    public void cloneFList(List<Footballer> list){
+        for (Footballer boy : list) tempList.add(boy);
     }
 
     public Team findTeam(){
