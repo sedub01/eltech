@@ -11,7 +11,6 @@ import com.itextpdf.text.pdf.PdfPTable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import java.io.*;
 /**
  * Сама команда
  * @param list Список футболистов
@@ -35,9 +34,7 @@ public class Team implements IRoles{ // класс-агрегатор
     private int losses;
     private int games;
     private String DBlock = new String();
-   
-    //изначальная неизменяемая версия
-    //private List<Footballer> tempList = new ArrayList<Footballer>();
+
     /**
      * @param ID админа команды (для связки)
      * @param wins Кол-во победных матчей
@@ -54,26 +51,25 @@ public class Team implements IRoles{ // класс-агрегатор
     /**Конструктор для ввода информации из файла*/
     public Team(int fict){
         UserService userService = new UserService();
-        calendar = new ArrayList <Calendar>();
-        list = new ArrayList<Footballer>();
         wins=0; losses=0; games=0; bossID = 222663;
         try{//Ввод инфы из трех файлов
             Tlog.info("Team is ready to construct");
             synchronized(DBlock){//блок может выполняться только одним потоком одновременно
                 Tlog.info("Info about team");
-                //
-                
+                //ниче делать не надо)))
                 Tlog.info("Info about team is ready");
             }
             synchronized(DBlock){
-                list = userService.findAllFootballers();
-                userService.cloneFList(list);
+                UserService.tempList = userService.findAllFootballers();
+                for (Footballer boy : UserService.tempList) addFootballer(boy);
+                //в начале все клонируется одинаково
+                //userService.cloneFList(list);
             }
-            
             synchronized(DBlock){
                 Tlog.info("Info about calendar");
-                List<Calendar> tempcal = userService.findAllCalendar();
-                for(Calendar cal : tempcal) addDate(cal);
+                UserService.tempCals = userService.findAllCalendar();
+                for(Calendar cal : UserService.tempCals) addDate(cal);
+
                 Tlog.info("Info about calendar is ready");
             }
             Tlog.info("Team constructed");
@@ -153,9 +149,8 @@ public class Team implements IRoles{ // класс-агрегатор
     }
     public int lastID(){
         int max = 0;
-        for (Footballer boy : list){
+        for (Footballer boy : list)
             if (boy.getID() > max) max = boy.getID();
-        }
         return max;
     }
     
@@ -198,29 +193,21 @@ public class Team implements IRoles{ // класс-агрегатор
             UserService userService = new UserService();
             synchronized(DBlock){
                 Tlog.info("Saving calendar");
-
-                FileWriter writer1 = new FileWriter("./src/main/resources/data/Даты.txt");
-                for (Calendar cal: calendar){
-                    writer1.write(cal.getDate()+';'+cal.getWins()+';'+cal.getLosses()+'\n');
-                }
-                writer1.flush();
-                writer1.close();
+                for (Calendar cal : UserService.tempCals) userService.deleteCal(cal);
+                for (Calendar cal : calendar) userService.saveCal(cal);
 
                 Tlog.info("Calendar saved");
             }
             
             synchronized(DBlock){
                 Tlog.info("Saving footballers");
+                System.out.println("First in const: "+UserService.tempList.get(0).info());
+                System.out.println("Last: in const"+UserService.tempList.get(list.size()-1).info());
 
-                // FileWriter writer2 = new FileWriter("./src/main/resources/data/Игроки.txt");
-                // for (Footballer boy: list){
-                //     writer2.write(boy.getID()+";"+boy.getName()+';'+boy.getLastName()+
-                //     ';'+boy.getClub()+';'+boy.getCity()+';'+boy.getGoals()+';'+boy.getSalary()+
-                //     ';'+boy.getRole()+'\n');
-                // }
-                // writer2.flush();
-                // writer2.close();
-
+                System.out.println("First in final: "+list.get(0).info());
+                System.out.println("Last: in final"+list.get(list.size()-1).info());
+                
+                
                 for (Footballer boy : UserService.tempList) userService.deleteFootballer(boy);
                 for (Footballer boy : list) userService.saveFootballer(boy);
                 Tlog.info("Footballers saved");
@@ -228,10 +215,7 @@ public class Team implements IRoles{ // класс-агрегатор
             
             synchronized(DBlock){
                 Tlog.info("Saving team info");
-                FileWriter writer3 = new FileWriter("./src/main/resources/data/Команда.txt");
-                writer3.write(bossID+";"+wins+";"+losses+";"+games);
-                writer3.flush();
-                writer3.close();
+                //ниче делать не надо)))
                 Tlog.info("Team info saved");
             }
             Tlog.info("Changes were saved");

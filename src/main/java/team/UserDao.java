@@ -16,14 +16,6 @@ public class UserDao {
         session.close();
     }
 
-    public void update(Footballer user) {
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
-        session.update(user);
-        tx1.commit();
-        session.close();
-    }
-
     public void delete(Footballer user) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
@@ -39,16 +31,29 @@ public class UserDao {
     }
 
     public Team findTeam(){
-        
         @SuppressWarnings("unchecked")
         List<Team> teams = (List<Team>)HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Team").list();
-        
         return teams.get(0);
     }
 
+    //можно было сделать через шаблоны
     public List<Calendar> findCalendar() {
         @SuppressWarnings("unchecked")
         List<Calendar> cals = (List<Calendar>)HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Calendar").list();
         return cals;
+    }
+    public void delete(Calendar cal) {
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction tx1 = session.beginTransaction();
+        session.delete(cal);
+        tx1.commit();
+        session.close();
+    }
+    public void save(Calendar cal) {
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction tx1 = session.beginTransaction();
+        session.save(cal);
+        tx1.commit();
+        session.close();
     }
 }

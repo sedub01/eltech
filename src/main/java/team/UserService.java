@@ -6,12 +6,9 @@ public class UserService {
 
     private UserDao usersDao = new UserDao();
     static List<Footballer> tempList = new ArrayList<Footballer>();
+    static List<Calendar> tempCals = new ArrayList<Calendar>();
 
     public UserService() {}
-
-    public Footballer findFootballer(int id) {
-        return usersDao.findFootballerById(id);
-    }
 
     public void saveFootballer(Footballer user) {
         usersDao.save(user);
@@ -21,15 +18,14 @@ public class UserService {
         usersDao.delete(user);
     }
 
-    public void updateFootballer(Footballer user) {
-        usersDao.update(user);
-    }
-
     public List<Footballer> findAllFootballers() {
         return usersDao.findFootballers();
     }
     public void cloneFList(List<Footballer> list){
         for (Footballer boy : list) tempList.add(boy);
+    }
+    public void cloneCList(List<Calendar> cals){
+        for (Calendar cal : cals) tempCals.add(cal);
     }
 
     public Team findTeam(){
@@ -39,4 +35,11 @@ public class UserService {
     public List<Calendar> findAllCalendar() {
         return usersDao.findCalendar();
     }
+    public void deleteCal(Calendar cal) {
+        usersDao.delete(cal);
+    }
+    public void saveCal(Calendar cal) {
+        usersDao.save(cal);
+    }
+
 }
