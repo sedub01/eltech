@@ -13,9 +13,8 @@ public class MyModel extends DefaultTableModel implements IRoles {
     MyModel(String[][] data, String[] columns){super(data, columns);}
     public void showTable(Team theBest){
         MMlog.info("Finding gamers for creating table");
-        for (int i = 0; i<theBest.getSizeTeam(); ++i){
+        for (Footballer boy : theBest.getFootballers()){
             String[] buf = new String[8];
-            Footballer boy = theBest.find(theBest.firstID()+i);
             buf[0] = Integer.toString(boy.getID());
             buf[1] = boy.getName();
             buf[2] = boy.getLastName();

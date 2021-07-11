@@ -105,6 +105,16 @@ public class addButton implements ActionListener, IRoles{
                     Footballer boy = new Footballer(theBest.lastID()+1, newName.getText().trim(), newLastName.getText().trim(), 
                         newClub.getText().trim(), newCity.getText().trim(), Integer.parseInt(newGoals.getText().trim()), 
                         Integer.parseInt(newSalary.getText().trim()), neededRoleInt);
+
+                    // Footballer boy = new Footballer();
+                    // boy.setName(newName.getText().trim());
+                    // boy.setLastName(newLastName.getText().trim());
+                    // boy.setClub(newClub.getText().trim());
+                    // boy.setCity(newCity.getText().trim());
+                    // boy.setGoals(Integer.parseInt(newGoals.getText().trim()));
+                    // boy.setSalary(Integer.parseInt(newSalary.getText().trim()));
+                    // boy.setRole(neededRoleInt);
+
                     boy.isAllRight();
                     theBest.addFootballer(boy);
                     model.addRow(new String[]{

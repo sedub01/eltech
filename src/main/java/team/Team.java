@@ -59,17 +59,15 @@ public class Team implements IRoles{ // класс-агрегатор
                 //ниче делать не надо)))
                 Tlog.info("Info about team is ready");
             }
-            synchronized(DBlock){
+            synchronized(DBlock){//в начале все клонируется одинаково
                 UserService.tempList = userService.findAllFootballers();
+                
                 for (Footballer boy : UserService.tempList) addFootballer(boy);
-                //в начале все клонируется одинаково
-                //userService.cloneFList(list);
             }
             synchronized(DBlock){
                 Tlog.info("Info about calendar");
                 UserService.tempCals = userService.findAllCalendar();
                 for(Calendar cal : UserService.tempCals) addDate(cal);
-
                 Tlog.info("Info about calendar is ready");
             }
             Tlog.info("Team constructed");
@@ -99,8 +97,8 @@ public class Team implements IRoles{ // класс-агрегатор
         for (Footballer boy : list){
             if (boy.getID() == id){
                 list.remove(boy);
-                for (int i = id+1; i <= lastID(); ++i)
-                    find(i).setID(i-1);
+                //for (int i = id+1; i <= lastID(); ++i)
+                    //find(i).setID(i-1);
                 break;
             }
         }
@@ -195,19 +193,11 @@ public class Team implements IRoles{ // класс-агрегатор
                 Tlog.info("Saving calendar");
                 for (Calendar cal : UserService.tempCals) userService.deleteCal(cal);
                 for (Calendar cal : calendar) userService.saveCal(cal);
-
                 Tlog.info("Calendar saved");
             }
             
             synchronized(DBlock){
                 Tlog.info("Saving footballers");
-                System.out.println("First in const: "+UserService.tempList.get(0).info());
-                System.out.println("Last: in const"+UserService.tempList.get(list.size()-1).info());
-
-                System.out.println("First in final: "+list.get(0).info());
-                System.out.println("Last: in final"+list.get(list.size()-1).info());
-                
-                
                 for (Footballer boy : UserService.tempList) userService.deleteFootballer(boy);
                 for (Footballer boy : list) userService.saveFootballer(boy);
                 Tlog.info("Footballers saved");
