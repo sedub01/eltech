@@ -7,23 +7,31 @@ public class UserService {
 
     public UserService() {}
 
-    public Footballer findUser(int id) {
-        return usersDao.findById(id);
+    public Footballer findFootballer(int id) {
+        return usersDao.findFootballerById(id);
     }
 
-    public void saveUser(Footballer user) {
+    public void saveFootballer(Footballer user) {
         usersDao.save(user);
     }
 
-    public void deleteUser(Footballer user) {
+    public void deleteFootballer(Footballer user) {
         usersDao.delete(user);
     }
 
-    public void updateUser(Footballer user) {
+    public void updateFootballer(Footballer user) {
         usersDao.update(user);
     }
 
-    public List<Footballer> findAllUsers() {
-        return usersDao.findAll();
+    public List<Footballer> findAllFootballers() {
+        return usersDao.findFootballers();
+    }
+
+    public Team findTeam(){
+        return usersDao.findTeam();
+    }
+
+    public List<Calendar> findAllCalendar() {
+        return usersDao.findCalendar();
     }
 }

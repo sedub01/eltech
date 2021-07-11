@@ -29,6 +29,7 @@ public class Calendar{
      * @param win Счет сборной 
      * @param lose Счет противника
      */
+    public Calendar(){}
     public Calendar(String date, int win, int lose){
         this.date = date;
         wins = win;

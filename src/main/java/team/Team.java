@@ -22,9 +22,9 @@ import java.io.*;
 public class Team implements IRoles{ // класс-агрегатор
     private static final Logger Tlog = LogManager.getLogger(Team.class);
     @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Footballer> list = null;
+    private List<Footballer> list = new ArrayList<Footballer>();
     @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Calendar> calendar = null;
+    private List<Calendar> calendar =  new ArrayList <Calendar>();
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
@@ -42,80 +42,44 @@ public class Team implements IRoles{ // класс-агрегатор
      * @param games Кол-во игр всего (для подсчета ничей)
      */
     public Team(int ID, int wins, int losses, int games){
-        calendar = new ArrayList <Calendar>();
-        list = new ArrayList<Footballer>();
+        
         bossID = ID;
         this.wins = wins;
         this.losses = losses;
         this.games = games;
     }
-    public Team(){
-        calendar = new ArrayList <Calendar>();
-        list = new ArrayList<Footballer>();
-    }
+    public Team(){}
     /**Конструктор для ввода информации из файла*/
     public Team(int fict){
+        UserService userService = new UserService();
         calendar = new ArrayList <Calendar>();
         list = new ArrayList<Footballer>();
-        wins=0; losses=0; games=0; bossID = 100000;
+        wins=0; losses=0; games=0; bossID = 222663;
         try{//Ввод инфы из трех файлов
             Tlog.info("Team is ready to construct");
             BufferedReader buf;
             synchronized(DBlock){//блок может выполняться только одним потоком одновременно
                 Tlog.info("Info about team");
-                buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Команда.txt")));
-                String s[] = buf.readLine().split(";");
-                bossID = Integer.parseInt(s[0]);
-                buf.close();
                 Tlog.info("Info about team is ready");
             }
             synchronized(DBlock){
-
-                UserService userService = new UserService();
-                //Footballer footballer = new Footballer(2400, "Кирилл", "Чехов", "Новгород", "Махачкала", 12, 92000, 2);
-                //userService.saveUser(footballer);
-
-                list = userService.findAllUsers();
-                Footballer temp = list.get(0);
-                System.out.println("Имя: "+ temp.getName()+"\nФамилия: "+ temp.getLastName());
-                
-                // EntityManagerFactory emf = Persistence.createEntityManagerFactory("test_persistence");
-                // EntityManager em = emf.createEntityManager();
-                // System.out.println("Start hibernate test");
-                // em.getTransaction().begin();
-                // //Footballer boy = new Footballer(2400, "Антон", "Чехов", "Москва", "Махачкала", 12, 92000, 2);
-                // Footballer boy = new Footballer();
-                // boy.setName("Антон");
-                // boy.setLastName("Чехов");
-                // boy.setCity("Москва");
-                // boy.setClub("Кожаный мяч");
-                // boy.setSalary(32000);
-                // boy.setGoals(32);
-                // boy.setRole(3);
-                // em.persist(boy);
-                // em.getTransaction().commit();
-                // System.out.println("New group iD is " + boy.getID());
-
-
-                // Tlog.info("Info about footballers");
-                // buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Игроки.txt")));
-                // while (buf.ready()){
-                //     String v[] = buf.readLine().split(";");
-                //     addFootballer(new Footballer(Integer.parseInt(v[0]), v[1], v[2], v[3], v[4], 
-                //     Integer.parseInt(v[5]), Integer.parseInt(v[6]), Integer.parseInt(v[7])));
-                // }
-                // buf.close();
-                // Tlog.info("Info about footballers is ready");
+                list = userService.findAllFootballers();
             }
             
             synchronized(DBlock){
                 Tlog.info("Info about calendar");
-                buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Даты.txt")));
-                while(buf.ready()){
-                    String v[] = buf.readLine().split(";");
-                    addDate(v[0], Integer.parseInt(v[1]), Integer.parseInt(v[2]));
+
+                // buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Даты.txt")));
+                // while(buf.ready()){
+                //     String v[] = buf.readLine().split(";");
+                //     addDate(v[0], Integer.parseInt(v[1]), Integer.parseInt(v[2]));
+                // }
+                // buf.close();
+                List<Calendar> tempcal = userService.findAllCalendar();
+                for(Calendar cal : tempcal){
+                    addDate(cal);
                 }
-                buf.close();
+
                 Tlog.info("Info about calendar is ready");
             }
             Tlog.info("Team constructed");
@@ -279,12 +243,12 @@ public class Team implements IRoles{ // класс-агрегатор
      */
     public String msg(){
         String[] buf = new String[5];
-        buf[0] = "ID Админа: "+Integer.toString(bossID)+"\n";
+        //buf[0] = "ID Админа: "+Integer.toString(bossID)+"\n";
         buf[1] = "Кол-во игроков: "+Integer.toString(list.size())+"\n";
         buf[2] = "Кол-во побед: "+Integer.toString(wins)+"\n";
         buf[3] = "Кол-во поражений: "+Integer.toString(losses)+"\n";
         buf[4] = "Кол-во ничей: "+Integer.toString(games - wins - losses)+"\n";
-        return buf[0] + buf[1]+buf[2]+buf[3]+buf[4];
+        return /*buf[0] + */buf[1]+buf[2]+buf[3]+buf[4];
     }
 
     /**
