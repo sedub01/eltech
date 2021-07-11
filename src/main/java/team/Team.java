@@ -69,26 +69,34 @@ public class Team implements IRoles{ // класс-агрегатор
                 buf.close();
                 Tlog.info("Info about team is ready");
             }
-            
             synchronized(DBlock){
 
-                EntityManagerFactory emf = Persistence.createEntityManagerFactory("test_persistence");
-                EntityManager em = emf.createEntityManager();
-                System.out.println("Start hibernate test");
-                em.getTransaction().begin();
-                //Footballer boy = new Footballer(2400, "Антон", "Чехов", "Москва", "Махачкала", 12, 92000, 2);
-                Footballer boy = new Footballer();
-                boy.setName("Антон");
-                boy.setLastName("Чехов");
-                boy.setCity("Москва");
-                boy.setClub("Кожаный мяч");
-                boy.setSalary(32000);
-                boy.setGoals(32);
-                boy.setRole(3);
+                UserService userService = new UserService();
+                //Footballer footballer = new Footballer(2400, "Кирилл", "Чехов", "Новгород", "Махачкала", 12, 92000, 2);
+                //userService.saveUser(footballer);
+
+                list = userService.findAllUsers();
+                Footballer temp = list.get(0);
+                System.out.println("Имя: "+ temp.getName()+"\nФамилия: "+ temp.getLastName());
                 
-                em.persist(boy);
-                em.getTransaction().commit();
-                System.out.println("New group iD is " + boy.getID());
+                // EntityManagerFactory emf = Persistence.createEntityManagerFactory("test_persistence");
+                // EntityManager em = emf.createEntityManager();
+                // System.out.println("Start hibernate test");
+                // em.getTransaction().begin();
+                // //Footballer boy = new Footballer(2400, "Антон", "Чехов", "Москва", "Махачкала", 12, 92000, 2);
+                // Footballer boy = new Footballer();
+                // boy.setName("Антон");
+                // boy.setLastName("Чехов");
+                // boy.setCity("Москва");
+                // boy.setClub("Кожаный мяч");
+                // boy.setSalary(32000);
+                // boy.setGoals(32);
+                // boy.setRole(3);
+                // em.persist(boy);
+                // em.getTransaction().commit();
+                // System.out.println("New group iD is " + boy.getID());
+
+
                 // Tlog.info("Info about footballers");
                 // buf = new BufferedReader(new FileReader(new File("./src/main/resources/data/Игроки.txt")));
                 // while (buf.ready()){
