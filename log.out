@@ -20,3 +20,21 @@
 [8936 is 2021-07-11 21:54:22,623 INFO  team.Team:find:113] Finding needed gamer with ID
 [8937 is 2021-07-11 21:54:22,624 ERROR team.Team:find:120] Gamer not found
 [10325 is 2021-07-11 21:54:24,012 INFO  design.editButton:actionPerformed:76] Edit frames closed
+[0 is 2021-07-11 23:20:25,728 INFO  team.Team:<init>:56] Team is ready to construct
+[2 is 2021-07-11 23:20:25,730 INFO  team.Team:<init>:58] Info about team
+[2 is 2021-07-11 23:20:25,730 INFO  team.Team:<init>:60] Info about team is ready
+[58 is 2021-07-11 23:20:25,786 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[355 is 2021-07-11 23:20:26,083 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[625 is 2021-07-11 23:20:26,353 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[632 is 2021-07-11 23:20:26,360 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/coursework]
+[632 is 2021-07-11 23:20:26,360 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[633 is 2021-07-11 23:20:26,361 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[635 is 2021-07-11 23:20:26,363 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 1 (min=1)
+[910 is 2021-07-11 23:20:26,638 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[1463 is 2021-07-11 23:20:27,191 INFO  team.Team:<init>:68] Info about calendar
+[1466 is 2021-07-11 23:20:27,194 INFO  team.Team:<init>:71] Info about calendar is ready
+[1467 is 2021-07-11 23:20:27,195 INFO  team.Team:<init>:73] Team constructed
+[1471 is 2021-07-11 23:20:27,199 INFO  design.PlayerList:show:67] Main menu is preparing
+[1662 is 2021-07-11 23:20:27,390 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[1664 is 2021-07-11 23:20:27,392 INFO  design.MyModel:showTable:28] Table was created
+[1780 is 2021-07-11 23:20:27,508 INFO  design.PlayerList:show:207] Main menu has been created
