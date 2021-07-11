@@ -1,6 +1,0 @@
-digraph "team:coursework:jar:1.0-SNAPSHOT" { 
-	"team:coursework:jar:1.0-SNAPSHOT" -> "org.jdatepicker:jdatepicker:jar:1.3.4:compile" ; 
-	"team:coursework:jar:1.0-SNAPSHOT" -> "com.itextpdf:itextpdf:jar:5.5.13.2:compile" ; 
-	"team:coursework:jar:1.0-SNAPSHOT" -> "junit:junit:jar:4.13.2:test" ; 
-	"junit:junit:jar:4.13.2:test" -> "org.hamcrest:hamcrest-core:jar:1.3:test" ; 
- } 
