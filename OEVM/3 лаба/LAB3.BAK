@@ -1,0 +1,106 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <dos.h>
+#include <graphics.h>
+#include <math.h>
+int main()
+{
+const double pi = 3.14159265358979323846;
+const double x_approach = 50/pi; // approximation coefficient
+const double y_approach = 25; // approximation coefficient
+const int ten_num = 10;
+const int start_out = 1; // start pi coefficient
+const int end_out = 8; // end pi coefficient
+const int hatch_out = 50;
+const int number_out = 11;
+const int lines_out = 20;
+
+double y_result; // y coordinate
+double x_result; // x coordinate
+double y_out; // y coordinate for output
+double x_out; // x coordinate for output
+double max_result = -100; // function maximum
+int i;
+int graph_driver,
+    graph_mode,
+    graph_error_code;
+
+int max_x; // maximal x coodrinate in window 
+int max_y; // maximal y coodrinate in window 
+char symbols_out[4]; // var for number print
+char maximum_out[20]; // var for function maximum print 
+
+clrscr();
+graph_driver = DETECT;
+detectgraph(&graph_driver, &graph_mode);
+initgraph(&graph_driver, &graph_mode, "C:\\TURBOC3\\BGI"); // my path
+
+// THROWING ERROR MESSAGE IF WE COULDN'T INITIALIZE GRAPH
+
+graph_error_code = graphresult();
+if (graph_error_code != grOk)
+{
+printf("error %s\n ", grapherrormsg(graph_error_code));
+getch();
+return 255;
+}
+
+// GETTING MAXIMAL NUMBER OF X AND Y COORINATES IN THIS VIDEOMODE
+
+max_x = getmaxx();
+max_y = getmaxy();
+setviewport(0, 0, max_x, max_y, 0); // creating window with coordinates
+setlinestyle(0, 0, 1); // 0 - solid line, 0 - without hatch (user's type), 1 - thin (number of pixels)
+line(lines_out, max_y, lines_out, 0); // drawing vertical line
+line(lines_out, max_y/2, max_x, max_y/2); // horisontal line
+
+// MARKING X AND Y LINES
+
+for (i = start_out; i < end_out + 1; i++)
+{
+sprintf(symbols_out, "%dPI", i); // forming text with Xpi number
+outtextxy(ten_num + hatch_out*i, max_y/2 - lines_out, symbols_out); // text with Xpi number outbut
+line(lines_out + hatch_out*i, max_y/2 + ten_num/2, lines_out + hatch_out*i, max_y/2 - ten_num/2); // creating marks on X-line
+}
+for (i = - number_out + 1; i < number_out; i++)
+{
+sprintf(symbols_out, "%d", i); // forming text with Y number
+outtextxy(0, max_y/2 - hatch_out*i/2 - ten_num/2, symbols_out); // text with Y number outbut
+line(lines_out + ten_num/2, max_y/2 - hatch_out*i/2, lines_out - ten_num/2, max_y/2 - hatch_out*i/2); // creating marks on Y-line
+}
+
+// DRAW START ASYMPTOTE
+
+setlinestyle(3, 0, 3); // 3 - hatch line, 0 - without hatch (user's type), 3 - tough (number of pixels)
+line(lines_out + hatch_out*start_out, max_y, lines_out + hatch_out*start_out, 0); // vertical line
+setlinestyle(0, 0, 1); // 0 - solid line, 0 - without hatch (user's type), 1 - thin (number of pixels)
+
+setviewport(0, 0, max_x, max_y, 0);
+
+// DRAW GRAPH OF FUNCTION
+
+for (x_result = start_out*pi; x_result <= end_out*pi; x_result = x_result + 0.00005)
+{
+y_result = pow(sin(x_result), 3) + pow(cos(x_result), 2);
+x_out = x_result*x_approach; // get output number by multiplying approach var
+y_out = y_result*y_approach; // get output number by multiplying approach var
+if (y_result > max_result)
+    max_result = y_result;
+putpixel(lines_out + x_out, max_y/2 - y_out, 4); // putting pixel in the place, where we calculated
+}
+
+// DRAW END ASYMPTOTE
+
+setlinestyle(3, 0, 3); // 3 - hatch line, 0 - without hatch (user's type), 3 - tough (number of pixels)
+line(lines_out + hatch_out*end_out, max_y, lines_out + hatch_out*end_out, 0); // vertical line
+
+// OUTPUT FUNCTION MAXIMUM
+
+sprintf(maximum_out, "FUNCTION MAXIMUM: %f", max_result);
+outtextxy(max_x/3, max_y - lines_out, maximum_out);
+
+getch();
+closegraph();
+return 0;
+}

@@ -4,7 +4,7 @@
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.10+9"/>
     <property name="sun.boot.library.path" value="C:\Program Files\AdoptOpenJDK\jdk-11.0.10.9-hotspot\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\sedub01\Desktop\labs\ООП\Курсовая\eltech"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\sedub01\Desktop\labs\ООП\Курсовая\eltech\JavaCourseWork"/>
     <property name="java.vm.vendor" value="AdoptOpenJDK"/>
     <property name="java.vendor.url" value="https://adoptopenjdk.net/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="RU"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\sedub01\Desktop\labs\ООП\Курсовая\eltech"/>
+    <property name="user.dir" value="C:\Users\sedub01\Desktop\labs\ООП\Курсовая\eltech\JavaCourseWork"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="11.0.10+9"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
