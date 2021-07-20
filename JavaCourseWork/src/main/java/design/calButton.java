@@ -132,9 +132,9 @@ public class calButton implements ActionListener {
                             JOptionPane.showMessageDialog(addDateBox, "Введите дату полностью", "", 
                             JOptionPane.ERROR_MESSAGE);
                         }
-                        
-                        
                     }
+                    
+                    
                 });
 
                 addDateBox.setContentPane(commonPanel);
@@ -143,6 +143,8 @@ public class calButton implements ActionListener {
                 addDateBox.setLocationRelativeTo(null);
                 addDateBox.setVisible(true);
                 Callog.info("New date frame closed");
+                java.util.List<Calendar> test = theBest.getCal();
+                for (Calendar temp : test) System.out.println(Calendar.howMuchDays(temp.getDate()));
             }
         });
         

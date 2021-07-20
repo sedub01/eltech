@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="AppTest" time="0.088" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="AppTest" time="0.142" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.10+9"/>
     <property name="sun.boot.library.path" value="C:\Program Files\AdoptOpenJDK\jdk-11.0.10.9-hotspot\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\sedub01\Desktop\labs\ООП\Курсовая\eltech\JavaCourseWork"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\sedub01\Desktop\labs\eltech\JavaCourseWork"/>
     <property name="java.vm.vendor" value="AdoptOpenJDK"/>
     <property name="java.vendor.url" value="https://adoptopenjdk.net/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="RU"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\sedub01\Desktop\labs\ООП\Курсовая\eltech\JavaCourseWork"/>
+    <property name="user.dir" value="C:\Users\sedub01\Desktop\labs\eltech\JavaCourseWork"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="11.0.10+9"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
@@ -65,6 +65,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="AppTest" name="allLoaded_notNull" time="0.088"/>
-  <testcase classname="AppTest" name="correctlyAdded" time="0"/>
+  <testcase classname="AppTest" name="allLoaded_notNull" time="0.14"/>
+  <testcase classname="AppTest" name="correctlyAdded" time="0.002"/>
 </testsuite>

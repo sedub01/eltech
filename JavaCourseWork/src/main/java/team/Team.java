@@ -152,18 +152,20 @@ public class Team implements IRoles{ // класс-агрегатор
         return max;
     }
     
-    public void addDate(String date, int win, int loss){
-        Calendar day = new Calendar(date, win, loss);
-        calendar.add(day);
-        games++;
-        if (win > loss) wins++;
-        else if (loss > win) losses++;
-    }
     public void addDate(Calendar cal){
-        calendar.add(cal);
+        int index = 0;
+        for (Calendar tempCal : calendar)
+            if (Calendar.howMuchDays(cal.getDate()) > Calendar.howMuchDays(tempCal.getDate())) 
+                index++;
+            else break;
+        calendar.add(index, cal);
         if (cal.getWins()>cal.getLosses()) wins++;
         else if (cal.getWins()<cal.getLosses()) losses++;
         games++;
+    }
+
+    public void addDate(String date, int win, int loss){
+        addDate(new Calendar(date, win, loss));
     }
 
     public void deleteDate(int selected){

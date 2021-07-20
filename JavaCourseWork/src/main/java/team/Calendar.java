@@ -125,4 +125,21 @@ public class Calendar{
             throw new IllegalArgumentException();
         }
     }
+
+    //сделать статический класс подсчета кол-ва дней
+    public static int howMuchDays(String date){
+        final int[] months = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        String[] strings = date.split("\\.");
+        int[] nums = new int[3];
+        for (int i=0; i<3; i++) 
+            nums[i] = Integer.parseInt(strings[i]);
+        int days = 0;
+        //прибавили годы
+        days += nums[2] * 365 + nums[2]%4;
+        //прибавили месяцы
+        days += nums[1]*months[nums[1]];
+        // прибавили дни
+        days += nums[0];
+        return days;
+    }
 }
