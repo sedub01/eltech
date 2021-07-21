@@ -675,3 +675,135 @@
 [64223 is 2021-07-21 12:04:23,668 INFO  design.calButton:run:61] Creating the table
 [64224 is 2021-07-21 12:04:23,669 INFO  design.calButton:run:64] Table was created
 [66105 is 2021-07-21 12:04:25,550 INFO  design.calButton:actionPerformed:168] Calendar frame was closed
+[0 is 2021-07-21 12:17:32,665 INFO  team.Team:<init>:56] Team is ready to construct
+[4 is 2021-07-21 12:17:32,669 INFO  team.Team:<init>:58] Info about team
+[4 is 2021-07-21 12:17:32,669 INFO  team.Team:<init>:60] Info about team is ready
+[114 is 2021-07-21 12:17:32,779 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[714 is 2021-07-21 12:17:33,379 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[1383 is 2021-07-21 12:17:34,048 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[1398 is 2021-07-21 12:17:34,063 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/coursework]
+[1399 is 2021-07-21 12:17:34,064 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[1400 is 2021-07-21 12:17:34,065 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[1404 is 2021-07-21 12:17:34,069 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 1 (min=1)
+[1955 is 2021-07-21 12:17:34,620 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2913 is 2021-07-21 12:17:35,578 INFO  team.Team:<init>:68] Info about calendar
+[2919 is 2021-07-21 12:17:35,584 INFO  team.Team:<init>:71] Info about calendar is ready
+[2919 is 2021-07-21 12:17:35,584 INFO  team.Team:<init>:73] Team constructed
+[2926 is 2021-07-21 12:17:35,591 INFO  design.PlayerList:show:67] Main menu is preparing
+[3246 is 2021-07-21 12:17:35,911 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[3248 is 2021-07-21 12:17:35,913 INFO  design.MyModel:showTable:28] Table was created
+[3449 is 2021-07-21 12:17:36,114 INFO  design.PlayerList:show:207] Main menu has been created
+[7574 is 2021-07-21 12:17:40,239 INFO  design.addButton:actionPerformed:34] Adding new player frame opened
+[42342 is 2021-07-21 12:18:15,007 INFO  design.addButton:actionPerformed:104] Trying to add new player
+[42342 is 2021-07-21 12:18:15,007 INFO  team.Footballer:isAllRight:126] Checking footballer
+[42343 is 2021-07-21 12:18:15,008 INFO  team.Footballer:isAllRight:156] Footballer is correct
+[43899 is 2021-07-21 12:18:16,564 INFO  design.addButton:actionPerformed:133] New player was added
+[43900 is 2021-07-21 12:18:16,565 INFO  design.addButton:actionPerformed:169] Adding new player frame closed
+[48030 is 2021-07-21 12:18:20,695 INFO  design.editButton:actionPerformed:33] Edit button was pressed
+[48030 is 2021-07-21 12:18:20,695 INFO  team.Team:find:113] Finding needed gamer with ID
+[48031 is 2021-07-21 12:18:20,696 ERROR team.Team:find:120] Gamer not found
+[49492 is 2021-07-21 12:18:22,157 INFO  design.editButton:actionPerformed:76] Edit frames closed
+[50438 is 2021-07-21 12:18:23,103 INFO  design.calButton:actionPerformed:30] Calendar frame was opened
+[50443 is 2021-07-21 12:18:23,108 INFO  design.calButton:run:61] Creating the table
+[50445 is 2021-07-21 12:18:23,110 INFO  design.calButton:run:64] Table was created
+[53350 is 2021-07-21 12:18:26,015 INFO  design.calButton:actionPerformed:91] New date frame opened
+[68875 is 2021-07-21 12:18:41,540 INFO  design.calButton:actionPerformed:115] Trying add new date
+[68875 is 2021-07-21 12:18:41,540 INFO  team.Footballer:isDateRight:70] Checking object in calendar
+[68876 is 2021-07-21 12:18:41,541 INFO  team.Footballer:isDateRight:112] This object is correct!
+[69638 is 2021-07-21 12:18:42,303 INFO  design.calButton:actionPerformed:127] Date was added
+[69639 is 2021-07-21 12:18:42,304 INFO  design.calButton:actionPerformed:151] New date frame closed
+[74592 is 2021-07-21 12:18:47,257 INFO  design.calButton:actionPerformed:164] Calendar frame was closed
+[80621 is 2021-07-21 12:18:53,286 INFO  design.PlayerList:actionPerformed:128] User is going to save his changes
+[80622 is 2021-07-21 12:18:53,287 INFO  team.Team:saveChanges:192] Saving all changes
+[80622 is 2021-07-21 12:18:53,287 INFO  team.Team:saveChanges:195] Saving calendar
+[80788 is 2021-07-21 12:18:53,453 INFO  team.Team:saveChanges:198] Calendar saved
+[80790 is 2021-07-21 12:18:53,455 INFO  team.Team:saveChanges:202] Saving footballers
+[80897 is 2021-07-21 12:18:53,562 INFO  team.Team:saveChanges:205] Footballers saved
+[80898 is 2021-07-21 12:18:53,563 INFO  team.Team:saveChanges:209] Saving team info
+[80898 is 2021-07-21 12:18:53,563 INFO  team.Team:saveChanges:211] Team info saved
+[80898 is 2021-07-21 12:18:53,563 INFO  team.Team:saveChanges:213] Changes were saved
+[81937 is 2021-07-21 12:18:54,602 INFO  design.PlayerList:actionPerformed:132] Data saved successfully!
+[0 is 2021-07-21 12:19:01,323 INFO  team.Team:<init>:56] Team is ready to construct
+[4 is 2021-07-21 12:19:01,327 INFO  team.Team:<init>:58] Info about team
+[4 is 2021-07-21 12:19:01,327 INFO  team.Team:<init>:60] Info about team is ready
+[116 is 2021-07-21 12:19:01,439 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[710 is 2021-07-21 12:19:02,033 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[1359 is 2021-07-21 12:19:02,682 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[1370 is 2021-07-21 12:19:02,693 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/coursework]
+[1370 is 2021-07-21 12:19:02,693 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[1371 is 2021-07-21 12:19:02,694 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[1375 is 2021-07-21 12:19:02,698 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 1 (min=1)
+[1850 is 2021-07-21 12:19:03,173 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2839 is 2021-07-21 12:19:04,162 INFO  team.Team:<init>:68] Info about calendar
+[2844 is 2021-07-21 12:19:04,167 INFO  team.Team:<init>:71] Info about calendar is ready
+[2844 is 2021-07-21 12:19:04,167 INFO  team.Team:<init>:73] Team constructed
+[2852 is 2021-07-21 12:19:04,175 INFO  design.PlayerList:show:67] Main menu is preparing
+[3166 is 2021-07-21 12:19:04,489 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[3170 is 2021-07-21 12:19:04,493 INFO  design.MyModel:showTable:28] Table was created
+[3373 is 2021-07-21 12:19:04,696 INFO  design.PlayerList:show:207] Main menu has been created
+[0 is 2021-07-21 12:23:30,377 INFO  team.Team:<init>:56] Team is ready to construct
+[4 is 2021-07-21 12:23:30,381 INFO  team.Team:<init>:58] Info about team
+[4 is 2021-07-21 12:23:30,381 INFO  team.Team:<init>:60] Info about team is ready
+[119 is 2021-07-21 12:23:30,496 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[740 is 2021-07-21 12:23:31,117 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[1468 is 2021-07-21 12:23:31,845 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[1479 is 2021-07-21 12:23:31,856 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/coursework]
+[1479 is 2021-07-21 12:23:31,856 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[1480 is 2021-07-21 12:23:31,857 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[1484 is 2021-07-21 12:23:31,861 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 1 (min=1)
+[1960 is 2021-07-21 12:23:32,337 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2916 is 2021-07-21 12:23:33,293 INFO  team.Team:<init>:68] Info about calendar
+[2922 is 2021-07-21 12:23:33,299 INFO  team.Team:<init>:71] Info about calendar is ready
+[2922 is 2021-07-21 12:23:33,299 INFO  team.Team:<init>:73] Team constructed
+[2931 is 2021-07-21 12:23:33,308 INFO  design.PlayerList:show:67] Main menu is preparing
+[3225 is 2021-07-21 12:23:33,602 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[3228 is 2021-07-21 12:23:33,605 INFO  design.MyModel:showTable:28] Table was created
+[3409 is 2021-07-21 12:23:33,786 INFO  design.PlayerList:show:207] Main menu has been created
+[6614 is 2021-07-21 12:23:36,991 INFO  design.calButton:actionPerformed:30] Calendar frame was opened
+[6621 is 2021-07-21 12:23:36,998 INFO  design.calButton:run:61] Creating the table
+[6623 is 2021-07-21 12:23:37,000 INFO  design.calButton:run:64] Table was created
+[8918 is 2021-07-21 12:23:39,295 INFO  design.calButton:actionPerformed:91] New date frame opened
+[21406 is 2021-07-21 12:23:51,783 INFO  design.calButton:actionPerformed:115] Trying add new date
+[21407 is 2021-07-21 12:23:51,784 INFO  team.Footballer:isDateRight:70] Checking object in calendar
+[21408 is 2021-07-21 12:23:51,785 INFO  team.Footballer:isDateRight:112] This object is correct!
+[22771 is 2021-07-21 12:23:53,148 INFO  design.calButton:actionPerformed:127] Date was added
+[22772 is 2021-07-21 12:23:53,149 INFO  design.calButton:actionPerformed:151] New date frame closed
+[26498 is 2021-07-21 12:23:56,875 INFO  design.calButton:actionPerformed:164] Calendar frame was closed
+[28045 is 2021-07-21 12:23:58,422 INFO  design.addButton:actionPerformed:34] Adding new player frame opened
+[56669 is 2021-07-21 12:24:27,046 INFO  design.addButton:actionPerformed:104] Trying to add new player
+[56670 is 2021-07-21 12:24:27,047 INFO  team.Footballer:isAllRight:126] Checking footballer
+[56670 is 2021-07-21 12:24:27,047 INFO  team.Footballer:isAllRight:156] Footballer is correct
+[58251 is 2021-07-21 12:24:28,628 INFO  design.addButton:actionPerformed:133] New player was added
+[58252 is 2021-07-21 12:24:28,629 INFO  design.addButton:actionPerformed:169] Adding new player frame closed
+[60134 is 2021-07-21 12:24:30,511 INFO  design.PlayerList:actionPerformed:128] User is going to save his changes
+[60135 is 2021-07-21 12:24:30,512 INFO  team.Team:saveChanges:192] Saving all changes
+[60135 is 2021-07-21 12:24:30,512 INFO  team.Team:saveChanges:195] Saving calendar
+[60346 is 2021-07-21 12:24:30,723 INFO  team.Team:saveChanges:198] Calendar saved
+[60347 is 2021-07-21 12:24:30,724 INFO  team.Team:saveChanges:202] Saving footballers
+[60459 is 2021-07-21 12:24:30,836 INFO  team.Team:saveChanges:205] Footballers saved
+[60459 is 2021-07-21 12:24:30,836 INFO  team.Team:saveChanges:209] Saving team info
+[60460 is 2021-07-21 12:24:30,837 INFO  team.Team:saveChanges:211] Team info saved
+[60460 is 2021-07-21 12:24:30,837 INFO  team.Team:saveChanges:213] Changes were saved
+[61655 is 2021-07-21 12:24:32,032 INFO  design.PlayerList:actionPerformed:132] Data saved successfully!
+[0 is 2021-07-21 12:24:35,000 INFO  team.Team:<init>:56] Team is ready to construct
+[4 is 2021-07-21 12:24:35,004 INFO  team.Team:<init>:58] Info about team
+[4 is 2021-07-21 12:24:35,004 INFO  team.Team:<init>:60] Info about team is ready
+[117 is 2021-07-21 12:24:35,117 INFO  org.hibernate.Version:logVersion:44] HHH000412: Hibernate ORM core version [WORKING]
+[726 is 2021-07-21 12:24:35,726 INFO  org.hibernate.annotations.common.Version:<clinit>:56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[1237 is 2021-07-21 12:24:36,237 WARN  org.hibernate.orm.connections.pooling:configure:72] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[1248 is 2021-07-21 12:24:36,248 INFO  org.hibernate.orm.connections.pooling:buildCreator:115] HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/coursework]
+[1249 is 2021-07-21 12:24:36,249 INFO  org.hibernate.orm.connections.pooling:buildCreator:124] HHH10001001: Connection properties: {password=****, user=root}
+[1249 is 2021-07-21 12:24:36,249 INFO  org.hibernate.orm.connections.pooling:buildCreator:129] HHH10001003: Autocommit mode: false
+[1252 is 2021-07-21 12:24:36,252 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:<init>:259] HHH000115: Hibernate connection pool size: 1 (min=1)
+[1717 is 2021-07-21 12:24:36,717 INFO  org.hibernate.dialect.Dialect:<init>:175] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2670 is 2021-07-21 12:24:37,670 INFO  team.Team:<init>:68] Info about calendar
+[2676 is 2021-07-21 12:24:37,676 INFO  team.Team:<init>:71] Info about calendar is ready
+[2676 is 2021-07-21 12:24:37,676 INFO  team.Team:<init>:73] Team constructed
+[2684 is 2021-07-21 12:24:37,684 INFO  design.PlayerList:show:67] Main menu is preparing
+[3004 is 2021-07-21 12:24:38,004 INFO  design.MyModel:showTable:15] Finding gamers for creating table
+[3007 is 2021-07-21 12:24:38,007 INFO  design.MyModel:showTable:28] Table was created
+[3182 is 2021-07-21 12:24:38,182 INFO  design.PlayerList:show:207] Main menu has been created
+[7223 is 2021-07-21 12:24:42,223 INFO  design.calButton:actionPerformed:30] Calendar frame was opened
+[7230 is 2021-07-21 12:24:42,230 INFO  design.calButton:run:61] Creating the table
+[7232 is 2021-07-21 12:24:42,232 INFO  design.calButton:run:64] Table was created
+[9770 is 2021-07-21 12:24:44,770 INFO  design.calButton:actionPerformed:164] Calendar frame was closed

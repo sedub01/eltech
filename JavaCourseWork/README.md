@@ -27,18 +27,14 @@ CREATE TABLE IF NOT EXISTS `footballers` (
   `city` VARCHAR(45),
   `goals` INT,
   `salary` INT,
-  `roleid` INT, 
-  `bossid` INT, 
-  FOREIGN KEY (bossid) REFERENCES team(id) ON DELETE SET NULL)
+  `roleid` INT)
   AUTO_INCREMENT = 1200;
 
 CREATE TABLE IF NOT EXISTS `calendar` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
   `date` VARCHAR(45),
   `wins` INT,
-  `losses` INT,
-  `bossid` INT,
-  FOREIGN KEY (bossid) REFERENCES team(id) ON DELETE SET NULL)
+  `losses` INT)
 AUTO_INCREMENT = 1;
 
 INSERT INTO `footballers` (`id`, `name`, `lastname`, `club`, `city`, `goals`, `salary`, `roleid`) VALUES ('1200', 'Билли', 'Херрингтон', 'ЦСКА', 'Москва', '2', '10000', '0');

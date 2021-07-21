@@ -20,11 +20,7 @@ public class Calendar{
     private String date;
     private int wins;
     private int losses;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "bossid")
-    private Team team;
     /**
-     * 
      * @param date Дата в формате {@code String}
      * @param win Счет сборной 
      * @param lose Счет противника
@@ -125,7 +121,6 @@ public class Calendar{
             throw new IllegalArgumentException();
         }
     }
-
     //сделать статический класс подсчета кол-ва дней
     public static int howMuchDays(String date){
         final int[] months = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};

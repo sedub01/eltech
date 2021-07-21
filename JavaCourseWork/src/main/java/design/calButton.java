@@ -142,10 +142,7 @@ public class calButton implements ActionListener {
                             JOptionPane.ERROR_MESSAGE);
                         }
                     }
-                    
-                    
                 });
-
                 addDateBox.setContentPane(commonPanel);
                 addDateBox.setSize(250, 150);
                 addDateBox.setResizable(false);
@@ -154,7 +151,6 @@ public class calButton implements ActionListener {
                 Callog.info("New date frame closed");
             }
         });
-        
         JPanel calPanel = new JPanel();
         calPanel.add(addDateButton);
         calPanel.add(deleteDateButton);
@@ -167,5 +163,4 @@ public class calButton implements ActionListener {
         calBox.setVisible(true);
         Callog.info("Calendar frame was closed");
     }
-    
 }

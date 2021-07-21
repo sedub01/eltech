@@ -23,9 +23,6 @@ public class Footballer implements IRoles{
     private String city; //город прибывшего футболиста
     private int goals; // кол-во забитых голов
     private int salary; //зарплата в долларах в месяц
-    @ManyToOne(optional = true)
-    @JoinColumn(name = "bossid")
-    private Team team;
     /**
      * @param ID футболиста
      * @param name Имя футболиста

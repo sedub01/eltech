@@ -20,9 +20,9 @@ import org.apache.log4j.Logger;
 @Table(name = "team")
 public class Team implements IRoles{ // класс-агрегатор
     private static final Logger Tlog = LogManager.getLogger(Team.class);
-    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Footballer> list = new ArrayList<Footballer>();
-    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Calendar> calendar =  new ArrayList <Calendar>();
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -34,7 +34,6 @@ public class Team implements IRoles{ // класс-агрегатор
     private int losses;
     private int games;
     private String DBlock = new String();
-
     /**
      * @param ID админа команды (для связки)
      * @param wins Кол-во победных матчей
