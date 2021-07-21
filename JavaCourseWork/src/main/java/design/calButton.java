@@ -2,7 +2,6 @@ package design;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.*;
 import org.apache.log4j.LogManager;
@@ -30,13 +29,25 @@ public class calButton implements ActionListener {
     public void actionPerformed(ActionEvent e){
         Callog.info("Calendar frame was opened");
         JTable dates;
-        DefaultTableModel newModel;
+        MyModel newModel;
         JButton addDateButton, deleteDateButton;
         JScrollPane newScroll;
         JDialog calBox = new JDialog(owner,"Календарь игр", true);
         String[] cols = {"Дата", "Счет сборной", "Счет противника"};
         String[][] data = new String[0][];
-        newModel = new DefaultTableModel(data, cols);
+        newModel = new MyModel(data, cols){
+            @Override
+            /**Вывод информации в таблицу, не более того */
+            public void showTable(Team theBest){
+                for (Calendar cal : theBest.getCal()){
+                    String[] buf = new String[3];
+                    buf[0] = cal.getDate();
+                    buf[1] = Integer.toString(cal.getWins());
+                    buf[2] = Integer.toString(cal.getLosses());
+                    addRow(buf);
+                }
+            }
+        };
         addDateButton = new JButton("Добавить дату");
         deleteDateButton = new JButton("Удалить дату");
         dates = new JTable(newModel){
@@ -110,11 +121,9 @@ public class calButton implements ActionListener {
                             theBest.addDate(addedDate);
                             JOptionPane.showMessageDialog(addDateBox, "Дата добавлена", "", 
                             JOptionPane.INFORMATION_MESSAGE);
+                            while (newModel.getRowCount()>0) newModel.removeRow(0);
+                            newModel.showTable(theBest);
                             addDateBox.dispose();
-                            String[] buf = {addedDate.getDate(), 
-                                Integer.toString(addedDate.getWins()), 
-                                Integer.toString(addedDate.getLosses())};
-                            newModel.addRow(buf);
                             Callog.info("Date was added");
                         }
                         catch(NumberFormatException exNum){
@@ -143,8 +152,6 @@ public class calButton implements ActionListener {
                 addDateBox.setLocationRelativeTo(null);
                 addDateBox.setVisible(true);
                 Callog.info("New date frame closed");
-                java.util.List<Calendar> test = theBest.getCal();
-                for (Calendar temp : test) System.out.println(Calendar.howMuchDays(temp.getDate()));
             }
         });
         
