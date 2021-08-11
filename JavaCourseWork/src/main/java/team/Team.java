@@ -1,5 +1,6 @@
 package team;
 import java.util.*;
+import hibernate.*;
 
 import javax.swing.table.DefaultTableModel;
 import javax.persistence.*;
@@ -10,6 +11,8 @@ import com.itextpdf.text.pdf.PdfPTable;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+
+
 
 /**
  * Сама команда

@@ -1,5 +1,4 @@
 design\helpButton$1.class
-team\UserDao.class
 design\editButton$2.class
 design\PlayerList$1.class
 team\IRoles.class
@@ -12,7 +11,6 @@ MyPC.class
 design\calButton$3.class
 exceptions\WrongLastNameException.class
 exceptions\WrongNameException.class
-design\calButton$4$1.class
 design\PlayerList$4$1.class
 design\MyModel.class
 design\calButton$1.class
@@ -23,7 +21,6 @@ design\addButton.class
 team\Footballer.class
 design\calButton$4.class
 team\Team.class
-team\HibernateSessionFactoryUtil.class
 design\calButton$2.class
 design\PlayerList$2.class
 design\deleteButton$1.class
@@ -31,7 +28,6 @@ design\deleteButton.class
 design\PlayerList.class
 design\helpButton.class
 design\editButton$1.class
-team\UserService.class
 design\addButton$1.class
 design\PDFGenerator.class
 design\PlayerList$5.class
