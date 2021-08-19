@@ -1,16 +1,11 @@
 import java.util.List;
 import java.util.ArrayList;
 
-import org.junit.Test;
-
 import team.*;
 
 import static org.junit.Assert.*;
 
-import org.junit.Before;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.*;
 /**
  * Unit test for simple App.
  */
@@ -47,21 +42,20 @@ public class AppTest
     private Calendar cal1;
     private Calendar cal2;
 
-    private List<Footballer> list1;
+    private List<Footballer> list1 = new ArrayList<Footballer>();
     private List<Calendar> cals1;
-    private Team MyTeam1;
+    private Team MyTeam1= new Team(100000, 3, 4, 10);
     private Team MyTeam2;
 
     @Before
     public void newEntities()
     {
         ++testNUM;
-        list1 = new ArrayList<Footballer>();
+        
         cals1 = new ArrayList<Calendar>();
 
         //======== Иниц. ========
 
-        MyTeam1 = new Team(100000, 3, 4, 10);
         MyTeam2 = new Team(666000, 7, 18, 40);
 
         boy1 = new Footballer(666, "Антон", "Иванов", "Клуб любителей", "Махачкала", 17, 32190, 2);
@@ -87,6 +81,26 @@ public class AppTest
     {
         assertEquals(list1, MyTeam1.getFootballers());
         assertEquals(cals1, MyTeam2.getCal());
+    }
+
+    @Test
+    public void isDeleted()
+    {
+        Team MyTeam3 = new Team(33, 3, 7, 12);
+        List<Footballer> list3 = new ArrayList<>();
+        Footballer first = new Footballer(666, "Антон", "Иванов", "Клуб любителей", "Махачкала", 17, 32190, 2),
+        second = new Footballer(667, "Семен", "Спиваков", "Кожаный мяч", "Воркута", 14, 28000, 1),
+        third = new Footballer(668, "Кирилл", "Рыгалов", "Динамо", "Дагестан", 18, 32000, 3);
+
+        MyTeam3.addFootballer(first);
+        MyTeam3.addFootballer(second);
+        MyTeam3.addFootballer(third);
+
+        list3.add(first);
+        list3.add(third);
+
+        MyTeam3.delete(667);
+        assertEquals(third.getID(), MyTeam3.getFootballers().get(1).getID());
     }
 
     @After
