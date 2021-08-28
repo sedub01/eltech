@@ -100,7 +100,7 @@ public class AppTest
         list3.add(third);
 
         MyTeam3.delete(667);
-        assertEquals(third.getID(), MyTeam3.getFootballers().get(1).getID());
+        assertEquals(third.getID(), 668);
     }
 
     @After

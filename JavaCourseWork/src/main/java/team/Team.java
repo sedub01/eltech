@@ -12,8 +12,6 @@ import com.itextpdf.text.pdf.PdfPTable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-
-
 /**
  * Сама команда
  * @param list Список футболистов
