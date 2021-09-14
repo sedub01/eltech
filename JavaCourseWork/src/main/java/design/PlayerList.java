@@ -3,9 +3,13 @@ package design;
 import team.*;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 
 import javax.swing.*;
+
+
 import java.awt.event.*;
 import java.util.List;
 
@@ -102,6 +106,7 @@ public class PlayerList implements IRoles {
         toolBar.add(print);
         toolBar.add(info);
         toolBar.add(help);
+        toolBar.setBackground(Color.white);
         // Размещение панели инструментов
         playerList.setLayout(new BorderLayout());
         playerList.add(toolBar, BorderLayout.NORTH);
@@ -176,6 +181,12 @@ public class PlayerList implements IRoles {
         filterPanel.add(PlayerName);
         filterPanel.add(PlayerLastName);
         filterPanel.add(filter);
+        filter.setFocusable(false);
+        filter.setFont(new Font("Comic Sans", Font.BOLD, 13));
+        filter.setForeground(Color.BLUE);
+        filter.setBackground(Color.yellow);
+        
+        
         //Поиск по имени фамилии
         filter.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){

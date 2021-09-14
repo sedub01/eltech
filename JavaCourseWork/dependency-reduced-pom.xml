@@ -18,7 +18,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>raceManager/GUI</mainClass>
+                  <mainClass>MyPC</mainClass>
                 </transformer>
               </transformers>
             </configuration>

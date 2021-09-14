@@ -49,7 +49,11 @@ public class calButton implements ActionListener {
             }
         };
         addDateButton = new JButton("Добавить дату");
+        addDateButton.setBackground(Color.lightGray);
+        addDateButton.setFocusable(false);
         deleteDateButton = new JButton("Удалить дату");
+        deleteDateButton.setBackground(Color.lightGray);
+        deleteDateButton.setFocusable(false);
         dates = new JTable(newModel){
             @Override
             public boolean isCellEditable(int row, int column){ return false; }
