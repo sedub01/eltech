@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"design","c":"PlayerList","l":"PlayerList()","url":"%3Cinit%3E()"},{"p":"design","c":"PlayerList","l":"show(Team)","url":"show(team.Team)"}]
