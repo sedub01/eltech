@@ -147,6 +147,30 @@ void displayInfoAboutDisk(){
         cout << "Volume serial number: " << sn << endl;
         cout << "Maximum component length: " << maxlen << endl;
         cout << "File system flag: " << flags << "\n\n";
+        
+        cout << "System flags: \n";
+        if (flags & FILE_CASE_PRESERVED_NAMES) cout << "The specified volume supports preserved case of file names when it places a name on disk.\n";
+        if (flags & FILE_CASE_SENSITIVE_SEARCH) cout << "The specified volume supports case-sensitive file names.\n";
+        //if (flags & FILE_DAX_VOLUME) cout << "The specified volume is a direct access (DAX) volume.\n";
+        if (flags & FILE_FILE_COMPRESSION) cout << "The specified volume supports file-based compression.\n";
+        if (flags & FILE_NAMED_STREAMS) cout << "The specified volume supports named streams.\n";
+        if (flags & FILE_PERSISTENT_ACLS) cout << "The specified volume preserves and enforces access control lists (ACL).\n";
+        if (flags & FILE_READ_ONLY_VOLUME) cout << "The specified volume is read-only.\n";
+        if (flags & FILE_SEQUENTIAL_WRITE_ONCE) cout << "The specified volume supports a single sequential write.\n";
+        if (flags & FILE_SUPPORTS_ENCRYPTION) cout << "The specified volume supports the Encrypted File System (EFS)\n";
+        if (flags & FILE_SUPPORTS_EXTENDED_ATTRIBUTES) cout << "The specified volume supports extended attributes.\n";
+        if (flags & FILE_SUPPORTS_HARD_LINKS) cout << "The specified volume supports hard links.\n";
+        if (flags & FILE_SUPPORTS_OBJECT_IDS) cout << " The specified volume supports object identifiers.\n";
+        if (flags & FILE_SUPPORTS_OPEN_BY_FILE_ID) cout << "The file system supports open by FileID\n";
+        if (flags & FILE_SUPPORTS_REPARSE_POINTS) cout << "The specified volume supports reparse points.\n";
+        if (flags & FILE_SUPPORTS_SPARSE_FILES) cout << "The specified volume supports sparse files.\n";
+        if (flags & FILE_SUPPORTS_TRANSACTIONS) cout << "The specified volume supports transactions.\n";
+        if (flags & FILE_SUPPORTS_USN_JOURNAL) cout << "The specified volume supports update sequence number (USN) journals.\n";
+        if (flags & FILE_UNICODE_ON_DISK) cout << "The specified volume supports Unicode in file names as they appear on disk.\n";
+        if (flags & FILE_VOLUME_IS_COMPRESSED) cout << "The specified volume is a compressed volume, for example, a DoubleSpace volume\n";
+        if (flags & FILE_VOLUME_QUOTAS) cout << "The specified volume supports disk quotas.\n";
+        //if (flags & FILE_SUPPORTS_BLOCK_REFCOUNTING) cout << "The specified volume supports sharing logical clusters between files on the same volume.\n";
+        cout << endl;
 
         DWORD sectorsPerCluster, bytesPerSector, numberfOfFreeClusters,totalNumberOfClusters;
         GetDiskFreeSpaceA(str, &sectorsPerCluster, &bytesPerSector, &numberfOfFreeClusters, &totalNumberOfClusters);
@@ -291,17 +315,13 @@ void changeAttributesOfFile(){
     if (choice == 1){
         DWORD ret = GetFileAttributesA(fileName);
         printf("File's code attribute is 0x%x\n", ret);
-        if (ret == FILE_ATTRIBUTE_NORMAL)
-            cout << "It's usual file\n";
-        else if (ret == FILE_ATTRIBUTE_READONLY)
-            cout << "It's readonly file\n";
-        else if (ret == FILE_ATTRIBUTE_ARCHIVE)
-            cout << "It's archive file\n";
-        else if (ret == FILE_ATTRIBUTE_SYSTEM)
-            cout << "It's system file\n";
-        else if (ret == FILE_ATTRIBUTE_HIDDEN)
-            cout << "It's hidden file\n";
-        else cout << "It's unusual file\n";
+        if (FILE_ATTRIBUTE_ARCHIVE & ret) cout <<    "- Archive file" << endl;
+        if (FILE_ATTRIBUTE_COMPRESSED & ret) cout << "- Compressed file" << endl;
+        if (FILE_ATTRIBUTE_DIRECTORY & ret) cout <<  "- Catalog" << endl;
+        if (FILE_ATTRIBUTE_HIDDEN & ret) cout <<     "- Hidden File" << endl;
+        if (FILE_ATTRIBUTE_NORMAL & ret) cout <<     "- File has no attributes" << endl;
+        if (FILE_ATTRIBUTE_READONLY & ret) cout <<   "- Readonly file" << endl;
+        if (ret & FILE_ATTRIBUTE_DEVICE) cout << "This value is reserved for system use.\n";
     }
     else{
         DWORD ret;
