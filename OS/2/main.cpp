@@ -175,7 +175,7 @@ void defineTheStateOfMemoryArea(){
 }
 
 void reservationOfTheRegion(){
-    int option = -1, allocType = -1, memProtect = -1;
+    int option = -1, len, allocType = -1, memProtect = -1;
     LPVOID *address;
     while (option < 0 || option > 2){
         cout << "What do you wanna choose?\n";
@@ -192,8 +192,11 @@ void reservationOfTheRegion(){
         cout << "Enter the required valid address: 0x";
         cin >> std::hex >> *address;
     }
+    cout << "Enter the size of the region, in bytes: ";
+    cin >> len;
+
     while (allocType < 0 || allocType > 3){
-        cout << "Enter the type of memory allocation: ";
+        cout << "Enter the type of memory allocation:\n";
         cout << "1 - MEM_COMMIT\n";
         cout << "2 - MEM_RESERVE\n";
         cout << "3 - MEM_RESET\n";
@@ -203,7 +206,7 @@ void reservationOfTheRegion(){
         if (allocType < 0 || allocType > 3) cout << "Wrong option\n";
     }
     while (memProtect < 0 || memProtect > 10){
-        cout << "Enter the memory protection: ";
+        cout << "Enter the memory protection:\n";
         cout << "1 - PAGE_EXECUTE\n";
         cout << "2 - PAGE_EXECUTE_READ\n";
         cout << "3 - PAGE_EXECUTE_READWRITE\n";
@@ -234,7 +237,9 @@ void reservationOfTheRegion(){
     else if (memProtect == 9) memProtect = PAGE_TARGETS_INVALID;
     else memProtect = PAGE_TARGETS_NO_UPDATE;
 
-
+    if (!VirtualAlloc(address, 64, allocType, memProtect))
+        cout << "Error 0x" << GetLastError() << endl;
+    else cout << "Memory area allocated\n";
 
     if (address == nullptr) delete address;
 }
