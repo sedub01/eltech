@@ -10,6 +10,7 @@ int safe_cin();
 void computingSystemInfo();
 void statusOfVirtualMemory();
 void defineTheStateOfMemoryArea();
+void reservationOfTheRegion();
 
 int main(){
     int option = -1, LOOP = 1;
@@ -28,6 +29,9 @@ int main(){
                 break;
             case 3:
                 defineTheStateOfMemoryArea();
+                break;
+            case 4:
+                reservationOfTheRegion();
                 break;
         }
     }while (LOOP);
@@ -56,7 +60,7 @@ void menu(int& option){
         cout << "Enter your choice: ";
         option = safe_cin();
         CLS;
-        if (option < 0 || option > 6) cout << "Wrong option\n";
+        if (option < 0 || option > 8) cout << "Wrong option\n";
     }
 
 }
@@ -168,4 +172,69 @@ void defineTheStateOfMemoryArea(){
 
     system("pause");
     CLS;
+}
+
+void reservationOfTheRegion(){
+    int option = -1, allocType = -1, memProtect = -1;
+    LPVOID *address;
+    while (option < 0 || option > 2){
+        cout << "What do you wanna choose?\n";
+        cout << "1 - reserve the region in automatic mode\n";
+        cout << "2 - reserve the region in the mode enter the address of the beginning of the region\n";
+        cout << "Enter your choice: ";
+        option = safe_cin();
+        CLS;
+        if (option < 0 || option > 2) cout << "Wrong option\n";
+    }
+    if (option == 1) address = nullptr;
+    else {
+        address = new LPVOID();
+        cout << "Enter the required valid address: 0x";
+        cin >> std::hex >> *address;
+    }
+    while (allocType < 0 || allocType > 3){
+        cout << "Enter the type of memory allocation: ";
+        cout << "1 - MEM_COMMIT\n";
+        cout << "2 - MEM_RESERVE\n";
+        cout << "3 - MEM_RESET\n";
+        cout << "Enter your choice: ";
+        allocType = safe_cin();
+        CLS;
+        if (allocType < 0 || allocType > 3) cout << "Wrong option\n";
+    }
+    while (memProtect < 0 || memProtect > 10){
+        cout << "Enter the memory protection: ";
+        cout << "1 - PAGE_EXECUTE\n";
+        cout << "2 - PAGE_EXECUTE_READ\n";
+        cout << "3 - PAGE_EXECUTE_READWRITE\n";
+        cout << "4 - PAGE_EXECUTE_WRITECOPY\n";
+        cout << "5 - PAGE_NOACCESS\n";
+        cout << "6 - PAGE_READONLY\n";
+        cout << "7 - PAGE_READWRITE\n";
+        cout << "8 - PAGE_WRITECOPY\n";
+        cout << "9 - PAGE_TARGETS_INVALID\n";
+        cout << "10- PAGE_TARGETS_NO_UPDATE\n";
+        cout << "Enter your choice: ";
+        memProtect = safe_cin();
+        CLS;
+        if (memProtect < 0 || memProtect > 10) cout << "Wrong option\n";
+    }
+    if (allocType == 1) allocType = MEM_COMMIT;
+    else if (allocType == 2) allocType = MEM_RESERVE;
+    else allocType = MEM_RESET;
+
+    if (memProtect == 1) memProtect = PAGE_EXECUTE;
+    else if (memProtect == 2) memProtect = PAGE_EXECUTE_READ;
+    else if (memProtect == 3) memProtect = PAGE_EXECUTE_READWRITE;
+    else if (memProtect == 4) memProtect = PAGE_EXECUTE_WRITECOPY;
+    else if (memProtect == 5) memProtect = PAGE_NOACCESS;
+    else if (memProtect == 6) memProtect = PAGE_READONLY;
+    else if (memProtect == 7) memProtect = PAGE_READWRITE;
+    else if (memProtect == 8) memProtect = PAGE_WRITECOPY;
+    else if (memProtect == 9) memProtect = PAGE_TARGETS_INVALID;
+    else memProtect = PAGE_TARGETS_NO_UPDATE;
+
+
+
+    if (address == nullptr) delete address;
 }
