@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.4">
+  <display-name>TestServlet</display-name>
+  
+  <welcome-file-list>
+  	<welcome-file>TeamTitle.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>Testing</servlet-name>
+    <servlet-class>Testing</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Testing</servlet-name>
+    <url-pattern>/TeamList</url-pattern>
+  </servlet-mapping>
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/404Error.jsp</location>
+  </error-page>
+  <error-page>
+  	<exception-type>java.lang.NumberFormatException</exception-type>
+  	<location>/SalaryError.jsp</location>
+  </error-page>
+</web-app>
