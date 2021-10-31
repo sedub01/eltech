@@ -1,28 +1,36 @@
 #include <iostream>
 #include <windows.h>
 #include <bitset>
+#include <cstring>
 #define CLS system("cls")
 using std::cout;
 using std::cin;
 using std::endl;
-void menu(int& option);
-int safe_cin();
-void computingSystemInfo();
+void computingSystemInfo(SYSTEM_INFO&);
 void statusOfVirtualMemory();
 void defineTheStateOfMemoryArea();
-void reservationOfTheRegion();
+void reservationOfTheRegion(SYSTEM_INFO&);
+void reservationOfTheRegion_rc(SYSTEM_INFO&);
+void writeData();
+void setProtection();
+void freeMem();
+
+void menu(int& option);
+int safe_cin();
+void choose_protection(DWORD&);
+void protect_info(const DWORD&);
 
 int main(){
-    int option = -1, LOOP = 1;
+    int option = -1;
+    SYSTEM_INFO SYSTEM_INFO;
+    GetSystemInfo(&SYSTEM_INFO);
     do{
         menu(option);
         switch(option){
             case 0:
-                cout << "Goodbye" << endl;
-                LOOP = 0;
                 break;
             case 1:
-                computingSystemInfo();
+                computingSystemInfo(SYSTEM_INFO);
                 break;
             case 2:
                 statusOfVirtualMemory();
@@ -31,11 +39,23 @@ int main(){
                 defineTheStateOfMemoryArea();
                 break;
             case 4:
-                reservationOfTheRegion();
+                reservationOfTheRegion(SYSTEM_INFO);
+                break;
+            case 5:
+                reservationOfTheRegion_rc(SYSTEM_INFO);
+                break;
+            case 6:
+                writeData();
+                break;
+            case 7:
+                setProtection();
+                break;
+            case 8:
+                freeMem();
                 break;
         }
-    }while (LOOP);
-
+    }while(option);
+    cout << "Goodbye" << endl;
 
     return 0;
 }
@@ -74,10 +94,9 @@ int safe_cin(){
     }
     return choice;
 }
-void computingSystemInfo(){
-    SYSTEM_INFO SYSTEM_INFO;
+void computingSystemInfo(SYSTEM_INFO& SYSTEM_INFO){
     WORD archType;
-    GetSystemInfo(&SYSTEM_INFO);
+
     archType = SYSTEM_INFO.wProcessorArchitecture;
     if (archType == PROCESSOR_ARCHITECTURE_AMD64)
         cout << "x64 (AMD or Intel)";
@@ -128,7 +147,7 @@ void defineTheStateOfMemoryArea(){
     cout << "Enter the required valid address: 0x";
     cin >> std::hex >> address;
 
-    if (VirtualQuery(address, &info, 64) == 0){
+    if (VirtualQuery(address, &info, sizeof(info)) == 0){
         cout << "Error 0x" <<GetLastError() << "\n";
         system("pause");
         CLS;
@@ -157,6 +176,9 @@ void defineTheStateOfMemoryArea(){
     else cout << "Unknown state\n";
 
     cout << "The access protection of the pages in the region: " << info.Protect << endl;
+    //именно здесь нужна info_protect(так должна быть какая-нибудь константа)
+    protect_info(info.Protect);
+    cout << endl;
     cout << "The type of pages in the region\n";
     type = info.Type;
     if (type == MEM_IMAGE)
@@ -174,39 +196,136 @@ void defineTheStateOfMemoryArea(){
     CLS;
 }
 
-void reservationOfTheRegion(){
-    int option = -1, len, allocType = -1, memProtect = -1;
-    LPVOID *address;
-    while (option < 0 || option > 2){
+//this will with commit
+void reservationOfTheRegion(SYSTEM_INFO& SYSTEM_INFO){
+    int option = -1;
+    void* address = nullptr;
+    while (option < 1 || option > 2){
         cout << "What do you wanna choose?\n";
         cout << "1 - reserve the region in automatic mode\n";
         cout << "2 - reserve the region in the mode enter the address of the beginning of the region\n";
         cout << "Enter your choice: ";
         option = safe_cin();
         CLS;
-        if (option < 0 || option > 2) cout << "Wrong option\n";
+        if (option < 1 || option > 2) cout << "Wrong option\n";
     }
-    if (option == 1) address = nullptr;
-    else {
-        address = new LPVOID();
+    if (option == 2){
         cout << "Enter the required valid address: 0x";
-        cin >> std::hex >> *address;
+        cin >> address;
     }
-    cout << "Enter the size of the region, in bytes: ";
-    cin >> len;
 
-    while (allocType < 0 || allocType > 3){
-        cout << "Enter the type of memory allocation:\n";
-        cout << "1 - MEM_COMMIT\n";
-        cout << "2 - MEM_RESERVE\n";
-        cout << "3 - MEM_RESET\n";
-        cout << "Enter your choice: ";
-        allocType = safe_cin();
-        CLS;
-        if (allocType < 0 || allocType > 3) cout << "Wrong option\n";
+    // разблокировать на случай хз
+    // while (memProtect < 0 || memProtect > 10){
+    //     cout << "Enter the memory protection:\n";
+    //     cout << "1 - PAGE_EXECUTE\n";
+    //     cout << "2 - PAGE_EXECUTE_READ\n";
+    //     cout << "3 - PAGE_EXECUTE_READWRITE\n";
+    //     cout << "4 - PAGE_EXECUTE_WRITECOPY\n";
+    //     cout << "5 - PAGE_NOACCESS\n";
+    //     cout << "6 - PAGE_READONLY\n";
+    //     cout << "7 - PAGE_READWRITE\n";
+    //     cout << "8 - PAGE_WRITECOPY\n";
+    //     cout << "9 - PAGE_TARGETS_INVALID\n";
+    //     cout << "10- PAGE_TARGETS_NO_UPDATE\n";
+    //     cout << "Enter your choice: ";
+    //     memProtect = safe_cin();
+    //     CLS;
+    //     if (memProtect < 0 || memProtect > 10) cout << "Wrong option\n";
+    // }
+    // if (memProtect == 1) memProtect = PAGE_EXECUTE;
+    // else if (memProtect == 2) memProtect = PAGE_EXECUTE_READ;
+    // else if (memProtect == 3) memProtect = PAGE_EXECUTE_READWRITE;
+    // else if (memProtect == 4) memProtect = PAGE_EXECUTE_WRITECOPY;
+    // else if (memProtect == 5) memProtect = PAGE_NOACCESS;
+    // else if (memProtect == 6) memProtect = PAGE_READONLY;
+    // else if (memProtect == 7) memProtect = PAGE_READWRITE;
+    // else if (memProtect == 8) memProtect = PAGE_WRITECOPY;
+    // else if (memProtect == 9) memProtect = PAGE_TARGETS_INVALID;
+    // else memProtect = PAGE_TARGETS_NO_UPDATE;
+
+    address = VirtualAlloc(address, SYSTEM_INFO.dwPageSize, MEM_RESERVE, PAGE_READWRITE);
+    if (address){
+        if (address = VirtualAlloc(address, SYSTEM_INFO.dwPageSize, MEM_COMMIT, PAGE_READWRITE))
+            cout << "Memory area allocated\nAddress: " << address << endl;
+        else cout << "Error 0x" << GetLastError() << endl << "Memory hasn't commited";
     }
-    while (memProtect < 0 || memProtect > 10){
-        cout << "Enter the memory protection:\n";
+    else cout << "Error 0x" << GetLastError() << endl << "Memory hasn't reserved\n";
+}
+//and the next function will be with reserve and commit
+void reservationOfTheRegion_rc(SYSTEM_INFO& SYSTEM_INFO){
+    int option = -1;
+    void* address = nullptr;
+    while (option < 1 || option > 2){
+        cout << "What do you wanna choose?\n";
+        cout << "1 - reserve the region in automatic mode\n";
+        cout << "2 - reserve the region in the mode enter the address of the beginning of the region\n";
+        cout << "Enter your choice: ";
+        option = safe_cin();
+        CLS;
+        if (option < 1 || option > 2) cout << "Wrong option\n";
+    }
+    if (option == 2){
+        cout << "Enter the required valid address: 0x";
+        cin >> address;
+    }
+    if (address = VirtualAlloc(address, SYSTEM_INFO.dwPageSize, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE))
+        cout << "Memory area allocated\nAddress: " << address << endl;
+    else cout << "Error 0x" << GetLastError() << endl << "Memory hasn't allocated";
+}
+//use CopyMemory
+void writeData(){
+    std::string source;
+    LPVOID address; //not const
+    MEMORY_BASIC_INFORMATION info;
+    char* destination;
+
+    cout << "Enter data for input: ";
+    getchar();
+    std::getline(cin, source);
+
+    cout << "Enter the address of input: 0x";
+    cin >> address;
+
+    if(!VirtualQuery(address, &info, 256)){
+        cout << "Error 0x" << GetLastError() << "\n";
+        system("pause");
+        CLS;
+        return;
+    }
+    
+    if (info.AllocationProtect && (PAGE_EXECUTE_READWRITE | PAGE_EXECUTE_WRITECOPY | PAGE_READWRITE | PAGE_WRITECOPY)){
+        destination = (char*)address;
+        CopyMemory(destination, source.c_str(), source.length() * sizeof(char));
+        //if not copied --> invalid address
+        cout << "Memory area " << address << " filled. Entered data: ";
+        for (size_t i = 0; i < source.length(); i++)
+            cout << destination[i];
+        cout << endl;
+    }
+    else cout << "Access is denied\n";
+}
+
+void setProtection(){
+    LPVOID address;
+    DWORD newLevel, oldLevel;
+
+    cout << "Enter the address: 0x";
+    cin >> address;
+    cout << "Choose new protection level:\n";
+    choose_protection(newLevel);
+
+    if (VirtualProtect(address, sizeof(DWORD), newLevel, &oldLevel)){
+        cout << "Old protection level:\n";
+        protect_info(oldLevel);
+    }
+    else cout << "Error 0x" << GetLastError() << "Access denied\n";
+    system("pause");
+}
+
+void choose_protection(DWORD& newLevel){
+    newLevel = -1;
+    while (newLevel < 1 || newLevel > 10){
+        //cout << "Enter the memory protection:\n";
         cout << "1 - PAGE_EXECUTE\n";
         cout << "2 - PAGE_EXECUTE_READ\n";
         cout << "3 - PAGE_EXECUTE_READWRITE\n";
@@ -218,28 +337,43 @@ void reservationOfTheRegion(){
         cout << "9 - PAGE_TARGETS_INVALID\n";
         cout << "10- PAGE_TARGETS_NO_UPDATE\n";
         cout << "Enter your choice: ";
-        memProtect = safe_cin();
+        newLevel = safe_cin();
         CLS;
-        if (memProtect < 0 || memProtect > 10) cout << "Wrong option\n";
+        if (newLevel < 1 || newLevel > 10) cout << "Wrong option\n";
     }
-    if (allocType == 1) allocType = MEM_COMMIT;
-    else if (allocType == 2) allocType = MEM_RESERVE;
-    else allocType = MEM_RESET;
 
-    if (memProtect == 1) memProtect = PAGE_EXECUTE;
-    else if (memProtect == 2) memProtect = PAGE_EXECUTE_READ;
-    else if (memProtect == 3) memProtect = PAGE_EXECUTE_READWRITE;
-    else if (memProtect == 4) memProtect = PAGE_EXECUTE_WRITECOPY;
-    else if (memProtect == 5) memProtect = PAGE_NOACCESS;
-    else if (memProtect == 6) memProtect = PAGE_READONLY;
-    else if (memProtect == 7) memProtect = PAGE_READWRITE;
-    else if (memProtect == 8) memProtect = PAGE_WRITECOPY;
-    else if (memProtect == 9) memProtect = PAGE_TARGETS_INVALID;
-    else memProtect = PAGE_TARGETS_NO_UPDATE;
+    if (newLevel == 1) newLevel = PAGE_EXECUTE;
+    else if (newLevel == 2) newLevel = PAGE_EXECUTE_READ;
+    else if (newLevel == 3) newLevel = PAGE_EXECUTE_READWRITE;
+    else if (newLevel == 4) newLevel = PAGE_EXECUTE_WRITECOPY;
+    else if (newLevel == 5) newLevel = PAGE_NOACCESS;
+    else if (newLevel == 6) newLevel = PAGE_READONLY;
+    else if (newLevel == 7) newLevel = PAGE_READWRITE;
+    else if (newLevel == 8) newLevel = PAGE_WRITECOPY;
+    else if (newLevel == 9) newLevel = PAGE_TARGETS_INVALID;
+    else newLevel = PAGE_TARGETS_NO_UPDATE;
+}
 
-    if (!VirtualAlloc(address, 64, allocType, memProtect))
-        cout << "Error 0x" << GetLastError() << endl;
-    else cout << "Memory area allocated\n";
+void protect_info(const DWORD& pro){
+    if (pro & PAGE_EXECUTE) cout << "PAGE_EXECUTE\n";
+    if (pro & PAGE_EXECUTE_READ) cout << "PAGE_EXECUTE_READ\n";
+    if (pro & PAGE_EXECUTE_READWRITE) cout << "PAGE_EXECUTE_READWRITE\n";
+    if (pro & PAGE_EXECUTE_WRITECOPY) cout << "PAGE_EXECUTE_WRITECOPY\n";
+    if (pro & PAGE_NOACCESS) cout << "PAGE_NOACCESS\n";
+    if (pro & PAGE_READONLY) cout << "PAGE_READONLY\n";
+    if (pro & PAGE_READWRITE) cout << "PAGE_READWRITE\n";
+    if (pro & PAGE_WRITECOPY) cout << "PAGE_WRITECOPY\n";
+    if (pro & PAGE_TARGETS_INVALID) cout << "PAGE_TARGETS_INVALID\n";
+    if (pro & PAGE_TARGETS_NO_UPDATE) cout << "PAGE_TARGETS_NO_UPDATE\n";
+}
 
-    if (address == nullptr) delete address;
+void freeMem(){
+    LPVOID address;
+
+    cout << "Enter the address: 0x";
+    cin >> address;
+    if (VirtualFree(address, 0, MEM_RELEASE))
+        cout << "Memory area deleted\n";
+    else std::cerr << "Error 0x" << GetLastError() << endl;
+    system("pause");
 }
