@@ -270,21 +270,22 @@ void reservationOfTheRegion_rc(SYSTEM_INFO& SYSTEM_INFO){
     }
     if (address = VirtualAlloc(address, SYSTEM_INFO.dwPageSize, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE))
         cout << "Memory area allocated\nAddress: " << address << endl;
-    else cout << "Error 0x" << GetLastError() << endl << "Memory hasn't allocated";
+    else cout << "Error 0x" << GetLastError() << endl << "Memory hasn't allocated\n";
 }
 //use CopyMemory
 void writeData(){
     std::string source;
-    LPVOID address; //not const
+    LPVOID address = NULL; //not const
     MEMORY_BASIC_INFORMATION info;
-    char* destination;
+    size_t addr_t;
 
     cout << "Enter data for input: ";
     getchar();
     std::getline(cin, source);
 
     cout << "Enter the address of input: 0x";
-    cin >> address;
+    cin >> addr_t;
+    address = (LPVOID)addr_t;
 
     if(!VirtualQuery(address, &info, 256)){
         cout << "Error 0x" << GetLastError() << "\n";
@@ -293,10 +294,9 @@ void writeData(){
         return;
     }
     
-    if (info.AllocationProtect && (PAGE_EXECUTE_READWRITE | PAGE_EXECUTE_WRITECOPY | PAGE_READWRITE | PAGE_WRITECOPY)){
-        destination = (char*)address;
+    if (info.Protect && (PAGE_EXECUTE_READWRITE | PAGE_EXECUTE_WRITECOPY | PAGE_READWRITE | PAGE_WRITECOPY)){
+        char* destination = (char*)address;
         CopyMemory(destination, source.c_str(), source.length() * sizeof(char));
-        //if not copied --> invalid address
         cout << "Memory area " << address << " filled. Entered data: ";
         for (size_t i = 0; i < source.length(); i++)
             cout << destination[i];
@@ -311,6 +311,11 @@ void setProtection(){
 
     cout << "Enter the address: 0x";
     cin >> address;
+    if (!address){
+        cout << "Address is null\n";
+        system("pause");
+        return;
+    }
     cout << "Choose new protection level:\n";
     choose_protection(newLevel);
 
@@ -318,7 +323,7 @@ void setProtection(){
         cout << "Old protection level:\n";
         protect_info(oldLevel);
     }
-    else cout << "Error 0x" << GetLastError() << "Access denied\n";
+    else cout << "Error 0x" << GetLastError() << "\nAccess denied\n";
     system("pause");
 }
 
@@ -368,12 +373,12 @@ void protect_info(const DWORD& pro){
 }
 
 void freeMem(){
-    LPVOID address;
-
+    LPVOID address = NULL;
     cout << "Enter the address: 0x";
     cin >> address;
+
     if (VirtualFree(address, 0, MEM_RELEASE))
-        cout << "Memory area deleted\n";
-    else std::cerr << "Error 0x" << GetLastError() << endl;
+        cout << "Memory area's released\n";
+    else std::cerr << "Error: 0x" << GetLastError() << endl;
     system("pause");
 }
