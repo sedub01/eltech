@@ -1,0 +1,22 @@
+html{
+	background-color: #9ecd08;
+}
+h1{
+	text-shadow: 3px -2px 5px red, 4px -3px 5px yellow;
+}
+table{
+	border: 2px solid black;
+	background-color: #808000;
+}
+tr:nth-child(1){
+	background-color: #50c878;
+}
+input[type = text]{
+	width: 13%;
+	border-radius: 2px;
+	padding: 8px 14px;
+	margin: 8px;
+}
+h2{
+	color: steelblue;
+}
