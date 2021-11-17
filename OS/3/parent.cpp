@@ -2,6 +2,8 @@
 #include <iostream>
 #include <windows.h>
 
+const int N = 10;
+
 using std::cout;
 using std::wstring;
 int main(){
