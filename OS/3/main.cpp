@@ -8,7 +8,7 @@ DWORD WINAPI MyThreadFunction(LPVOID lpParam);
 const int numberTicket = 930831, N=1000000000;
  
 typedef struct NumberOfPi{
-        int i,number,j;
+        int i;
         double pi;
 }NuOfPi,*PNuOfPi;
  
@@ -26,8 +26,6 @@ int main(){
        
         pDataArray[i]->i = i*numberTicket*10;
         pDataArray[i]->pi = 0;
-        pDataArray[i]->number=i;
-        pDataArray[i]->j=j;
  
         hThreadArray[i] = CreateThread(
         NULL,                   // default security attributes
@@ -57,12 +55,12 @@ DWORD WINAPI MyThreadFunction(LPVOID lpParam){
     PNuOfPi pDataArray = (PNuOfPi)lpParam;
     double pi=0, x;
  
-    while(pDataArray->i<N){
-        for(int j=0; j < numberTicket*10 && j+pDataArray->i < N; j++){
+    while(pDataArray->i < N){
+        for(int j = 0; j < numberTicket*10 && j + pDataArray->i < N; j++){
             x = (j+pDataArray->i+0.5)*1/N;    
             pi += 4/(1+x*x);
         }
-        pDataArray->i += pDataArray->j * numberTicket*10;
+        pDataArray->i += MAX_THREADS * numberTicket*10;
     }
     pDataArray->pi += pi;
     return 0;
