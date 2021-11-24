@@ -8,8 +8,8 @@ DWORD WINAPI MyThreadFunction(LPVOID lpParam);
 const int numberTicket = 930831, N=1000000000;
  
 typedef struct NumberOfPi{
-        int i;
-        double pi;
+    int i; //кол-во слагаемых в одном потоке
+    double pi; //получившееся слагаемое (в одном потоке)
 }NuOfPi,*PNuOfPi;
  
 int main(){
@@ -20,8 +20,9 @@ int main(){
     unsigned long t1, t2;
     int i, j=MAX_THREADS;
 
-    cout<<"Wait, please...\n\n";
+    cout<<"Wait, please...\n";
     for(i=0; i<j; i++){
+        //возвращает указатель на неперемещаемый блок памяти из кучи (он пока равен 0)
         pDataArray[i] = (PNuOfPi) HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY,sizeof(NuOfPi));
        
         pDataArray[i]->i = i*numberTicket*10;
@@ -31,21 +32,27 @@ int main(){
         NULL,                   // default security attributes
         0,                      // use default stack size  
         MyThreadFunction,       // thread function name
-        pDataArray[i],          // argument to thread function
-        CREATE_SUSPENDED,      
+        pDataArray[i],          // аргументы для поточной функции
+        CREATE_SUSPENDED,       // создается остановленным
         &dwThreadIdArray[i]);   // returns the thread identifier
     }
    
     t1=clock();
     for (i=0; i<j; i++)
+        //продолжает потоки, так как они созданы "остановленными"
         ResumeThread(hThreadArray[i]);      
-    WaitForMultipleObjects(j, hThreadArray, TRUE, INFINITE);    
+    //Ожидает, пока все указанные объекты не перейдут в сигнальное состояние
+    if (!WaitForMultipleObjects(j, hThreadArray, TRUE, INFINITE)) //j=length(hThreadArray)
+        cout << "All threads are closed\n\n";
+        else cout << "Something went wrong!\n\n";
+    //теперь остался поток main
     t2=clock();
  
+    //складываю получившиеся значения из каждого потока
     for (i=0; i<j; i++){
         pi += pDataArray[i]->pi;
         CloseHandle(hThreadArray[i]);
-        HeapFree(GetProcessHeap(), 0, pDataArray[i]);      
+        HeapFree(GetProcessHeap(), 0, pDataArray[i]);
     }
     printf("pi: %lf",pi/N);
     cout << "\nTime " << (t2-t1) / (double)CLOCKS_PER_SEC << "\n";
@@ -62,6 +69,6 @@ DWORD WINAPI MyThreadFunction(LPVOID lpParam){
         }
         pDataArray->i += MAX_THREADS * numberTicket*10;
     }
-    pDataArray->pi += pi;
+    pDataArray->pi = pi;
     return 0;
 }
