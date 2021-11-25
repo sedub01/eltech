@@ -28,11 +28,14 @@ int main(){
    
     t1=clock();
 
-    #pragma omp parallel for private(pi) shedule(dynamic, MAX_THREADS)
-    {
-        double pi=0, x;
+    #pragma omp parallel for schedule(dynamic, MAX_THREADS)
+    {//без schedule то же самое
+        double pi, x;
         //pDataArray[k]
         for (int k = 0; k < j; k++){
+            pi = 0;
+            cout << "k = " << k << "\n";
+            cout << "pi[start] = " << pi << "\n";
             while(pDataArray[k]->i < N){
                 for(int j = 0; j < numberTicket*10 && j + pDataArray[k]->i < N; j++){
                     x = (j+pDataArray[k]->i+0.5)*1/N;    
@@ -41,6 +44,7 @@ int main(){
                 pDataArray[k]->i += MAX_THREADS * numberTicket*10;
             }
             pDataArray[k]->pi = pi;
+            cout << "pi[end] = " << pi << "\n\n";
         }
     }
     
