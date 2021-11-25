@@ -1,8 +1,9 @@
 #include <time.h>
 #include <iostream>
 #include <omp.h>
+#include <windows.h>
 using std::cout;
-#define MAX_THREADS 4 //(1, 2, 4, 8, 12, 16).
+#define MAX_THREADS 5 //(1, 2, 4, 8, 12, 16).
 
 const int numberTicket = 930831, N=1000000000;
  
@@ -28,16 +29,20 @@ int main(){
    
     t1=clock();
 
-    #pragma omp parallel for schedule(dynamic, MAX_THREADS)
-    {//без schedule то же самое
+    //что если запихать pragma в сам цикл?
+    #pragma omp parallel shared(pDataArray) 
+    {//без pragma omp то же самое
         double pi, x;
         //pDataArray[k]
-        for (int k = 0; k < j; k++){
+        int k = omp_get_thread_num();
+        //for (int k = 0; k < j; k++){
             pi = 0;
             cout << "k = " << k << "\n";
             cout << "pi[start] = " << pi << "\n";
             while(pDataArray[k]->i < N){
-                for(int j = 0; j < numberTicket*10 && j + pDataArray[k]->i < N; j++){
+                int flag = std::min(numberTicket*10, N - pDataArray[k]->i);
+                #pragma omp for schedule(dynamic, MAX_THREADS)
+                for ( int j=0; j<flag; j++ ){
                     x = (j+pDataArray[k]->i+0.5)*1/N;    
                     pi += 4/(1+x*x);
                 }
@@ -45,7 +50,7 @@ int main(){
             }
             pDataArray[k]->pi = pi;
             cout << "pi[end] = " << pi << "\n\n";
-        }
+        //}
     }
     
     t2=clock();
