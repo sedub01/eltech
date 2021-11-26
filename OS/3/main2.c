@@ -1,9 +1,9 @@
 #include <time.h>
-#include <iostream>
 #include <omp.h>
-#include <windows.h>
-using std::cout;
+#include <stdio.h>
+#include <stdlib.h>
 #define MAX_THREADS 5 //(1, 2, 4, 8, 12, 16).
+#define min(a,b) ((a) < (b) ? (a) : (b))
 
 const int numberTicket = 930831, N=1000000000;
  
@@ -18,11 +18,12 @@ int main(){
     unsigned long t1, t2;
     int i, j=MAX_THREADS;
 
-    cout<<"Wait, please...\n";
-    for(i=0; i<j; i++){
+    printf("Wait, please...\n");
+    for (i=0; i<j; i++){
         //возвращает указатель на неперемещаемый блок памяти из кучи (он пока равен 0)
         //pDataArray[i] = (PNuOfPi) HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY,sizeof(NuOfPi));
-        pDataArray[i] = new NuOfPi();
+        //pDataArray[i] = new NuOfPi();
+        pDataArray[i] = (PNuOfPi) malloc(sizeof(NuOfPi));
         pDataArray[i]->i = i*numberTicket*10;
         pDataArray[i]->pi = 0;
     }
@@ -37,10 +38,10 @@ int main(){
         int k = omp_get_thread_num();
         //for (int k = 0; k < j; k++){
             pi = 0;
-            cout << "k = " << k << "\n";
-            cout << "pi[start] = " << pi << "\n";
+            printf("k = %d\n", k);
+            printf("pi[start] = %lf\n", pi);
             while(pDataArray[k]->i < N){
-                int flag = std::min(numberTicket*10, N - pDataArray[k]->i);
+                int flag = min(numberTicket*10, N - pDataArray[k]->i);
                 #pragma omp for schedule(dynamic, MAX_THREADS)
                 for ( int j=0; j<flag; j++ ){
                     x = (j+pDataArray[k]->i+0.5)*1/N;    
@@ -49,7 +50,7 @@ int main(){
                 pDataArray[k]->i += MAX_THREADS * numberTicket*10;
             }
             pDataArray[k]->pi = pi;
-            cout << "pi[end] = " << pi << "\n\n";
+            printf("pi[end] = %lf\n\n", pi);
         //}
     }
     
@@ -59,8 +60,8 @@ int main(){
     for (i=0; i<j; i++)
         pi += pDataArray[i]->pi;
     printf("pi: %lf",pi/N);
-    cout << "\nTime " << (t2-t1) / (double)CLOCKS_PER_SEC << "\n";
-    for (i = 0; i < j; i++)
-        delete pDataArray[i];
-    system("pause");
+    printf("\nTime %lf\n", (t2-t1) / (double)CLOCKS_PER_SEC);
+    // for (i = 0; i < j; i++)
+    //     delete pDataArray[i];
+    free(pDataArray);
 }
