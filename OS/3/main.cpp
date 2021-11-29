@@ -54,7 +54,7 @@ int main(){
         CloseHandle(hThreadArray[i]);
         HeapFree(GetProcessHeap(), 0, pDataArray[i]);
     }
-    printf("pi: %lf",pi/N);
+    printf("pi: %.10lf",pi/N);
     cout << "\nTime " << (t2-t1) / (double)CLOCKS_PER_SEC << "\n";
     system("pause");
 }
