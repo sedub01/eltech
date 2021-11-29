@@ -5,7 +5,7 @@ using std::cout;
 #define MAX_THREADS 8 //(1, 2, 4, 8, 12, 16).
  
 DWORD WINAPI MyThreadFunction(LPVOID lpParam);
-const int numberTicket = 930831, N=1000000000;
+const int numberTicket = 930831, N=100000000;
  
 typedef struct NumberOfPi{
     int i; //кол-во слагаемых в одном потоке
