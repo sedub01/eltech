@@ -13,7 +13,7 @@ public class MySampleApplicationServiceImpl extends RemoteServiceServlet impleme
     private static List<Footballer> footballers = null;
     static {
         footballers = new ArrayList<>();
-        footballers.add(new Footballer("Билли Херрингтон", 0, "Калуга", 19000));
+        footballers.add(new Footballer("Билли Херрингтон", 0, "Калуга", 16000));
         footballers.add(new Footballer("Антон Чехов", 1, "Санкт-Петербург", 30000));
         footballers.add(new Footballer("Илья Антонов", 2, "Екатеринбург", 25000));
         footballers.add(new Footballer("Андрей Сачков", 3, "Вологда", 19000));
@@ -22,10 +22,5 @@ public class MySampleApplicationServiceImpl extends RemoteServiceServlet impleme
     @Override
     public List<Footballer> getFootballerList() {
         return footballers;
-    }
-
-    @Override
-    public void addFootballer(Footballer footballer) {
-        if(footballer != null) footballers.add(footballer);
     }
 }

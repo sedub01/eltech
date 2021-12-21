@@ -15,12 +15,6 @@ public interface MySampleApplicationService extends RemoteService {
     List<Footballer> getFootballerList();
 
     /**
-     * Добавление футболиста в список
-     * @param footballer Добавляемый футболист
-     */
-    void addFootballer(Footballer footballer);
-
-    /**
      * Utility/Convenience class.
      * Use MySampleApplicationService.App.getInstance() to access static instance of MySampleApplicationServiceAsync
      */

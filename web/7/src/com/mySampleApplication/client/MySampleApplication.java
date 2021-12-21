@@ -6,38 +6,28 @@ import com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.ui.*;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.DOM;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.view.client.ListDataProvider;
 
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Entry point classes define <code>onModuleLoad()</code>
- */
+/**Entry point classes define <code>onModuleLoad()</code>*/
 public class MySampleApplication implements EntryPoint {
     private final MySampleApplicationServiceAsync myService =
             MySampleApplicationService.App.getInstance();
-    @SuppressWarnings("deprecation")
     /** Список футболистов */
+    @SuppressWarnings("deprecation")
     final ListBox footballersListBox = new ListBox(false);
-    /** Место для вывода ошибки */
-    final Label errorLabel = new Label();
+    final String[] roles = {"Вратарь", "Нападающий", "Полузащитник", "Защитник"};
 
     /** Точка входа в приложение - аналог main */
     public void onModuleLoad() {
-        final Button button = new Button("Получить список");
-        final Label label = new Label();
-
         footballersListBox.setFocus(true);
         refreshFootballersList();
 
-        //final CellTable<Footballer> mainTable = createCellTable();
-
         //создание и заполнение таблицы
         final CellTable<Footballer> mainTable = createCellTable();
-        final ListDataProvider<Footballer> mainDataProvider = new ListDataProvider<Footballer>();
+        final ListDataProvider<Footballer> mainDataProvider = new ListDataProvider<>();
         mainDataProvider.addDataDisplay(mainTable);
         RootPanel.get("PanelContainer").add(mainTable);
         myService.getFootballerList(
@@ -54,23 +44,42 @@ public class MySampleApplication implements EntryPoint {
                 }
         );
 
-        final VerticalPanel addPanel = new VerticalPanel();
-        addPanel.setHorizontalAlignment(VerticalPanel.ALIGN_RIGHT);
-        addPanel.setVisible(true);
+        final VerticalPanel salaryPanel = new VerticalPanel();
+        salaryPanel.setHorizontalAlignment(VerticalPanel.ALIGN_CENTER);
+        salaryPanel.setVisible(true);
+        final Label salaryLabel = new Label("Введите минимальную зарплату");
+        final Label errorLabel = new Label("Неверно введенная зарплата");
+        final Button button = new Button("Получить список");
+        final TextBox salaryField = new TextBox();
+        salaryField.getElement().setPropertyString("placeholder", "Зарплата");
+        errorLabel.setVisible(false);
+        salaryPanel.add(salaryLabel);
+        salaryPanel.add(errorLabel);
+        salaryPanel.add(salaryField);
+        salaryPanel.add(button);
 
-        button.addClickHandler(new ClickHandler() {
-            public void onClick(ClickEvent event) {
-                if (label.getText().equals("")) {
-                    //MySampleApplicationService.App.getInstance().getMessage("Hello, World!", new MyAsyncCallback(label));
-                } else {
-                    label.setText("");
-                }
+        button.addClickHandler(event -> {
+            int salary;
+            try{
+                salary = Integer.parseInt(salaryField.getText());
+                List<Footballer> tempList = new ArrayList<>(mainDataProvider.getList());
+                tempList.removeIf(boy -> boy.getSalary() < salary);
+                mainDataProvider.setList(tempList);
+                mainDataProvider.refresh();
+                refreshFootballersList();
+                salaryField.setText("");
+                errorLabel.setVisible(false);
+            }
+            catch (Exception e){
+                errorLabel.setVisible(true);
             }
         });
+
+        RootPanel.get("salaryForm").add(salaryPanel);
     }
 
     private CellTable<Footballer> createCellTable(){
-        final CellTable<Footballer> table = new CellTable<Footballer>();
+        final CellTable<Footballer> table = new CellTable<>();
         //без этой строчки ничего не будет видно
         table.setKeyboardSelectionPolicy(HasKeyboardSelectionPolicy.KeyboardSelectionPolicy.ENABLED);
 
@@ -80,15 +89,15 @@ public class MySampleApplication implements EntryPoint {
                 return object.getName();
             }
         };
-        table.addColumn(nameColumn);
-        //...
+        table.addColumn(nameColumn, "Имя");//колонка, ее название
+
         TextColumn<Footballer> specColumn = new TextColumn<Footballer>() {
             @Override
             public String getValue(Footballer object) {
-                return String.valueOf(object.getSpec());
+                return roles[object.getSpec()];
             }
         };
-        table.addColumn(specColumn);
+        table.addColumn(specColumn, "Специализация");
 
         TextColumn<Footballer> cityColumn = new TextColumn<Footballer>() {
             @Override
@@ -96,7 +105,7 @@ public class MySampleApplication implements EntryPoint {
                 return object.getCity();
             }
         };
-        table.addColumn(cityColumn);
+        table.addColumn(cityColumn, "Город");
 
         TextColumn<Footballer> salaryColumn = new TextColumn<Footballer>() {
             @Override
@@ -104,7 +113,7 @@ public class MySampleApplication implements EntryPoint {
                 return String.valueOf(object.getSalary());
             }
         };
-        table.addColumn(salaryColumn);
+        table.addColumn(salaryColumn, "Зарплата");
 
         return table;
     }
@@ -123,21 +132,5 @@ public class MySampleApplication implements EntryPoint {
                     footballersListBox.addItem(boy.getName());
             }
         });
-    }
-
-    private static class MyAsyncCallback implements AsyncCallback<String> {
-        private Label label;
-
-        MyAsyncCallback(Label label) {
-            this.label = label;
-        }
-
-        public void onSuccess(String result) {
-            label.getElement().setInnerHTML(result);
-        }
-
-        public void onFailure(Throwable throwable) {
-            label.setText("Failed to receive answer from server!");
-        }
     }
 }
