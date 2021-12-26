@@ -1,0 +1,15 @@
+Take | Semaphore | 14344343
+Take | Mutex | 14355500
+Read | Page: 1| 14356953
+Free | Mutex | 14356953
+Free | Semaphore | 14356953
+Take | Semaphore | 14356953
+Take | Mutex | 14370046
+Read | Page: 9| 14370546
+Free | Mutex | 14370546
+Free | Semaphore | 14370546
+Take | Semaphore | 14371359
+Take | Mutex | 14380140
+Read | Page: 2| 14380953
+Free | Mutex | 14380953
+Free | Semaphore | 14380953
