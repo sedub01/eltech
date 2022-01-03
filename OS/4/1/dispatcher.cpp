@@ -8,6 +8,7 @@ int main(){
     fileHandle = CreateFile(fileName.c_str(), GENERIC_WRITE | GENERIC_READ, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0),
     mapFile = CreateFileMapping(fileHandle, NULL, PAGE_READWRITE, 0, pageSize * pageCount, mapName.c_str()),
     processHandles[hProcessCount * 2];
+    LPVOID fileView = MapViewOfFile(mapFile, FILE_MAP_ALL_ACCESS, 0, 0, pageSize * pageCount);
     
     cout << "---Start---\n";
     for (int i = 0; i < pageCount; i++){
@@ -16,6 +17,7 @@ int main(){
         semaphoreName = "readSemaphore #" + to_string(i);
         readSemaphores[i] = CreateSemaphore(NULL, 0, 1, semaphoreName.c_str());
     }
+    VirtualLock(fileView, pageSize * pageCount);
 
     for (int i = 0; i < hProcessCount; i++){
         string logName = "writelogs\\writeLog #" + to_string(i) + ".txt";
@@ -31,6 +33,8 @@ int main(){
     WaitForMultipleObjects(hProcessCount * 2, processHandles, true, INFINITE);
     cout << "---End---\n";
     
+    VirtualUnlock(fileView, pageSize * pageCount);
+    UnmapViewOfFile(fileView);
     CloseHandle(IOMutex);
     CloseHandle(mapFile);
     CloseHandle(fileHandle);

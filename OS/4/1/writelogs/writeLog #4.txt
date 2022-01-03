@@ -1,15 +1,21 @@
-Take | Semaphore | 14341500
-Take | Mutex | 14345796
-Write | Page: 3| 14347234
-Free | Mutex | 14347234
-Free | Semaphore | 14347234
-Take | Semaphore | 14347234
-Take | Mutex | 14358921
-Write | Page: 11| 14359421
-Free | Mutex | 14359421
-Free | Semaphore | 14359421
-Take | Semaphore | 14362328
-Take | Mutex | 14373203
-Write | Page: 4| 14374015
-Free | Mutex | 14374015
-Free | Semaphore | 14374015
+Wait | Semaphore | 33764890
+Take | Semaphore | 33764890
+Take | Mutex | 33767828
+Write | Page: 4 | 33768562
+Free | Mutex | 33768562
+Free | Semaphore | 33768562
+
+Wait | Semaphore | 33768562
+Take | Semaphore | 33768562
+Take | Mutex | 33777406
+Write | Page: 12 | 33778312
+Free | Mutex | 33778312
+Free | Semaphore | 33778312
+
+Wait | Semaphore | 33778312
+Take | Semaphore | 33780687
+Take | Mutex | 33794734
+Write | Page: 5 | 33796031
+Free | Mutex | 33796031
+Free | Semaphore | 33796031
+

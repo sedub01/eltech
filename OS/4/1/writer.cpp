@@ -13,7 +13,6 @@ int main(){
         IOMutex = OpenMutex(MUTEX_MODIFY_STATE | SYNCHRONIZE, false, mutexName.c_str()),
         mapFile = OpenFileMapping(GENERIC_READ, false, mapName.c_str());
     handleStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
-    LPVOID fileView = MapViewOfFile(mapFile, FILE_MAP_READ, 0, 0, pageSize * pageCount);
     DWORD page = 0;
 
     for (int i = 0; i < pageCount; i++){
@@ -22,9 +21,10 @@ int main(){
         semaphoreName = "readSemaphore #" + to_string(i);
         readSemaphores[i] = OpenSemaphore(SEMAPHORE_MODIFY_STATE | SYNCHRONIZE, FALSE, semaphoreName.c_str());
     }
-    VirtualLock(fileView, pageSize * pageCount);
 
-    for (int i = 0; i < 3; i++){ // take + write + free
+    for (int i = 0; i < 3; i++){
+        LogWrite("Wait | Semaphore | " + to_string(GetTickCount()) + "\n");
+
         page = WaitForMultipleObjects(pageCount, writeSemaphores, FALSE, INFINITE);
         LogWrite("Take | Semaphore | " + to_string(GetTickCount()) + "\n");
 
@@ -38,11 +38,10 @@ int main(){
         LogWrite("Free | Mutex | " + to_string(GetTickCount()) + "\n");
 
         ReleaseSemaphore(readSemaphores[page], 1, NULL);
-        LogWrite("Free | Semaphore | " + to_string(GetTickCount()) + "\n");
+        LogWrite("Free | Semaphore | " + to_string(GetTickCount()) + "\n\n");
     }
 
     CloseHandle(IOMutex);
 	CloseHandle(mapFile);
-	CloseHandle(fileView);
 	CloseHandle(handleStdOut);
 }
