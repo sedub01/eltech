@@ -1,74 +1,70 @@
+#include <iostream>
 #include <windows.h>
 #include <time.h>
-#include <iostream>
 using std::cout;
-#define MAX_THREADS 8 //(1, 2, 4, 8, 12, 16).
- 
-DWORD WINAPI MyThreadFunction(LPVOID lpParam);
-const int numberTicket = 930831, N=100000000;
- 
-typedef struct NumberOfPi{
-    int i; //кол-во слагаемых в одном потоке
-    double pi; //получившееся слагаемое (в одном потоке)
-}NuOfPi,*PNuOfPi;
- 
-int main(){
-    DWORD  dwThreadIdArray[MAX_THREADS];
-    HANDLE hThreadArray[MAX_THREADS];
-    PNuOfPi pDataArray[MAX_THREADS];
-    double pi=0;
-    unsigned long t1, t2;
-    int i, j=MAX_THREADS;
+using std::endl;
 
-    cout<<"Wait, please...\n";
-    for(i=0; i<j; i++){
-        //возвращает указатель на неперемещаемый блок памяти из кучи (он пока равен 0)
-        pDataArray[i] = (PNuOfPi) HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY,sizeof(NuOfPi));
-       
-        pDataArray[i]->i = i*numberTicket*10;
-        pDataArray[i]->pi = 0;
- 
-        hThreadArray[i] = CreateThread(
-        NULL,                   // default security attributes
-        0,                      // use default stack size  
-        MyThreadFunction,       // thread function name
-        pDataArray[i],          // аргументы для поточной функции
-        CREATE_SUSPENDED,       // создается остановленным
-        &dwThreadIdArray[i]);   // returns the thread identifier
-    }
-   
-    t1=clock();
-    for (i=0; i<j; i++)
-        //продолжает потоки, так как они созданы "остановленными"
-        ResumeThread(hThreadArray[i]);      
-    //Ожидает, пока все указанные объекты не перейдут в сигнальное состояние
-    if (!WaitForMultipleObjects(j, hThreadArray, TRUE, INFINITE)) //j=length(hThreadArray)
-        cout << "All threads are closed\n\n";
-        else cout << "Something went wrong!\n\n";
-    //теперь остался поток main
-    t2=clock();
- 
-    //складываю получившиеся значения из каждого потока
-    for (i=0; i<j; i++){
-        pi += pDataArray[i]->pi;
-        CloseHandle(hThreadArray[i]);
-        HeapFree(GetProcessHeap(), 0, pDataArray[i]);
-    }
-    printf("pi: %.10lf",pi/N);
-    cout << "\nTime " << (t2-t1) / (double)CLOCKS_PER_SEC << "\n";
-    system("pause");
-}
+const int N = 100000000, BLOCKSIZE = 9308310, MAX_THREADS = 8, TIMES = 10;
+
+int currentPos = 0;
+double pi = 0.0;
+LPCRITICAL_SECTION section = new CRITICAL_SECTION;
+
 DWORD WINAPI MyThreadFunction(LPVOID lpParam){
-    PNuOfPi pDataArray = (PNuOfPi)lpParam;
-    double pi=0, x;
- 
-    while(pDataArray->i < N){
-        for(int j = 0; j < numberTicket*10 && j + pDataArray->i < N; j++){
-            x = (j+pDataArray->i+0.5)*1/N;    
-            pi += 4/(1+x*x);
+    int* first = (int*)lpParam;
+    int end = *first + BLOCKSIZE;
+    long double x, tempPi;
+
+    while (*first < N){
+        tempPi = 0.0;
+        for (int i = *first; (i < end) && (i < N); ++i){
+            x = (i + 0.5) / N;
+            tempPi += (4 / (1 + x*x));
         }
-        pDataArray->i += MAX_THREADS * numberTicket*10;
+        EnterCriticalSection(section);
+        pi += tempPi;
+        currentPos += BLOCKSIZE;
+        *first = currentPos;
+        LeaveCriticalSection(section);
+        end = *first + BLOCKSIZE;
     }
-    pDataArray->pi = pi;
     return 0;
+}
+
+int main(){   
+    DWORD t1;
+    HANDLE hThreadArray[MAX_THREADS];
+    int position[MAX_THREADS];
+    double averageTime = 0.0;
+    for (int j = 0; j < TIMES; j++){
+        pi = 0.0;
+        InitializeCriticalSection(section);
+
+        for (int i = 0; i < MAX_THREADS; ++i){
+            position[i] = BLOCKSIZE * i;
+            currentPos = position[i];
+            hThreadArray[i] = CreateThread(
+                NULL,               // default security attributes
+                0,                  // use default stack size  
+                MyThreadFunction,   // thread function name
+                &position[i],       // аргументы для поточной функции
+                CREATE_SUSPENDED,   // создается остановленным
+                NULL);              // returns the thread identifier
+        }
+        t1 = clock();
+
+        for (int i = 0; i < MAX_THREADS; ++i)
+            ResumeThread(hThreadArray[i]);
+        WaitForMultipleObjects(MAX_THREADS, hThreadArray, TRUE, INFINITE);
+
+        pi /= (long double)N;
+        DeleteCriticalSection(section);
+        averageTime += clock() - t1;
+        for (int i = 0; i < MAX_THREADS; ++i)
+            CloseHandle(hThreadArray[i]);
+    }
+    
+    printf("pi: %.10lf\n",pi);
+    cout << "Average time: " << (long double)(averageTime / TIMES) / CLOCKS_PER_SEC << endl;
+
 }
