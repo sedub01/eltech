@@ -1,7 +1,6 @@
 #include <iostream>
 #include <windows.h>
 using std::cout;
-using std::cin;
 const int size = 128;
 
 bool ConnectToPipe(HANDLE&, HANDLE&);
@@ -48,18 +47,20 @@ bool ConnectToPipe(HANDLE& hPipe, HANDLE& hEvent){
         isConnected = ConnectNamedPipe(hPipe, &overlapped);
         WaitForSingleObject(hEvent, INFINITE);
     }
-
     return isConnected;
 }
 
 bool SendMyMessage(HANDLE& hPipe, HANDLE& hEvent, bool& endFlag){
-    char message[size];
+    std::string message;
     OVERLAPPED overlapped = OVERLAPPED();
     overlapped.hEvent = hEvent;
 
     cout << "Enter the message:\n";
-    cin.getline(message, size);
-
-    if (!strcmp(message, "")) endFlag = true;
-    return WriteFile(hPipe, message, size, NULL, &overlapped);
+    std::getline(std::cin, message);
+    if (message.length() > size){
+        printf("Message is above %d characters\n", size);
+        return false;
+    }
+    if (!strcmp(message.c_str(), "")) endFlag = true;
+    return WriteFile(hPipe, message.c_str(), size, NULL, &overlapped);
 }

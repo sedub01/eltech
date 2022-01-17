@@ -1,11 +1,10 @@
 #include <iostream>
 #include <windows.h>
 using std::cout;
-using std::cin;
 const int size = 128;
 bool ConnectToPipe(HANDLE&);
 bool GetMyMessage(HANDLE&, char[]);
-void WINAPI Callback(DWORD dwErrorCode, DWORD dwNumberOfBytesTransfered, LPOVERLAPPED lpOverlapped) {
+void WINAPI callback(DWORD dwErrorCode, DWORD dwNumberOfBytesTransfered, LPOVERLAPPED lpOverlapped) {
     cout << "\nMessage recieved\n";
 }
 
@@ -26,13 +25,14 @@ int main(){
 }
 
 bool ConnectToPipe(HANDLE& hPipe){
+    WaitNamedPipeA("\\\\.\\pipe\\pipename", NMPWAIT_WAIT_FOREVER);
     hPipe = CreateFile(TEXT("\\\\.\\pipe\\pipename"), GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_FLAG_OVERLAPPED, NULL);
     return hPipe != INVALID_HANDLE_VALUE;
 }
 
 bool GetMyMessage(HANDLE& hPipe, char message[]){
     OVERLAPPED overlapped = OVERLAPPED();
-    bool flag = ReadFileEx(hPipe, message, size, &overlapped, Callback);
+    bool flag = ReadFileEx(hPipe, message, size, &overlapped, callback);
     SleepEx(INFINITE, true);
     if (!strcmp(message, "")) flag = false;
     return flag;
