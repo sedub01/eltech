@@ -41,6 +41,10 @@ int main(){
         LogWrite("Free | Semaphore | " + to_string(GetTickCount()) + "\n\n");
     }
 
+    for (int i = 0; i < pageCount; i++){
+        CloseHandle(writeSemaphores[i]);
+        CloseHandle(readSemaphores[i]);
+    }
     CloseHandle(IOMutex);
 	CloseHandle(mapFile);
 	CloseHandle(handleStdOut);
