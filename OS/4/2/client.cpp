@@ -2,14 +2,17 @@
 #include <windows.h>
 using std::cout;
 const int size = 128;
+HANDLE pipeHandle = nullptr;
 bool ConnectToPipe(HANDLE&);
 bool GetMyMessage(HANDLE&, char[]);
 void WINAPI callback(DWORD dwErrorCode, DWORD dwNumberOfBytesTransfered, LPOVERLAPPED lpOverlapped) {
-    cout << "\nMessage recieved\n";
+    if (PeekNamedPipe(pipeHandle, NULL, 0, NULL, &dwNumberOfBytesTransfered, NULL))
+        cout << "\nMessage recieved\n";
+    else cout << "\nMessage haven't recieved\n";
 }
 
 int main(){
-    HANDLE pipeHandle = nullptr;
+    
     char message[size];
 
     if (ConnectToPipe(pipeHandle)){
