@@ -62,5 +62,5 @@ bool SendMyMessage(HANDLE& hPipe, HANDLE& hEvent, bool& endFlag){
         return false;
     }
     if (!strcmp(message.c_str(), "")) endFlag = true;
-    return WriteFile(hPipe, message.c_str(), size, NULL, &overlapped);
+    return (WriteFile(hPipe, message.c_str(), size, NULL, &overlapped) && WaitForSingleObject(overlapped.hEvent, INFINITE) == WAIT_OBJECT_0);
 }

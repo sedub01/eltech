@@ -6,8 +6,7 @@ HANDLE pipeHandle = nullptr;
 bool ConnectToPipe(HANDLE&);
 bool GetMyMessage(HANDLE&, char[]);
 void WINAPI callback(DWORD dwErrorCode, DWORD dwNumberOfBytesTransfered, LPOVERLAPPED lpOverlapped) {
-    if (PeekNamedPipe(pipeHandle, NULL, 0, NULL, &dwNumberOfBytesTransfered, NULL))
-        cout << "\nMessage recieved\n";
+    if (!dwErrorCode) cout << "\nMessage recieved\n";
     else cout << "\nMessage haven't recieved\n";
 }
 
