@@ -8,7 +8,6 @@ public class MainWindow extends JFrame{
     MainWindow(){
         add(coordinateAxis);
         add(figuresConfig);
-
         setTitle("Первая лаба");
         setLayout(null);
         setSize(960, 750);

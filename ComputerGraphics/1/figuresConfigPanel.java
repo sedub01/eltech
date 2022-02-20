@@ -23,18 +23,24 @@ public class figuresConfigPanel extends JPanel{
         add(draw);
 
         draw.addActionListener(new ActionListener(){
-            @Override
+            @Override //анонимный класс
             public void actionPerformed(ActionEvent e) {
                 AXISPANEL.repaint();
+                
                 AXISPANEL.setCircleX(Integer.parseInt(xField.getText()));
                 AXISPANEL.setCircleY(Integer.parseInt(yField.getText()));
                 AXISPANEL.setRadius(Integer.parseInt(radiusField.getText()));
 
                 AXISPANEL.setFirstX(Integer.parseInt(xPointField.getText()));
                 AXISPANEL.setFirstY(Integer.parseInt(yPointField.getText()));
+
+                AXISPANEL.calculatePoints();
+                if (!AXISPANEL.isInsideTheCircle())
+                System.out.println("Точки на окружности: \nax: " + AXISPANEL.getAX() + ", ay: " + AXISPANEL.getAY() + 
+                "\nbx: " + AXISPANEL.getBX() + ", by: " + AXISPANEL.getBY());
             }
         });
-
+        
         setBackground(Color.LIGHT_GRAY);
         setBounds(710, 250, 230, 200);
     }
